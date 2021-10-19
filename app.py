@@ -23,11 +23,17 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
+@app.route("/")
+@app.route("/get_food")
+def get_food():
+    foods = mongo.db.food.find()
+    return render_template("food.html", foods=foods)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
             debug=True)
-            """
-            This must be changed to False before submission!
-            """
-            
+"""
+This must be changed to False before submission!
+"""
