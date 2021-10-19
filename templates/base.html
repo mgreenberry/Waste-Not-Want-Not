@@ -11,8 +11,6 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
     <!-- Materalize -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
-    <!-- MDB -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css" rel="stylesheet"/>
     <!-- User css -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" href="style.css">
     {% block styles %}
@@ -29,9 +27,11 @@
 				<a href="{{ url_for('get_food') }}" class="brand-logo">Waste Not Want Not</a>
 				<a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
 				<ul class="right hide-on-med-and-down">
-					<li><a href="#">Kitchen Food List</a></li>
-					<li><a href="#">Log In</a></li>
-					<li><a href="#">Register</a></li>
+					<li><a href="{{ url_for('get_food') }}">Kitchen Food List</a></li>
+                    <li>
+                        <!-- Modal Trigger -->
+                        <button data-target="modal1" class="btn modal-trigger">Log In/Register</button>
+                    </li>
 					<li><a href="#">Profile</a></li>
 					<li><a href="#">Log Out</a></li>
 					<li><a href="#">Add Food</a></li>
@@ -41,16 +41,64 @@
         </div>
         <!-- mobile sidenav -->
 		<ul class="sidenav" id="mobile-demo">
-            <li><h4 class="right">Waste Not Want Not</h4></li>
-            <li><a href="#">Kitchen Food List</a></li>
+            <li><h4 class="right">Waste Not</h4></li>
+            <li><a href="#">Food List</a></li>
+            <li><button data-target="modal1" class="btn modal-trigger">Log In/Register</button></li>
             <li><a href="#">Log In</a></li>
-            <li><a href="#">Register</a></li>
+            <li><a href="{{ url_for('register') }}">Register</a></li>
             <li><a href="#">Profile</a></li>
             <li><a href="#">Log Out</a></li>
             <li><a href="#">Add Food</a></li>
 		</ul>
 	</header>
 
+    <!-- Modal Structure -->
+    <section> 
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <h4 class="center-align green">Welcome to Waste Not Want Not</h4>
+                <p class="center-align green">Helping you to reduce waste</p>
+            </div>
+            <h3 class="center-align">Register</h3>
+            <!-- Code adapted from Code Institue Task mini project -->
+            <div class="row">
+                <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('register') }}">
+                    <div class="card-panel">
+                    <!-- username -->
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class=""></i>
+                                <input id="username" name="username" type="text" minlength="5" maxlength="20" pattern="^[a-zA-Z0-9]{5,20}$" class="validate" required>
+                                <label for="username">Username</label>
+                            </div>
+                        </div>
+                        <!-- password -->
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class=""></i>
+                                <input id="password" name="password" type="password" minlength="8" maxlength="20" pattern="^[a-zA-Z0-9]{5,20}$" class="validate" required>
+                                <label for="password">Password</label>
+                            </div>
+                        </div>
+                        <!-- register -->
+                        <div class="row">
+                            <button type="submit" class="col s12">Register <i class=""></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <a href="" class="modal-close waves-effect waves-green btn-flat">Log In</a>
+                <a href="{{ url_for('register') }}" class="modal-close waves-effect waves-green btn-flat">Register</a>
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <p class="center-align">"Already Registered"" <a href="" class="">Log In</a></p>
+                </div>
+            </div>
+        </div>
+    </section> 
     {% block content %}
     {% endblock %}
 
@@ -58,7 +106,6 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js"></script>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
     {% block scripts %}
     {% endblock %}
