@@ -1,8 +1,3 @@
-"""
-The following Python code is taken from the 'Task' mini-project.
-This imports flask, bson and werkzeug for password control.
-A env.py file will also be created which will hold the MongoDB details
-"""
 import os
 from flask import (
     Flask, flash, render_template,
