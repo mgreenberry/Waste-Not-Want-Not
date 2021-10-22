@@ -99,6 +99,26 @@ def logout():
     return redirect(url_for("login"))
 
 
+@app.route("/add_food", methods=["GET", "POST"])
+def add_food():
+    if request.method == "POST":
+        is_urgent = "on" if request.form.get("is_urgent") else "off"
+        food = {
+            "food_name": request.form.get("food_name"),
+            "food_group": request.form.get("food_group"),
+            "use_by_date": request.form.get("use_by_date"),
+            "barcode": request.form.get("barcode"),
+            "is_urgent": is_urgent,
+            "created_by": session["user"]
+        }
+        mongo.db.catergories.insert_one(food)
+        flash("Food added succesfully")
+        return redirect(url_for("add_food"))
+        
+    foods = mongo.db.catergories.find().sort("food_group", 1)
+    return render_template("add_food.html", foods=foods)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
