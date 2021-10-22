@@ -19,7 +19,7 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-@app.route("/get_food")
+@app.route("/get_food")  # is this the right route?
 def get_food():
     foods = mongo.db.food.find()
     return render_template("food.html", foods=foods)
@@ -56,6 +56,7 @@ def login():
         # check if username exists in db
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
+
         if existing_user:
             # ensure hashed password matches user input
             if check_password_hash(
@@ -69,12 +70,33 @@ def login():
                 # invalid password match
                 flash("Incorrect Username and/or Password")
                 return redirect(url_for("login"))
+
         else:
             # username doesn't exist
             flash("Incorrect Username and/or Password")
             return redirect(url_for("login"))
 
     return render_template("login.html")
+
+
+@app.route("/profile/<username>", methods=["GET", "POST"])
+def profile(username):
+    # grab the session user's username from db
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+
+    if session["user"]:
+        return render_template("catergories.html", username=username)
+
+    return render_template("catergories.html", username=username)
+
+
+@app.route("/logout")
+def logout():
+    # Logs user out
+    flash("You have logged out")
+    session.pop("user")
+    return redirect(url_for("login"))
 
 
 if __name__ == "__main__":
