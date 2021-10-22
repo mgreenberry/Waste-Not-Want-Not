@@ -10,26 +10,26 @@
                 <div class="col s3">
                     <i class="fas fa-caret-down"></i>
                     {% if session.user|lower == catergory.created_by|lower %}
-                    <a class="btn-small red accent-4 delete" href="{{ url_for('delete_food', food_name=food._id) }}" 
+                    <a class="btn-small red accent-4 delete" href="{{ url_for('delete_food', food_name=catergory._id) }}" 
                         data-confirm="Are you sure to delete this item?">
                         Delete</a>
-                    <a href="{{ url_for('edit_food', food_name=food._id) }}" 
+                    <a href="{{ url_for('edit_food', food_name=catergory._id) }}" 
                         class="btn-small light-blue accent-4">Edit</a> 
                     {% endif %}
                 </div>
                 <div class="col s9">
-                    <h4 class="uppercase">Food Item: {{ food.food_name }}</h4>
+                    <h4 class="uppercase">Food Item: {{ catergory.food_name }}</h4>
                 </div>
             </div>
             <div class="collapsible-body">
-                <p class="uppercase">Use by Date: {{ food.use_by_date }}</p>
+                <p class="uppercase">Use by Date: {{ catergory.use_by_date }}</p>
                 {% if catergory.is_urgent == "on" %}
                     <i class="fas fa-exclamation-circle light-green-text text-lighten-2 tooltipped"
                         data-position="right" data-tooltip="USE ME"></a></i>
                 {% endif %}
-                <p><strong class="uppercase">Food Group: {{ food.food_group }}</strong></p>
-                <p class="uppercase">Barcode or ID No.: {{ food.barcode }}</p>
-                <p><em class="uppercase">Entered by: {{ food.created_by }}</em></p>
+                <p><strong class="uppercase">Food Group: {{ catergory.food_group }}</strong></p>
+                <p class="uppercase">Barcode or ID No.: {{ catergory.barcode }}</p>
+                <p><em class="uppercase">Entered by: {{ catergory.created_by }}</em></p>
             </div>
         </li>
         {% endfor %}

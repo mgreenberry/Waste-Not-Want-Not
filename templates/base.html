@@ -24,14 +24,18 @@
 		<div class="navbar-fixed">
         <nav class="nav-extended text-shadow green darken-3">
 			<div class="nav-wrapper">
-				<a href="{{ url_for('get_food') }}" class="brand-logo">Waste Not Want Not</a>
+				<a href="{{ url_for('foods') }}" class="brand-logo">Waste Not Want Not</a>
 				<a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
 				<ul class="right hide-on-med-and-down">
-					<li><a href="{{ url_for('get_food') }}">Kitchen Food List</a></li>
-                    <li><a href="{{ url_for('login') }}">Log In</a></li>
-                    <li><a href="{{ url_for('register') }}">Register</a></li>
-					<li><a href="#">Log Out</a></li>
-					<li><a href="{{ url_for('add_food') }}">Add Food</a></li>
+					<li><a href="{{ url_for('foods') }}">Food List</a></li>
+                    {% if session.user %}
+                        <li><a href="{{ url_for('add_food') }}">Add Food</a></li>
+                        <li><a href="{{ url_for('foods') }}">Shopping List</a></li>
+                        <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+                    {% else %} 
+                        <li><a href="{{ url_for('login') }}">Log In</a></li>
+                        <li><a href="{{ url_for('register') }}">Register</a></li>
+                    {% endif %}
 				</ul>
 			</div>
 		</nav>
@@ -39,9 +43,9 @@
         <!-- mobile sidenav -->
 		<ul class="sidenav" id="mobile-demo">
             <li><h4 class="right">Waste Not</h4></li>
-            <li><a href="{{ url_for('get_food') }}">Kitchen Food List</a></li>
+            <li><a href="">Food List</a></li>
             <li><a href="#">Log In</a></li>
-            <li><a href="{{ url_for('register') }}">Register</a></li>
+            <li><a href="">Register</a></li>
             <li><a href="#">Log Out</a></li>
             <li><a href="#">Add Food</a></li>
 		</ul>
