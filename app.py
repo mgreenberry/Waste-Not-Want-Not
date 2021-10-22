@@ -65,7 +65,7 @@ def login():
                         flash("Welcome, {}".format(
                             request.form.get("username")))
                         return redirect(url_for(
-                            "catergories", username=session["user"]))
+                            "get_food", username=session["user"]))
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
@@ -86,9 +86,9 @@ def profile(username):
         {"username": session["user"]})["username"]
 
     if session["user"]:
-        return render_template("catergories.html", username=username)
+        return render_template("food.html", username=username)
 
-    return render_template("catergories.html", username=username)
+    return render_template("food.html", username=username)
 
 
 @app.route("/logout")
@@ -104,18 +104,19 @@ def add_food():
     if request.method == "POST":
         is_urgent = "on" if request.form.get("is_urgent") else "off"
         food = {
+            "location": request.form.get("location"),
             "food_name": request.form.get("food_name"),
-            "food_group": request.form.get("food_group"),
-            "use_by_date": request.form.get("use_by_date"),
             "barcode": request.form.get("barcode"),
+            "use_by_date": request.form.get("use_by_date"),
+            "purchase_date": request.form.get("purchase_date"),
             "is_urgent": is_urgent,
             "created_by": session["user"]
         }
-        mongo.db.catergories.insert_one(food)
+        mongo.db.food.insert_one(food)
         flash("Food added succesfully")
         return redirect(url_for("add_food"))
         
-    foods = mongo.db.catergories.find().sort("food_group", 1)
+    foods = mongo.db.food.find().sort("food_group", 1)
     return render_template("add_food.html", foods=foods)
 
 
