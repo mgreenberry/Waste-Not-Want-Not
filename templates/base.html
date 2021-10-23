@@ -23,7 +23,6 @@
 					<li><a href="{{ url_for('modifies', username=session['user']) }}">Expiring Food List</a></li>
                     {% if session.user %}
 					    <li><a href="{{ url_for('add_food') }}">Add Food</a></li>
-					    <li><a href="#">Shopping List</a></li>
 					    <li><a href="{{ url_for('logout') }}">Log Out</a></li>
                     {% endif %}
 				</ul>

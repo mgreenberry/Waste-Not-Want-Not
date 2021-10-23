@@ -18,3 +18,9 @@
 .brand-logo {
     margin-left: 20px;
 }
+.left {
+    align-items: center;
+}
+.right {
+    align-items: center;
+}
