@@ -153,8 +153,8 @@ def modifies():
     modifies = list(mongo.db.food.find().sort('use_by_date', 1))
     return render_template("modifies.html", modifies=modifies)
 
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
             debug=True)
-            
