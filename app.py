@@ -79,18 +79,6 @@ def login():
     return render_template("catergories.html")
 
 
-@app.route("/profile/<username>", methods=["GET", "POST"])
-def profile(username):
-    # grab the session user's username from db
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
-
-    if session["user"]:
-        return render_template("catergories.html", username=username)
-
-    return render_template("catergories.html", username=username)
-
-
 @app.route("/logout")
 def logout():
     # Logs user out
@@ -106,9 +94,9 @@ def add_food():
         food = {
             "location": request.form.get("location"),
             "food_name": request.form.get("food_name"),
-            "use_by_date": request.form.get("use_by_date"),
-            "purchase_date": request.form.get("purchase_date"),
             "barcode": request.form.get("barcode"),
+            "purchase_date": request.form.get("purchase_date"),
+            "use_by_date": request.form.get("use_by_date"),
             "short_date": short_date,
             "created_by": session["user"]
         }
@@ -124,13 +112,14 @@ def add_food():
 def edit_food(food_name):
 
     if request.method == "POST":
-        is_urgent = "on" if request.form.get("is_urgent") else "off"
+        short_date = "on" if request.form.get("short_date") else "off"
         submit = {
+            "location": request.form.get("location"),
             "food_name": request.form.get("food_name"),
-            "food_group": request.form.get("location"),
-            "use_by_date": request.form.get("use_by_date"),
             "barcode": request.form.get("barcode"),
-            "short_date": is_urgent,
+            "purchase_date": request.form.get("purchase_date"),
+            "use_by_date": request.form.get("use_by_date"),
+            "short_date": short_date,
             "created_by": session["user"]
         }
         mongo.db.food.update({"_id": ObjectId(food_name)}, submit)
