@@ -24,20 +24,16 @@
                 </div>
                 <!-- register -->
                 <div class="row">
-                    <button type="submit" class="col s12 btn-large light-blue darken-4 text-shadow">
-                        Register <i class="fas fa-sign-in-alt"></i>
-                    </button>
+                    <div class="col s12">
+                        <a class="col s5 btn light-green darken-4 text-shadow left" href="{{ url_for('login') }}">
+                            Log In <i class="fas fa-sign-in-alt"></i></a>
+                        <button type="submit" class="col s5 btn light-blue darken-4 text-shadow right">
+                            Register <i class="fas fa-sign-in-alt"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
         </form>
-    </div>
-
-    <div class="row">
-        <div class="col s12">
-            <p class="center-align">
-                "Already Registered"" <a href="{{ url_for('login') }}" class="light-blue.text-darken-4">Log In</a>
-            </p>
-        </div>
     </div>
     
 {% endblock %}

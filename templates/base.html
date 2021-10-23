@@ -13,7 +13,7 @@
 </head>
 <body>
 
-	<header>
+	<header class="navbar-fixed">
         <!-- top navbar -->
 		<nav class="nav-extended text-shadow green darken-1">
 			<div class="nav-wrapper">
@@ -60,6 +60,28 @@
         {% block content %}
         {% endblock %}
     </main>
+    <footer class="page-footer green">
+        {% block footer %}
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Waste Not Want Not</h5>
+                    <p class="grey-text text-lighten-4">Helping you to reduce food waste</p>
+                </div>
+                <div class="right">
+                    <h6 class="white-text">Contact Us</h6>
+                    <p>Email: - info@wastenot.com</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright green lighten-2">
+            <div class="container">
+                © Waste Not Want Not 2021
+                <a class="grey-text text-lighten-4 right" href="https://www.linkedin.com/in/michael-greenberry-637299108/" target="_blank" rel="noopener">Michael Greenberry</a>
+            </div>
+        </div>
+        {% endblock %}
+    </footer>
 
 
 
