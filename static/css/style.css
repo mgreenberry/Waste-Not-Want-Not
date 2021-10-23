@@ -15,9 +15,6 @@
     margin: 5px;
     line-height: 42px;
 }
-.brand-logo {
-    margin-left: 20px;
-}
 body {
     display: flex;
     min-height: 100vh;
@@ -27,3 +24,8 @@ body {
   main {
     flex: 1 0 auto;
   }
+.box {
+    border-right: 1px solid #ddd !important;
+    border-left: 1px solid #ddd !important;
+    margin: 0.5rem 0 1rem 0 !important;
+}

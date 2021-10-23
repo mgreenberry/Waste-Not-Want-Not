@@ -6,6 +6,7 @@
 
     <ul class="collapsible">
         {% for modify in modifies %}
+        {% if session.user|lower == modify.created_by|lower %}
         <li>
             <div class="collapsible-header white-text green darken-4 text-shadow">
                 <div class="col s12">
@@ -14,10 +15,9 @@
                     {% endif %}
                     <h4 class="uppercase">Food: {{ modify.food_name}}</h4>
                     <p><span class="uppercase">Use By Date: {{ modify.use_by_date }}</span></p>
-                    {% if session.user|lower == modify.created_by|lower %}
+                    
                         <a href="#" class="btn-small green accent-4 right">Eaten</a>
                         <a href="#" class="btn-small red lighten-1 right">Thrown Away</a>
-                    {% endif %}
                     <br>
                     <i class="fas fa-caret-down"></i>
                 </div>
@@ -29,6 +29,7 @@
                 <p><em>Created by: {{ modify.created_by }}</em></p>
             </div>
         </li>
+        {% endif %}
         {% endfor %}
     </ul>
 

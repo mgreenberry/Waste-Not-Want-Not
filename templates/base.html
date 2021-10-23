@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     {% block styles %}
     {% endblock %}
-    <title>Food Manager</title>
+    <title>Waste Not Want Not</title>
 </head>
 <body>
 
@@ -17,11 +17,11 @@
         <!-- top navbar -->
 		<nav class="nav-extended text-shadow green darken-1">
 			<div class="nav-wrapper">
-				<a href="{{ url_for('index') }}" class="brand-logo">Waste Not, Want Not!</a>
+				<a href="{{ url_for('index') }}" class="brand-logo center">Waste Not, Want Not!</a>
 				<a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
 				<ul class="right hide-on-med-and-down">
-					<li><a href="{{ url_for('modifies', username=session['user']) }}">Expiring Food List</a></li>
                     {% if session.user %}
+					    <li><a href="{{ url_for('modifies', username=session['user']) }}">Expiring Food List</a></li>
 					    <li><a href="{{ url_for('add_food') }}">Add Food</a></li>
 					    <li><a href="{{ url_for('logout') }}">Log Out</a></li>
                     {% endif %}
