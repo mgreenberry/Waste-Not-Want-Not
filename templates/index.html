@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h1 class="light-green-text text-darken-4 center-align">Waste Not Want Not</h3>
+    <h3 class="light-green-text text-darken-4 center-align">Helping you to reduce food waste</h5>
+
+    <p class="text-darken-4 center-align">TEXT TO GO IN HERE</p>
+
+    <h5 class="center-align">Log in</h3>
+
+    <div class="row">
+        <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('index') }}">
+            <div class="card-panel">
+                <!-- username -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-user-cog prefix light-green-text text-darken-4"></i>
+                        <input id="username" name="username" type="text" minlength="5" maxlength="20" pattern="^[a-zA-Z0-9]{5,20}$" class="validate" required>
+                        <label for="username">Username</label>
+                    </div>
+                </div>
+                <!-- password -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-user-lock prefix light-green-text text-darken-4"></i>
+                        <input id="password" name="password" type="password" minlength="8" maxlength="20" pattern="^[a-zA-Z0-9]{5,20}$" class="validate" required>
+                        <label for="password">Password</label>
+                    </div>
+                </div>
+                <!-- login -->
+                <div class="row">
+                    <button type="submit" class="col s12 btn-large light-green darken-4 text-shadow">
+                        Log In <i class="fas fa-sign-in-alt"></i>
+                    </button>
+                </div>
+                <div class="row">
+                    <div class="col s12">
+                        <p class="center-align">
+                            Need An Account? <a href="{{ url_for('register') }}" class="light-green.text-darken-4">Register Account</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}
