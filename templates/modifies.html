@@ -4,21 +4,32 @@
     <h3 class="light-green-text text-darken-4 center-align">Food List</h3>
     <h5 class="light-green-text text-darken-4 center-align">Use By Dates</h5>
 
-    <div class="row">
+    <ul class="collapsible">
         {% for modify in modifies %}
-            <div class="col s12 m12">
-                <div class="card light-green darken-4 text-shadow center-align">
-                    <div class="card-content white-text">
-                        <span class="uppercase card-title">Food: {{ modify.food_name}}</span>
-                        <span class="uppercase card-title">Use By Date: {{ modify.use_by_date }}</span>
-                    </div>
-                    {% if session.user|lower == modify.created_by|lower %}
-                        <a href="#" class="btn-small green accent-4">Eaten</a>
-                        <a href="#" class="btn-small red lighten-1">Thrown Away</a>
+        <li>
+            <div class="collapsible-header white-text green darken-4 text-shadow">
+                <div class="col s12">
+                    {% if modify.short_date == "on" %}
+                        <span class="fas fa-exclamation-circle white-text" data-position="right"> SHORT DATE!</span>
                     {% endif %}
+                    <h4 class="uppercase">Food: {{ modify.food_name}}</h4>
+                    <p><span class="uppercase">Use By Date: {{ modify.use_by_date }}</span></p>
+                    {% if session.user|lower == modify.created_by|lower %}
+                        <a href="#" class="btn-small green accent-4 right">Eaten</a>
+                        <a href="#" class="btn-small red lighten-1 right">Thrown Away</a>
+                    {% endif %}
+                    <br>
+                    <i class="fas fa-caret-down"></i>
                 </div>
             </div>
+            <div class="collapsible-body">
+                <strong>Location: {{ modify.location }}</strong>
+                <p>Barcode or ID number: {{ modify.barcode }}</p>
+                <p>Date of Purchase: {{ modify.purchase_date }}</p>
+                <p><em>Created by: {{ modify.created_by }}</em></p>
+            </div>
+        </li>
         {% endfor %}
+    </ul>
 
-    </div>
 {% endblock %}

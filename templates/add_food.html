@@ -8,9 +8,13 @@
             <!-- Add location of the food item -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-pencil-alt prefix light-green-text text-darken-4"></i>
-                    <input id="location" name="location" minlength="3" maxlength ="50" 
-                        type="text" class="validate" required>
+                    <i class="fas fa-folder-open prefix light-green-text text-darken-4"></i>
+                    <select id="location" name="location" class="validate" required>
+                        <option value="" disabled selected>Choose Location</option>
+                        {% for location in locations %}
+                            <option value="{{ food.location }}">({ food.location})</option>
+                        {% endfor %}
+                    </select>
                     <label for="location">Location</label>
                 </div>
             </div>
