@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h3 class="light-green-text text-darken-4 center-align">Food Thrown Away</h3>
+
+    <ul class="collapsible">
+        {% for modify in modifies %}
+        {% if session.user|lower == modify.created_by|lower %}
+        <li>
+            <div class="collapsible-header white-text green darken-4 text-shadow">
+                <div class="col s12">
+                    <h4 class="uppercase">Food: {{ modify.food_name}}</h4>
+                    <p><span class="uppercase">Use By Date: {{ modify.quantity }}</span></p>
+                    
+                        <a href="#" class="btn-small green accent-4 right">Eaten</a>
+                        <a href="#" class="btn-small red lighten-1 right">Thrown Away</a>
+                    <br>
+                    <i class="fas fa-caret-down"></i>
+                </div>
+            </div>
+        </li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+
+{% endblock %}
