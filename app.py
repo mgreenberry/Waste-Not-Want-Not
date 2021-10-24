@@ -76,7 +76,7 @@ def login():
             flash("Incorrect Username and/or Password")
             return redirect(url_for("index"))
 
-    return render_template("catergories.html")
+    return render_template("profile.html")
 
 
 @app.route("/logout")
@@ -108,39 +108,17 @@ def add_food():
     return render_template("add_food.html", foods=foods)
 
 
-@app.route("/edit_food/<food_name>", methods=["GET", "POST"])
-def edit_food(food_name):
-
-    if request.method == "POST":
-        short_date = "on" if request.form.get("short_date") else "off"
-        submit = {
-            "location": request.form.get("location"),
-            "food_name": request.form.get("food_name"),
-            "barcode": request.form.get("barcode"),
-            "purchase_date": request.form.get("purchase_date"),
-            "use_by_date": request.form.get("use_by_date"),
-            "short_date": short_date,
-            "created_by": session["user"]
-        }
-        mongo.db.food.update({"_id": ObjectId(food_name)}, submit)
-        flash("Food updated succesfully")
-
-    food = mongo.db.food.find_one({"_id": ObjectId(food_name)})
-    foods = mongo.db.food.find().sort("food_name", 1)
-    return render_template("edit_food.html", food=food, foods=foods)
-
-
-@app.route("/delete_food/<food_name>")
-def delete_food(food_name):
-    mongo.db.food.remove({"_id": ObjectId(food_name)})
-    flash("Food Deleted")
-    return redirect(url_for("catergories"))
-
-
 @app.route("/modifies")
 def modifies():
     modifies = list(mongo.db.food.find().sort('use_by_date', 1))
     return render_template("modifies.html", modifies=modifies)
+
+
+@app.route("/waste")
+def waste():
+    waste = list(mongo.db.food.find().sort('food_name', 1))
+    mongo.db.waste.insert_one('food')
+    return render_template("waste.html", waste=waste)
 
 
 if __name__ == "__main__":

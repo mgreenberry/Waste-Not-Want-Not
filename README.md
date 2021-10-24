@@ -112,6 +112,7 @@ TO BE IMPLEMENTED!
   2. To search for a food item in any list - food stock, shopping and waste and to then edit/delete/add to lists.
   3. To able to add food by scanning a barcode
   4. To link with voice activated apps like Alexa
+  5. To allow push notifications to users mobile device to warn of items that need using.
 
 [Back to content](#table-of-contents)
 ### Design Choices
