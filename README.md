@@ -110,10 +110,8 @@ TO BE IMPLEMENTED!
 * As a user returning to the site:
   1. To send an email with suggestions, complaints, etc.
   2. To search for a food item in any list - food stock, shopping and waste and to then edit/delete/add to lists.
-
-* The owner/creator will do this by:
-  1. Create a form in a contact us section
-  2. Create a fuction which will allow user to search and edit/delete/add food to lists
+  3. To able to add food by scanning a barcode
+  4. To link with voice activated apps like Alexa
 
 [Back to content](#table-of-contents)
 ### Design Choices
@@ -175,7 +173,7 @@ I used Balsamiq to create my wireframes. I chose to do a mobile version first wi
 As I wanted to include this on all formats and devices I created my wireframes again for all pages and added the following to show mobile, tablet and desktop:
 
 **Mobile**
-* [Home](docs/mobile-home-page.pdf)
+* [Home](docs/mobile.pdf)
 * [Log In]()
 * [Register]()
 * [Food List]()
