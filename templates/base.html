@@ -23,7 +23,6 @@
                     {% if session.user %}
 					    <li><a href="{{ url_for('modifies', username=session['user']) }}">Expiring Food List</a></li>
 					    <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-					    <li><a href="{{ url_for('logout') }}">Log Out</a></li>
                     {% endif %}
 				</ul>
 			</div>
@@ -61,22 +60,13 @@
     </main>
     <footer class="page-footer green">
         {% block footer %}
-        <div class="container">
+        <div class="container center-align">
             <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="white-text">Waste Not Want Not</h5>
+                <div class="col s12">
+                    <h5>© Waste Not Want Not 2021</h5>
                     <p class="grey-text text-lighten-4">Helping you to reduce food waste</p>
+                    <p class="grey-text text-lighten-4" href="https://www.linkedin.com/in/michael-greenberry-637299108/" target="_blank" rel="noopener">&copy Michael Greenberry</p>
                 </div>
-                <div class="right">
-                    <h6 class="white-text">Contact Us</h6>
-                    <p>Email: - info@wastenot.com</p>
-                </div>
-            </div>
-        </div>
-        <div class="footer-copyright green lighten-2">
-            <div class="container">
-                © Waste Not Want Not 2021
-                <a class="grey-text text-lighten-4 right" href="https://www.linkedin.com/in/michael-greenberry-637299108/" target="_blank" rel="noopener">Michael Greenberry</a>
             </div>
         </div>
         {% endblock %}
