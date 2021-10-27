@@ -30,11 +30,14 @@
                     <i class="fas fa-caret-down"></i>
                 </div>
             </div>
-            <div class="collapsible-body">
+            <div class="collapsible-body uppercase">
                 <strong>Location: {{ modify.location }}</strong>
                 <p>Barcode or ID number: {{ modify.barcode }}</p>
                 <p>Date of Purchase: {{ modify.purchase_date }}</p>
                 <p><em>Created by: {{ modify.created_by }}</em></p>
+                <a href="{{ url_for('edit_food', food_name=modify._id) }}" class="btn-small green accent-4 right">Edit</a>
+                <a href="#" class="btn-small red lighten-1 right">Delete</a>
+            <br>
             </div>
         </li>
         {% endif %}

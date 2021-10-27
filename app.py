@@ -115,6 +115,29 @@ def add_food():
     return render_template("add_food.html", foods=foods)
 
 
+@app.route("/edit_food/<food_name>", methods=["GET", "POST"])
+def edit_food(food_name):
+
+    if request.method == "POST":
+        short_date = "on" if request.form.get("short_date") else "off"
+        submit = {
+            "location": request.form.get("location"),
+            "food_name": request.form.get("food_name"),
+            "barcode": request.form.get("barcode"),
+            "purchase_date": request.form.get("purchase_date"),
+            "use_by_date": request.form.get("use_by_date"),
+            "short_date": short_date,
+            "created_by": session["user"]
+        }
+        mongo.db.food.update({"_id": ObjectId(food_name)}, submit)
+        flash("Food updated succesfully")
+        return redirect(url_for("modifies"))
+
+    food = mongo.db.food.find_one({"_id": ObjectId(food_name)})
+    foods = mongo.db.food.find().sort("food_name", 1)
+    return render_template("edit_food.html", food=food, foods=foods)
+
+
 @app.route("/modifies")
 def modifies():
     modifies = list(mongo.db.food.find().sort('use_by_date', 1))
