@@ -151,6 +151,19 @@ def modifies():
     return render_template("modifies.html", modifies=modifies)
 
 
+@app.route("/shopping/<food_name>", methods=['GET', 'POST'])
+def shopping(food_name):
+    # get the item by id from the first collection
+    food = mongo.db.food.find_one({"food_name": food_name})
+    del food["_id"]
+    mongo.db.shopping.insert_one(food),
+    mongo.db.food.remove_one({"food": food_name })
+    items = list(
+        mongo.db.shopping.find().sort('food_name', 1))
+    flash("Food Item added to Shopping List")
+    return render_template("shopping.html", items=items)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
