@@ -110,7 +110,7 @@ def add_food():
         mongo.db.food.insert_one(food)
         flash("Food added succesfully")
         return redirect(url_for("modifies"))
-        
+
     foods = mongo.db.food.find().sort("food_name", 1)
     return render_template("add_food.html", foods=foods)
 
