@@ -138,6 +138,13 @@ def edit_food(food_name):
     return render_template("edit_food.html", food=food, foods=foods)
 
 
+@app.route("/delete_food/<food_name>")
+def delete_food(food_name):
+    mongo.db.food.remove({"_id": ObjectId(food_name)})
+    flash("Food Item Deleted")
+    return redirect(url_for("modifies"))
+
+
 @app.route("/modifies")
 def modifies():
     modifies = list(mongo.db.food.find().sort('use_by_date', 1))

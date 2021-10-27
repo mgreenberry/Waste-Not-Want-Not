@@ -35,9 +35,25 @@
                 <p>Barcode or ID number: {{ modify.barcode }}</p>
                 <p>Date of Purchase: {{ modify.purchase_date }}</p>
                 <p><em>Created by: {{ modify.created_by }}</em></p>
-                <a href="{{ url_for('edit_food', food_name=modify._id) }}" class="btn-small green accent-4 right">Edit</a>
-                <a href="#" class="btn-small red lighten-1 right">Delete</a>
-            <br>
+                <!-- Modal Trigger -->
+                <a href="#modal1" class="btn-small red modal-trigger">Delete</a>
+                <!-- Modal Structure -->
+                <div id="modal1" class="modal">
+                    <div class="modal-content">
+                        <h4>Are You Sure?</h4>
+                        <p>To delete food item click 'Delete' below or click 'Cancel' to go back</p>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="{{ url_for('delete_food', food_name=modify._id) }}" 
+                            class="modal-close btn-small blue lighten-1">
+                            Delete
+                        </a>
+                        <a href="{{ url_for('modifies') }}" class="modal-close left btn-small red text-shadow">
+                            Cancel <i class="fas fa-times-circle"></i>
+                        </a>
+                    </div>
+                </div>
+                <a href="{{ url_for('edit_food', food_name=modify._id) }}" class="btn-small blue">Edit</a>
             </div>
         </li>
         {% endif %}
