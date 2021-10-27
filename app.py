@@ -45,7 +45,7 @@ def register():
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
-        return redirect(url_for("modifies", username=session["user"]))
+        return redirect(url_for("profile", username=session["user"]))
 
     return render_template("register.html")
 
@@ -65,7 +65,7 @@ def login():
                         flash("Welcome, {}".format(
                             request.form.get("username")))
                         return redirect(url_for(
-                            "modifies", username=session["user"]))
+                            "profile", username=session["user"]))
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
@@ -77,6 +77,13 @@ def login():
             return redirect(url_for("index"))
 
     return render_template("profile.html")
+
+
+@app.route("/profile/<username>", methods=["GET", "POST"])
+def profile(username):
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    return render_template("profile.html", username=username)
 
 
 @app.route("/logout")
@@ -102,7 +109,7 @@ def add_food():
         }
         mongo.db.food.insert_one(food)
         flash("Food added succesfully")
-        return redirect(url_for("add_food"))
+        return redirect(url_for("modifies"))
         
     foods = mongo.db.food.find().sort("food_name", 1)
     return render_template("add_food.html", foods=foods)
@@ -112,13 +119,6 @@ def add_food():
 def modifies():
     modifies = list(mongo.db.food.find().sort('use_by_date', 1))
     return render_template("modifies.html", modifies=modifies)
-
-
-@app.route("/waste")
-def waste():
-    waste = list(mongo.db.food.find().sort('food_name', 1))
-    mongo.db.waste.insert_one('food')
-    return render_template("waste.html", waste=waste)
 
 
 if __name__ == "__main__":
