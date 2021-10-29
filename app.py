@@ -155,11 +155,12 @@ def modifies():
 def shopping(food_name):
     # get the item by id from the first collection
     food = mongo.db.food.find_one({"food_name": food_name})
-    mongo.db.shopping.insert_one(food)
     del food["_id"]
+    mongo.db.shopping.insert_one(food)
     mongo.db.food.remove({"food_name": food_name})
     flash("Food Item added to Shopping List")
-    return render_template("modifies.html")
+    items = list(mongo.db.shopping.find().sort('food_name', 1))
+    return render_template("modifies.html", items=items)
 
 
 if __name__ == "__main__":
