@@ -160,7 +160,7 @@ def shopping(food_name):
     mongo.db.food.remove({"food_name": food_name})
     flash("Food Item added to Shopping List")
     items = list(mongo.db.shopping.find().sort('food_name', 1))
-    return render_template("modifies.html", items=items)
+    return render_template("shopping.html", items=items)
 
 
 if __name__ == "__main__":
