@@ -26,24 +26,29 @@
                         <!-- Modal for adding to shopping list -->
                         <a href="#modal1" class="btn-small green accent-4 right modal-trigger">Eaten</a>
                         <div id="modal1" class="modal green">
-                            <div class="modal-content green">
-                                <h4 class="white-text">Would you like to add this item to your shopping list</h4>
-                                <p>Press the 'Add' button below or click No to delete item instead</p>
+                            <div class="modal-content">
+                                <h4 class="white-text">Would you like to add this item to your shopping list?</h4>
+                                <p>Press the 'Add to Shopping' button below or click "Don't Add to Shopping" to delete item instead</p>
                             </div>
                             <div class="modal-footer">
                                 <a href="{{ url_for('shopping', food_name=modify.food_name) }}" 
-                                    class="modal-close btn-small blue lighten-1">
+                                    class="modal-close right btn-small blue text-shadow">
                                     Add to Shopping
                                 </a>
+                                <div class="divider"></div>
                                 <a href="{{ url_for('delete_food', food_name=modify._id) }}" 
-                                    class="modal-close left btn-small red text-shadow">
-                                    Don't Add <i class="fas fa-times-circle"></i>
+                                    class="modal-close btn-small red text-shadow">
+                                    Don't Add to Shopping
+                                </a>
+                                <div class="divider"></div>
+                                <a href="{{ url_for('modifies') }}" class="modal-close left btn-small red text-shadow">
+                                    Cancel
                                 </a>
                             </div>
                         </div>
                         <a href="#" class="btn-small red lighten-1 right">Thrown Away</a>
                     <br>
-                    <i class="fas fa-caret-down"></i>
+                    <i class="fas fa-caret-down"></i> Click for more information 
                 </div>
             </div>
             <div class="collapsible-body uppercase">
@@ -55,7 +60,7 @@
                 <a href="#modal2" class="btn-small red modal-trigger">Delete</a>
                 <!-- Modal Structure -->
                 <div id="modal2" class="modal">
-                    <div class="modal-content">
+                    <div class="modal-content green white-text">
                         <h4>Are You Sure?</h4>
                         <p>To delete food item click 'Delete' below or click 'Cancel' to go back</p>
                     </div>

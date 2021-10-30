@@ -20,12 +20,16 @@ body {
     min-height: 100vh;
     flex-direction: column;
   }
-
-  main {
+main {
     flex: 1 0 auto;
-  }
+}
 .box {
     border-right: 1px solid #ddd !important;
     border-left: 1px solid #ddd !important;
     margin: 0.5rem 0 1rem 0 !important;
+}
+.divider{
+    width:5px;
+    height:auto;
+    display:inline-block;
 }

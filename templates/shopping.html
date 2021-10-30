@@ -20,7 +20,11 @@
                         <span class="card-title">{{ item.food_name }}</span>
                     </div>
                     <div class="card-action">
-                        <a href="#" class="btn light-blue lighten-1">Delete</a>
+                        <a href="#" 
+                            class="modal-close btn-small blue lighten-1">
+                            Delete
+                        </a>
+                        <!--  url_for('delete_shopping', food_name=item._id) -->
                     </div>
                 </div>
             </div>
