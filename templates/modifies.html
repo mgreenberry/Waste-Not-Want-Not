@@ -24,7 +24,23 @@
                     <h4 class="uppercase">Food: {{ modify.food_name}}</h4>
                     <p><span class="uppercase">Use By Date: {{ modify.use_by_date }}</span></p>
                         <!-- Modal for adding to shopping list -->
-                        <a href="{{ url_for('shopping', food_name=modify.food_name) }}" class="btn-small green accent-4 right">Eaten</a>
+                        <a href="#modal1" class="btn-small green accent-4 right modal-trigger">Eaten</a>
+                        <div id="modal1" class="modal green">
+                            <div class="modal-content green">
+                                <h4 class="white-text">Would you like to add this item to your shopping list</h4>
+                                <p>Press the 'Add' button below or click No to delete item instead</p>
+                            </div>
+                            <div class="modal-footer">
+                                <a href="{{ url_for('shopping', food_name=modify.food_name) }}" 
+                                    class="modal-close btn-small blue lighten-1">
+                                    Add to Shopping
+                                </a>
+                                <a href="{{ url_for('delete_food', food_name=modify._id) }}" 
+                                    class="modal-close left btn-small red text-shadow">
+                                    Don't Add <i class="fas fa-times-circle"></i>
+                                </a>
+                            </div>
+                        </div>
                         <a href="#" class="btn-small red lighten-1 right">Thrown Away</a>
                     <br>
                     <i class="fas fa-caret-down"></i>
@@ -36,9 +52,9 @@
                 <p>Date of Purchase: {{ modify.purchase_date }}</p>
                 <p><em>Created by: {{ modify.created_by }}</em></p>
                 <!-- Modal Trigger -->
-                <a href="#modal1" class="btn-small red modal-trigger">Delete</a>
+                <a href="#modal2" class="btn-small red modal-trigger">Delete</a>
                 <!-- Modal Structure -->
-                <div id="modal1" class="modal">
+                <div id="modal2" class="modal">
                     <div class="modal-content">
                         <h4>Are You Sure?</h4>
                         <p>To delete food item click 'Delete' below or click 'Cancel' to go back</p>
