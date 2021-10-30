@@ -157,8 +157,13 @@ def modifies():  # Displays current food list
 def shopping(food_name):
     # Finds the selected food item from the food list collection
     food = mongo.db.food.find_one({"food_name": food_name})
-    # Deletes the 'id' number from the record.
+    # Deletes the following unneeded fields from the record.
     del food["_id"]
+    del food["location"]
+    del food["purchase_date"]
+    del food["use_by_date"]
+    del food["short_date"]
+    del food["barcode"]
     # Inserts the food item, apart from 'id' to the shopping list collection
     mongo.db.shopping.insert_one(food)
     # Removes the original item from the food list collection
@@ -184,6 +189,24 @@ def delete_shopping(food_name):
     mongo.db.shopping.remove({"_id": ObjectId(food_name)})
     flash("Shopping List Item Deleted")
     return redirect(url_for("shopping_list"))
+
+
+@app.route("/add_shopping", methods=["GET", "POST"])  
+# Adds food item to current stock list
+def add_shopping():
+    if request.method == "POST":
+        food = {  # Form collects the food item entered
+            "food_name": request.form.get("food_name"),  # Milk, bread, etc
+            "quantity": request.form.get("quantity"),
+            "created_by": session["user"]
+        }
+        mongo.db.shopping.insert_one(food)
+        # inserts the completed form to the db
+        flash("Shopping Item Added succesfully")
+        return redirect(url_for("shopping_list"))
+
+    foods = mongo.db.shopping.find().sort("food_name", 1)
+    return render_template("add_shopping.html", foods=foods)
 
 
 if __name__ == "__main__":

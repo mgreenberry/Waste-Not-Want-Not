@@ -12,9 +12,9 @@
         </div>
     </div>
 
+    {% for modify in modifies %}
+    {% if session.user|lower == modify.created_by|lower %}
     <ul class="collapsible">
-        {% for modify in modifies %}
-        {% if session.user|lower == modify.created_by|lower %}
         <li>
             <div class="collapsible-header white-text green darken-4 text-shadow">
                 <div class="col s12">
@@ -77,8 +77,9 @@
                 <a href="{{ url_for('edit_food', food_name=modify._id) }}" class="btn-small blue">Edit</a>
             </div>
         </li>
-        {% endif %}
-        {% endfor %}
     </ul>
+    {% endif %}
+    {% endfor %}
+
 
 {% endblock %}
