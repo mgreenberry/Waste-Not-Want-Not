@@ -177,6 +177,15 @@ def shopping_list():  # With some great support from Sean and Scott from CI
     return render_template("shopping.html", items=items)
 
 
+@app.route("/delete_shopping/<food_name>")
+def delete_shopping(food_name):
+    # Allows user to delete shopping list item. 
+    # User will have warning message displayed
+    mongo.db.shopping.remove({"_id": ObjectId(food_name)})
+    flash("Shopping List Item Deleted")
+    return redirect(url_for("shopping_list"))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
