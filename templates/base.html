@@ -22,11 +22,11 @@
 				<ul class="right hide-on-med-and-down">
                     {% if session.user %}
 					    <li><a href="{{ url_for('modifies', username=session['user']) }}">Expiring Food List</a></li>
-					    <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                         {% if 'user' in session %}
-                        <li><a href="{{ url_for('shopping_list') }}">Shopping List</a></li>
-                        <li><a href="#">Wasted Food List</a></li>
+                            <li><a href="{{ url_for('shopping_list') }}">Shopping List</a></li>
+                            <li><a href="#">Wasted Food List</a></li>
                         {% endif %}
+                        <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                     {% endif %}
 				</ul>
 			</div>
@@ -34,7 +34,6 @@
 
         <!-- mobile sidenav -->
 		<ul class="sidenav" id="mobile-demo">
-            <li><h4 class="center-align light-green-text text-darken 4">Food Manager</h4></li>
             <li><a href="#">Home</a></li>
             {% if session.user %}
 				<li><a href="#">Add Food</a></li>

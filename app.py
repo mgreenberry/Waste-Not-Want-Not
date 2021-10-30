@@ -31,22 +31,21 @@ def register():
         # check if username already exists in db
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
-
+        # Displays message if username entered for registration already exists
         if existing_user:
             flash("Username already exists")
             return redirect(url_for("register"))
-
+        # Form for registration
         register = {
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password"))
         }
         mongo.db.users.insert_one(register)
-
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
         return redirect(url_for("profile", username=session["user"]))
-
+    # Takes new user to their profile page once completed
     return render_template("register.html")
 
 
@@ -80,13 +79,13 @@ def login():
 
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
-def profile(username):
+def profile(username):  # displays current user's profile page.
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     return render_template("profile.html", username=username)
 
 
-@app.route("/logout")
+@app.route("/logout")  # allows user to log out of current session
 def logout():
     # Logs user out
     flash("You have logged out")
@@ -94,20 +93,22 @@ def logout():
     return redirect(url_for("index"))
 
 
-@app.route("/add_food", methods=["GET", "POST"])
+@app.route("/add_food", methods=["GET", "POST"])  
+# Adds food item to current stock list
 def add_food():
     if request.method == "POST":
         short_date = "on" if request.form.get("short_date") else "off"
-        food = {
-            "location": request.form.get("location"),
-            "food_name": request.form.get("food_name"),
-            "barcode": request.form.get("barcode"),
+        food = {  # Form collects the food item entered
+            "location": request.form.get("location"),  # Fridge, cupboard, etc
+            "food_name": request.form.get("food_name"),  # Milk, bread, etc
+            "barcode": request.form.get("barcode"), 
+            # Barcode, batch code for packs or similar id number
             "purchase_date": request.form.get("purchase_date"),
             "use_by_date": request.form.get("use_by_date"),
             "short_date": short_date,
             "created_by": session["user"]
         }
-        mongo.db.food.insert_one(food)
+        mongo.db.food.insert_one(food)  # inserts the completed form to the db
         flash("Food added succesfully")
         return redirect(url_for("modifies"))
 
@@ -117,7 +118,7 @@ def add_food():
 
 @app.route("/edit_food/<food_name>", methods=["GET", "POST"])
 def edit_food(food_name):
-
+    # Allows user to change food details if error in list
     if request.method == "POST":
         short_date = "on" if request.form.get("short_date") else "off"
         submit = {
@@ -140,13 +141,14 @@ def edit_food(food_name):
 
 @app.route("/delete_food/<food_name>")
 def delete_food(food_name):
+    # Allows user to delete food item. User will have warning message displayed
     mongo.db.food.remove({"_id": ObjectId(food_name)})
     flash("Food Item Deleted")
     return redirect(url_for("modifies"))
 
 
 @app.route("/modifies")
-def modifies():
+def modifies():  # Displays current food list
     modifies = list(mongo.db.food.find().sort('use_by_date', 1))
     return render_template("modifies.html", modifies=modifies)
 
@@ -169,8 +171,8 @@ def shopping(food_name):
     return render_template("shopping.html", items=items)
 
 
-@app.route("/shopping_list", methods=['GET', 'POST'])
-def shopping_list():
+@app.route("/shopping_list", methods=['GET', 'POST'])  # For navigation
+def shopping_list():  # With some great support from Sean and Scott from CI
     items = list(mongo.db.shopping.find().sort('food_name', 1))
     return render_template("shopping.html", items=items)
 
