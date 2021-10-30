@@ -152,11 +152,10 @@ def modifies():
 
 
 @app.route("/shopping/<food_name>", methods=['GET', 'POST'])
-# Change to shopping username
 def shopping(food_name):
     # Finds the selected food item from the food list collection
     food = mongo.db.food.find_one({"food_name": food_name})
-    # Deletes the 'id' number from the record. Change to username
+    # Deletes the 'id' number from the record.
     del food["_id"]
     # Inserts the food item, apart from 'id' to the shopping list collection
     mongo.db.shopping.insert_one(food)
@@ -167,6 +166,12 @@ def shopping(food_name):
     # Sorts the new shopping list into alphabetical order
     items = list(mongo.db.shopping.find().sort('food_name', 1))
     # Creates the shopping list on the 'shopping.html' page
+    return render_template("shopping.html", items=items)
+
+
+@app.route("/shopping_list", methods=['GET', 'POST'])
+def shopping_list():
+    items = list(mongo.db.shopping.find().sort('food_name', 1))
     return render_template("shopping.html", items=items)
 
 

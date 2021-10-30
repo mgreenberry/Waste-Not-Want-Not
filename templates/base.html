@@ -23,8 +23,10 @@
                     {% if session.user %}
 					    <li><a href="{{ url_for('modifies', username=session['user']) }}">Expiring Food List</a></li>
 					    <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-                        <li><a href="#">Shopping List</a></li>
-                        <!--  url_for('shopping', username=session['user']) -->
+                        {% if 'user' in session %}
+                        <li><a href="{{ url_for('shopping_list') }}">Shopping List</a></li>
+                        <li><a href="#">Wasted Food List</a></li>
+                        {% endif %}
                     {% endif %}
 				</ul>
 			</div>
