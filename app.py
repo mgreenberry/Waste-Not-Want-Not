@@ -209,6 +209,22 @@ def add_shopping():
     return render_template("add_shopping.html", foods=foods)
 
 
+@app.route("/edit_shopping/<food_name>", methods=["GET", "POST"])
+def edit_shopping(food_name):
+    # Allows user to change food details if error in list
+    if request.method == "POST":
+        submit = {
+            "food_name": request.form.get("food_name"),
+            "quantity": request.form.get("quantity"),
+        }
+        mongo.db.shopping.update({"food_name": food_name}, submit)
+        flash("Shopping List Item Updated Succesfully")
+        return redirect(url_for("shopping_list"))
+
+    shopping = mongo.db.shopping.find_one({"_id": ObjectId(food_name)})
+    return render_template("edit_shopping.html", shopping=shopping)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),

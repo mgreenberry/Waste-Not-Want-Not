@@ -23,7 +23,7 @@
                         <span class="card-title">Item: {{ item.food_name }}</span>
                         <span class="card-title">Quantity: {{ item.quantity }}</span>
                         <div class="card-action">
-                            <a href="#" class="btn-small blue">Edit</a>
+                            <a href="{{ url_for('edit_shopping', food_name=item._id) }}" class="btn-small blue">Edit</a>
                         <!-- <a href=" url_for('edit_food', food_name=modify._id) " class="btn-small blue">Edit</a> -->
                             <a href="#modal3" class="btn-small red modal-trigger">Delete</a>
                         <!-- Modal Structure -->
