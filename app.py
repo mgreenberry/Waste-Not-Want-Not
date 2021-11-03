@@ -225,6 +225,62 @@ def edit_shopping(food_name):
     return render_template("edit_shopping.html", shopping=shopping)
 
 
+"""
+@app.route("/edit_shopping/<food_name>", methods=["GET", "POST"])
+def edit_shopping(food_name):
+    # Allows user to change food details if error in list
+    if request.method == "POST":
+        submit = {
+            "food_name": request.form.get("food_name"),
+            "created_by": session["user"]
+        }
+        mongo.db.shopping.update({"_id": ObjectId(food_name)}, submit)
+        flash("Shopping List Item Updated Succesfully")
+        return redirect(url_for("shopping"))
+
+    food = mongo.db.shopping.find_one({"_id": ObjectId(food_name)})
+    foods = mongo.db.shopping.find().sort("food_name", 1)
+    return render_template("edit_shopping.html", food=food, foods=foods)
+"""
+
+
+@app.route("/waste/<food_name>", methods=['GET', 'POST'])
+def waste(food_name):
+    # Finds the selected food item from the food list collection
+    food = mongo.db.food.find_one({"food_name": food_name})
+    # Deletes the following unneeded fields from the record.
+    del food["_id"]
+    del food["location"]
+    del food["purchase_date"]
+    del food["use_by_date"]
+    del food["short_date"]
+    del food["barcode"]
+    # Inserts the food item, apart from 'id' to the wasted food list collection
+    mongo.db.waste.insert_one(food)
+    # Removes the original item from the food list collection
+    mongo.db.food.remove({"food_name": food_name})
+    # Displays a success message to the user
+    flash("Food Item added to Wasted Food List")
+    # Sorts the new waste list into alphabetical order
+    items = list(mongo.db.waste.find().sort('food_name', 1))
+    # Creates the waste list on the 'waste.html' page
+    return render_template("waste.html", items=items)
+
+
+@app.route("/waste_list", methods=['GET', 'POST'])  # For navigation
+def waste_list():  # With some great support from Sean and Scott from CI
+    items = list(mongo.db.waste.find().sort('food_name', 1))
+    return render_template("waste.html", items=items)
+
+
+@app.route("/delete_waste/<food_name>")
+def delete_waste(food_name):
+    # Allows user to delete waste list item. 
+    mongo.db.waste.remove({"_id": ObjectId(food_name)})
+    flash("Waste Food Item Deleted")
+    return redirect(url_for("waste_list"))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
