@@ -1,16 +1,22 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="light-green-text text-darken-4 center-align">Add Food Item</h3>
+<div>
+    <h3 class="light-green-text text-darken-4 center-align">Add Food Item
+    <a href="{{ url_for('modifies') }}" class="modal-close btn-small red text-shadow">
+        Cancel
+    </a></h3>
+</div>    
 
     <div class="row card-panel grey lighten-5">
+
         <form class="col s12" method="POST" action="{{ url_for('add_food') }}">
             <!-- Add location of the food item -->
             <div class="row">
                 <div class="input-field col s12">
                     <i class="fas fa-pencil-alt prefix light-green-text text-darken-4"></i>
                     <input id="location" name="location" minlength="3" maxlength ="50" 
-                        type="text" class="validate" required>
+                        type="text" class="validate">
                     <label for="location">Location:</label>
                 </div>
             </div>
@@ -21,6 +27,15 @@
                     <input id="food_name" name="food_name" minlength="3" maxlength ="50" 
                         type="text" class="validate" required>
                     <label for="food_name">Add your food item:</label>
+                </div>
+            </div>
+            <!-- Add a quantity to the food list -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-pencil-alt prefix light-green-text text-darken-4"></i>
+                    <input id="quantity" name="quantity" minlength="1" maxlength ="10" 
+                        type="number" class="validate" required>
+                    <label for="quantity">Quantity:</label>
                 </div>
             </div>
             <!-- Add barcode or other identifying code of the food item -->

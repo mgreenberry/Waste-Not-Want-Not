@@ -4,23 +4,16 @@
     <h3 class="light-blue-text text-darken-4 center-align">Wasted Food List</h3>
 
     <div class="row">
-        <div class="col s12 center-align">
-            <a href="{{ url_for('modifies') }}" class="btn-large light-blue darken-2 text-shadow">
-                Return to Food List</i>
-            </a>
-        </div>
-    </div>
-
-    <div class="row">
         {% for item in items %}
         {% if session.user|lower == item.created_by|lower %}
             <div class="col s12">
                 <div class="card light-green darken-4 text-shadow center-align">
                     <div class="card-content white-text">
-                        <span class="card-title">Item: {{ item.food_name }}</span>
-                        <span class="card-title">Quantity: {{ item.quantity }}</span>
-                        <div class="card-action">
-                            <a href="#modal3" class="btn-small red modal-trigger">Delete</a>
+                        <div class="card-title">
+                            <div class="left">Item: {{ item.food_name }} </div> 
+                            <a href="#modal3" class="right btn-small red modal-trigger">Delete</a>
+                            <div class="">Quantity: {{ item.quantity }}</div>
+                        </div>
                             <!-- Modal Structure -->
                             <div id="modal3" class="modal">
                                 <div class="modal-content green white-text">
@@ -37,7 +30,6 @@
                                     </a>
                                 </div>
                             </div>
-                        </div>
                     </div>
                 </div>
             </div>

@@ -5,9 +5,6 @@
 
     <div class="row">
         <div class="col s12 center-align">
-            <a href="{{ url_for('modifies') }}" class="btn-large light-blue darken-2 text-shadow">
-                Return to Food List <i class="fas fa-plus-square right"></i>
-            </a>
             <a type="submit" class="btn-large light-green darken-1 text-shadow" href="{{ url_for('add_shopping') }}">
                 Add Shopping Item <i class="fas fa-plus-square right"></i>
             </a> 
@@ -20,12 +17,13 @@
             <div class="col s12">
                 <div class="card light-green darken-4 text-shadow center-align">
                     <div class="card-content white-text">
-                        <span class="card-title">Item: {{ item.food_name }}</span>
-                        <span class="card-title">Quantity: {{ item.quantity }}</span>
-                        <div class="card-action">
-                            <a href="{{ url_for('edit_shopping', food_name=item._id) }}" class="btn-small blue">Edit</a>
-                        <!-- <a href=" url_for('edit_food', food_name=modify._id) " class="btn-small blue">Edit</a> -->
-                            <a href="#modal3" class="btn-small red modal-trigger">Delete</a>
+                        <div class="card-title">
+                            <span class="left">Item: {{ item.food_name }}</span>
+                            <!-- <a href="{{ url_for('edit_shopping', food_name=item._id) }}" class="right btn-small blue">Edit</a> -->
+                            <a href="#modal3" class="right btn-small red modal-trigger">Delete</a>
+                            <span class="">Quantity: {{ item.quantity }}</span>
+                        </div>
+
                         <!-- Modal Structure -->
                             <div id="modal3" class="modal">
                                 <div class="modal-content green white-text">
@@ -42,7 +40,6 @@
                                     </a>
                                 </div>
                             </div>
-                        </div>
                     </div>
                 </div>
             </div>

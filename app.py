@@ -101,6 +101,7 @@ def add_food():
         food = {  # Form collects the food item entered
             "location": request.form.get("location"),  # Fridge, cupboard, etc
             "food_name": request.form.get("food_name"),  # Milk, bread, etc
+            "quantity": request.form.get("quantity"),  # quantity of product
             "barcode": request.form.get("barcode"), 
             # Barcode, batch code for packs or similar id number
             "purchase_date": request.form.get("purchase_date"),
@@ -124,6 +125,7 @@ def edit_food(food_name):
         submit = {
             "location": request.form.get("location"),
             "food_name": request.form.get("food_name"),
+            "quantity": request.form.get("quantity"),
             "barcode": request.form.get("barcode"),
             "purchase_date": request.form.get("purchase_date"),
             "use_by_date": request.form.get("use_by_date"),
