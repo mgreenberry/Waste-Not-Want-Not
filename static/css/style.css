@@ -39,7 +39,7 @@ main {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    min-height: 25vh;
+    min-height: 100vh;
 }
 .shopping {
     background: url("../css/shopping-list.png") no-repeat center center fixed;
@@ -47,16 +47,18 @@ main {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    min-height: 25vh;
+    min-height: 100vh;
 }
 .waste {
     background: url("../css/trash-bin.jpg") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    min-height: 75vh;
+    min-height: 100vh;
 }
 .opacity    {
     opacity: 0.2;
+}
+.sidenav-overlay {
+    display: contents !important;
+}
+.brand-logo {
+    margin-left: 2rem;
 }
