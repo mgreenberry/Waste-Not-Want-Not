@@ -17,10 +17,18 @@
                 <div class="input-field col s12">
                     <i class="fas fa-pencil-alt prefix light-green-text text-darken-4"></i>
                     <input id="quantity" name="quantity" minlength="1" maxlength ="3" 
-                        value="{{ shopping.quantity }}" type="text" class="validate uppercase">
+                        value="{{ shopping.quantity }}" type="number" class="validate uppercase">
                     <label for="quantity"> Quantity: </label>
                 </div>
             </div>
+            <!--<div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-pencil-alt prefix light-green-text text-darken-4"></i>
+                    <input id="created_by" name="created_by" minlength="3" maxlength ="50" 
+                        value="{{ shopping.created_by }}" type="text" class="validate uppercase">
+                    <label for="created_by"> Created By: </label>
+                </div>
+            </div> -->
             <!-- Submit -->
             <div class="row">
                 <div class="col s12 center-align">
