@@ -34,7 +34,9 @@ main {
     display:inline-block;
 }
 .pantry {
-    background: url("../css/pantry.jpg") no-repeat center center fixed;
+    background: url("../images/pantry.jpg") no-repeat center center fixed;
+    /* Image by <a href="https://pixabay.com/users/filmbetrachter-4391290/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=6033796">Filmbetrachter
+    </a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=6033796">Pixabay</a>*/
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -42,15 +44,15 @@ main {
     min-height: 100vh;
 }
 .shopping {
-    background: url("../css/shopping-list.png") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    background: url("../images/shopping-list.png") no-repeat center center fixed;
+    /* Image by <a href="https://pixabay.com/users/openclipart-vectors-30363/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1297592">OpenClipart-Vectors
+    </a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1297592">Pixabay</a>*/
     min-height: 100vh;
 }
 .waste {
-    background: url("../css/trash-bin.jpg") no-repeat center center fixed;
+    background: url("../images/trash-bin.jpg") no-repeat center center fixed;
+    /* Image by <a href="https://pixabay.com/users/publicdomainpictures-14/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=313711">PublicDomainPictures
+    </a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=313711">Pixabay</a>*/
     min-height: 100vh;
 }
 .opacity    {

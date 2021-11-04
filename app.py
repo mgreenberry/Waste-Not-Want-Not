@@ -97,7 +97,6 @@ def logout():
 # Adds food item to current stock list
 def add_food():
     if request.method == "POST":
-        short_date = "on" if request.form.get("short_date") else "off"
         food = {  # Form collects the food item entered
             "location": request.form.get("location"),  # Fridge, cupboard, etc
             "food_name": request.form.get("food_name"),  # Milk, bread, etc
@@ -106,7 +105,6 @@ def add_food():
             # Barcode, batch code for packs or similar id number
             "purchase_date": request.form.get("purchase_date"),
             "use_by_date": request.form.get("use_by_date"),
-            "short_date": short_date,
             "created_by": session["user"]
         }
         mongo.db.food.insert_one(food)  # inserts the completed form to the db
@@ -121,7 +119,6 @@ def add_food():
 def edit_food(food_name):
     # Allows user to change food details if error in list
     if request.method == "POST":
-        short_date = "on" if request.form.get("short_date") else "off"
         submit = {
             "location": request.form.get("location"),
             "food_name": request.form.get("food_name"),
@@ -129,7 +126,6 @@ def edit_food(food_name):
             "barcode": request.form.get("barcode"),
             "purchase_date": request.form.get("purchase_date"),
             "use_by_date": request.form.get("use_by_date"),
-            "short_date": short_date,
             "created_by": session["user"]
         }
         mongo.db.food.update({"_id": ObjectId(food_name)}, submit)
@@ -164,7 +160,6 @@ def shopping(food_name):
     del food["location"]
     del food["purchase_date"]
     del food["use_by_date"]
-    del food["short_date"]
     del food["barcode"]
     # Inserts the food item, apart from 'id' to the shopping list collection
     mongo.db.shopping.insert_one(food)

@@ -1,72 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
-        integrity="sha512-xA6Hp6oezhjd6LiLZynuukm80f8BoZ3OpcEYaqKoCV3HKQDrYjDE1Gu8ocxgxoXmwmSzM4iqPvCsOkQNiu41GA==" crossorigin="anonymous" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
+        integrity="sha512-xA6Hp6oezhjd6LiLZynuukm80f8BoZ3OpcEYaqKoCV3HKQDrYjDE1Gu8ocxgxoXmwmSzM4iqPvCsOkQNiu41GA=="
+        crossorigin="anonymous" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+        type="text/css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     {% block styles %}
     {% endblock %}
     <title>Waste Not Want Not</title>
 </head>
+
 <body>
 
-	<header class="navbar-fixed">
+    <header class="navbar-fixed">
         <!-- top navbar -->
-		<nav class="nav-extended text-shadow green darken-1">
-			<div class="nav-wrapper">
-				<div class="container-fluid">
+        <nav class="nav-extended text-shadow green darken-1">
+            <div class="nav-wrapper">
+                <div class="container-fluid">
                     <a href="{{ url_for('index') }}" class="brand-logo left">Waste Not, Want Not!</a>
                 </div>
-				<a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
-				<ul class="right hide-on-med-and-down">
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
+                <ul class="right hide-on-med-and-down">
                     {% if session.user %}
-					    <li><a href="{{ url_for('modifies', username=session['user']) }}">Food List</a></li>
-                        {% if 'user' in session %}
-                            <li><a href="{{ url_for('shopping_list') }}">Shopping List</a></li>
-                            <li><a href="{{ url_for('waste_list') }}">Wasted Food List</a></li>
-                        {% endif %}
-                        <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+                    <li>
+                        <a href="{{ url_for('modifies', username=session['user']) }}">Food List</a>
+                    </li>
+                    {% if 'user' in session %}
+                    <li>
+                        <a href="{{ url_for('shopping_list') }}">Shopping List</a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('waste_list') }}">Wasted Food List</a>
+                    </li>
                     {% endif %}
-				</ul>
-			</div>
-		</nav>
+                    <li>
+                        <a href="{{ url_for('profile', username=session['user']) }}">Profile</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
 
         <!-- mobile sidenav -->
-		<ul class="sidenav" id="mobile-demo">
+        <ul class="sidenav" id="mobile-demo">
             <li>
-                <a href="{{ url_for('index') }}">Home</a>
+                <a href="{{ url_for('index') }}" class="green-text text-darken-3">Home</a>
             </li>
             {% if session.user %}
-                <li>
-                    <a href="{{ url_for('modifies', username=session['user']) }}">Expiring Food List</a>
-                </li>
-				{% if 'user' in session %}
-                    <li><a href="{{ url_for('shopping_list') }}">Shopping List</a></li>
-                    <li><a href="{{ url_for('waste_list') }}">Wasted Food List</a></li>
-                {% endif %}
-                <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+            <li>
+                <a href="{{ url_for('modifies', username=session['user']) }}" class="green-text text-darken-3">Food List</a>
+            </li>
+            {% if 'user' in session %}
+            <li>
+                <a href="{{ url_for('shopping_list') }}" class="green-text text-darken-3">Shopping List</a>
+            </li>
+            <li>
+                <a href="{{ url_for('waste_list') }}" class="green-text text-darken-3">Wasted Food List</a>
+            </li>
             {% endif %}
-		</ul>
-	</header>
+            <li>
+                <a href="{{ url_for('profile', username=session['user']) }}" class="green-text text-darken-3">Profile</a>
+            </li>
+            {% endif %}
+        </ul>
+    </header>
     <div class="container">
-    <section>
-        {% with messages = get_flashed_messages() %}
+        <section>
+            {% with messages = get_flashed_messages() %}
             {% if messages %}
-                {% for message in messages %}
-                    <div class="row flashes">
-                        <h4 class="uppercase light-green lighten-4 center-align">{{ message }}</h4>
-                    </div>
-                {% endfor %}
+            {% for message in messages %}
+            <div class="container-fluid row flashes">
+                <h4 class="uppercase light-green lighten-4 center-align">{{ message }}</h4>
+            </div>
+            {% endfor %}
             {% endif %}
-        {% endwith %}
-    </section>
-    <div class="container-fluid">
-        {% block content %}
-        {% endblock %}
-    </div>
+            {% endwith %}
+        </section>
+        <div class="container-fluid">
+            {% block content %}
+            {% endblock %}
+        </div>
     </div>
     <footer class="page-footer green">
         {% block footer %}
@@ -77,7 +95,9 @@
                     <p class="white-text text-lighten-4">Helping you to reduce food waste</p>
                 </div>
                 <div>
-                    <a class="left white-text text-lighten-4" href="https://www.linkedin.com/in/michael-greenberry-637299108/" target="_blank" rel="noopener">&copy Michael Greenberry</a>
+                    <a class="left white-text text-lighten-4"
+                        href="https://www.linkedin.com/in/michael-greenberry-637299108/" target="_blank"
+                        rel="noopener">&copy Michael Greenberry</a>
                     <a class="right white-text text-lighten-4">Contact Us: support@wastenot.com</a>
                 </div>
             </div>
@@ -92,4 +112,5 @@
     {% block scripts %}
     {% endblock %}
 </body>
+
 </html>

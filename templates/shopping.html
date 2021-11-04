@@ -1,52 +1,56 @@
 {% extends "base.html" %}
 {% block content %}
+<div class="container-fluid">
     <div class="shopping">
-        <div class="container green">
+        <div class="green">
             <h3 class="green white-text text-darken-4 text-shadow center-align">Shopping List</h3>
         </div>
 
         <div class="row">
-        <div class="col s12 center-align">
-            <a type="submit" class="btn-large light-green darken-1 text-shadow" href="{{ url_for('add_shopping') }}">
-                Add Shopping Item <i class="fas fa-plus-square right"></i>
-            </a> 
+            <div class="col s12 center-align">
+                <a type="submit" class="btn-large blue darken-1 text-shadow" href="{{ url_for('add_shopping') }}">
+                    Add Shopping Item <i class="fas fa-plus-square right"></i>
+                </a>
+            </div>
         </div>
-    </div>
 
-    <div class="row container">
-        {% for item in items %}
-        {% if session.user|lower == item.created_by|lower %}
+        <div class="row container">
+            {% for item in items %}
+            {% if session.user|lower == item.created_by|lower %}
             <div class="col s12">
                 <div class="card light-green darken-4 text-shadow center-align">
                     <div class="card-content white-text">
                         <div class="card-title">
-                            <span class="left">Item: {{ item.food_name }}</span>
-                            <a href="{{ url_for('edit_shopping', food_name=item._id) }}" class="right btn-small blue">Edit</a>
+                            <span class="left uppercase">Item: {{ item.food_name }}</span>
+                            <a href="{{ url_for('edit_shopping', food_name=item._id) }}"
+                                class="right btn-small blue">Edit</a>
                             <a href="#modal3" class="right btn-small red modal-trigger">Delete</a>
-                            <span class="">Quantity: {{ item.quantity }}</span>
+                            <span class="uppercase">Quantity: {{ item.quantity }}</span>
                         </div>
 
                         <!-- Modal Structure -->
-                            <div id="modal3" class="modal">
-                                <div class="modal-content green white-text">
-                                    <h4>Are You Sure?</h4>
-                                    <p>To delete food item click 'Delete' below or click 'Cancel' to go back</p>
-                                </div>
-                                <div class="modal-footer">
-                                    <a href="{{ url_for('delete_shopping', food_name=item._id) }}" 
-                                        class="modal-close btn-small blue lighten-1">
-                                        Delete
-                                    </a>
-                                    <a href="{{ url_for('shopping_list') }}" class="modal-close left btn-small red text-shadow">
-                                        Cancel <i class="fas fa-times-circle"></i>
-                                    </a>
-                                </div>
+                        <div id="modal3" class="modal">
+                            <div class="modal-content green white-text">
+                                <h4>Are You Sure?</h4>
+                                <p>To delete food item click 'Delete' below or click 'Cancel' to go back</p>
                             </div>
+                            <div class="modal-footer">
+                                <a href="{{ url_for('delete_shopping', food_name=item._id) }}"
+                                    class="modal-close btn-small blue lighten-1">
+                                    Delete
+                                </a>
+                                <a href="{{ url_for('shopping_list') }}"
+                                    class="modal-close left btn-small red text-shadow">
+                                    Cancel <i class="fas fa-times-circle"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        {% endif %}
-        {% endfor %}
+            {% endif %}
+            {% endfor %}
+        </div>
     </div>
-    </div>
+</div>
 {% endblock %}

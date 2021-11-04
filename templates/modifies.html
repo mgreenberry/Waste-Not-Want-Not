@@ -1,87 +1,89 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="pantry">
-    <div class="container green">
-        <h3 class="green white-text text-darken-4 text-shadow center-align">Food List</h3>
-        <h5 class="green white-text text-darken-4 text-shadow center-align">Sorted by 'Use By Date'</h5>
-    </div>
-    <div class="row">
-        <div class="col s12 center-align">
-            <a type="submit" class="btn-large light-green darken-1 text-shadow" href="{{ url_for('add_food') }}">
-                Add Food Item <i class="fas fa-plus-square right"></i>
-            </a> 
+<div class="container-fluid">
+    <div class="pantry">
+        <div class="green">
+            <h3 class="green white-text text-darken-4 text-shadow center-align">Food List</h3>
+            <h5 class="green white-text text-darken-4 text-shadow center-align">Sorted by 'Use By Date'</h5>
         </div>
-    </div>
-    {% for modify in modifies %}
-    {% if session.user|lower == modify.created_by|lower %}
-    <div class="container">
-    <ul class="collapsible">
-        <li>        
-            <div class="collapsible-header white-text green darken-4 text-shadow">
-                <div class="col s12">
-                    {% if modify.short_date == "on" %}
-                        <span class="fas fa-exclamation-circle white-text" data-position="right"> SHORT DATE!</span>
-                    {% endif %}
-                    <h4 class="uppercase">Food: {{ modify.food_name}}</h4>
-                    <p><span class="uppercase">Use By Date: {{ modify.use_by_date }}</span></p>
-                        <!-- Modal for adding to shopping list -->
-                        <a href="#modal1" class="btn-small green accent-4 right modal-trigger">Eaten</a>
-                        <div id="modal1" class="modal green">
-                            <div class="modal-content">
-                                <h4 class="white-text">Would you like to add this item to your shopping list?</h4>
-                                <p>Press the 'Add to Shopping' button below or click "Don't Add to Shopping" to delete item instead</p>
+        <div class="row">
+            <div class="col s12 center-align">
+                <a type="submit" class="btn-large blue darken-1 text-shadow" href="{{ url_for('add_food') }}">
+                    Add Food Item <i class="fas fa-plus-square right"></i>
+                </a>
+            </div>
+        </div>
+        {% for modify in modifies %}
+        {% if session.user|lower == modify.created_by|lower %}
+        <div class="container">
+            <ul class="collapsible">
+                <li>
+                    <div class="collapsible-header white-text green darken-4 text-shadow">
+                        <div class="col s12">
+                            {% if modify.short_date == "on" %}
+                            <span class="fas fa-exclamation-circle white-text" data-position="right"> SHORT DATE!</span>
+                            {% endif %}
+                            <h4 class="uppercase">Food: {{ modify.food_name}}</h4>
+                            <p><span class="uppercase">Use By Date: {{ modify.use_by_date }}</span></p>
+                            <!-- Modal for adding to shopping list -->
+                            <a href="#modal1" class="btn-small green accent-4 right modal-trigger">Eaten</a>
+                            <div id="modal1" class="modal green">
+                                <div class="modal-content">
+                                    <h4 class="white-text">Would you like to add this item to your shopping list?</h4>
+                                </div>
+                                <div class="modal-footer">
+                                    <a href="{{ url_for('shopping', food_name=modify.food_name) }}"
+                                        class="modal-close right btn-small blue text-shadow">
+                                        Yes
+                                    </a>
+                                    <div class="divider"></div>
+                                    <a href="{{ url_for('delete_food', food_name=modify._id) }}"
+                                        class="modal-close btn-small red text-shadow">
+                                        No
+                                    </a>
+                                    <div class="divider"></div>
+                                    <a href="{{ url_for('modifies') }}"
+                                        class="modal-close left btn-small red text-shadow">
+                                        Cancel
+                                    </a>
+                                </div>
+                            </div>
+                            <a href="{{ url_for('waste', food_name=modify.food_name) }}"
+                                class="btn-small red lighten-1 right">Thrown Away</a>
+                            <br>
+                            <i class="fas fa-caret-down"></i> Click for more information
+                        </div>
+                    </div>
+                    <div class=" white collapsible-body uppercase">
+                        <strong>Location: {{ modify.location }}</strong>
+                        <p>Barcode or ID number: {{ modify.barcode }}</p>
+                        <p>Date of Purchase: {{ modify.purchase_date }}</p>
+                        <p><em>Created by: {{ modify.created_by }}</em></p>
+                        <!-- Modal Trigger -->
+                        <a href="#modal2" class="btn-small red modal-trigger">Delete</a>
+                        <!-- Modal Structure -->
+                        <div id="modal2" class="modal">
+                            <div class="modal-content green white-text">
+                                <h4>Are You Sure?</h4>
+                                <p>To delete food item click 'Delete' below or click 'Cancel' to go back</p>
                             </div>
                             <div class="modal-footer">
-                                <a href="{{ url_for('shopping', food_name=modify.food_name) }}" 
-                                    class="modal-close right btn-small blue text-shadow">
-                                    Add to Shopping
+                                <a href="{{ url_for('delete_food', food_name=modify._id) }}"
+                                    class="modal-close btn-small blue lighten-1">
+                                    Delete
                                 </a>
-                                <div class="divider"></div>
-                                <a href="{{ url_for('delete_food', food_name=modify._id) }}" 
-                                    class="modal-close btn-small red text-shadow">
-                                    Don't Add to Shopping
-                                </a>
-                                <div class="divider"></div>
                                 <a href="{{ url_for('modifies') }}" class="modal-close left btn-small red text-shadow">
-                                    Cancel
+                                    Cancel <i class="fas fa-times-circle"></i>
                                 </a>
                             </div>
                         </div>
-                        <a href="{{ url_for('waste', food_name=modify.food_name) }}" class="btn-small red lighten-1 right">Thrown Away</a>
-                    <br>
-                    <i class="fas fa-caret-down"></i> Click for more information 
-                </div>
-            </div>
-            <div class=" white collapsible-body uppercase">
-                <strong>Location: {{ modify.location }}</strong>
-                <p>Barcode or ID number: {{ modify.barcode }}</p>
-                <p>Date of Purchase: {{ modify.purchase_date }}</p>
-                <p><em>Created by: {{ modify.created_by }}</em></p>
-                <!-- Modal Trigger -->
-                <a href="#modal2" class="btn-small red modal-trigger">Delete</a>
-                <!-- Modal Structure -->
-                <div id="modal2" class="modal">
-                    <div class="modal-content green white-text">
-                        <h4>Are You Sure?</h4>
-                        <p>To delete food item click 'Delete' below or click 'Cancel' to go back</p>
+                        <a href="{{ url_for('edit_food', food_name=modify._id) }}" class="btn-small blue">Edit</a>
                     </div>
-                    <div class="modal-footer">
-                        <a href="{{ url_for('delete_food', food_name=modify._id) }}" 
-                            class="modal-close btn-small blue lighten-1">
-                            Delete
-                        </a>
-                        <a href="{{ url_for('modifies') }}" class="modal-close left btn-small red text-shadow">
-                            Cancel <i class="fas fa-times-circle"></i>
-                        </a>
-                    </div>
-                </div>
-                <a href="{{ url_for('edit_food', food_name=modify._id) }}" class="btn-small blue">Edit</a>
-            </div>
-        </li>
-    </ul>
+                </li>
+            </ul>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
 </div>
-    {% endif %}
-    {% endfor %}
-
-
 {% endblock %}

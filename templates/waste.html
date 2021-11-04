@@ -1,42 +1,45 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="waste">
-    <div class="container green">
-        <h3 class="green white-text text-darken-4 text-shadow center-align">Wasted Food List</h3>
-    </div>
+<div class="container-fluid">
+    <div class="waste">
+        <div class="green">
+            <h3 class="green white-text text-darken-4 text-shadow center-align">Wasted Food List</h3>
+        </div>
 
-    <div class="row container">
-        {% for item in items %}
-        {% if session.user|lower == item.created_by|lower %}
+        <div class="row container">
+            {% for item in items %}
+            {% if session.user|lower == item.created_by|lower %}
             <div class="col s12">
                 <div class="card light-green darken-4 text-shadow center-align">
                     <div class="card-content white-text">
                         <div class="card-title">
-                            <div class="left">Item: {{ item.food_name }} </div> 
+                            <div class="left">Item: {{ item.food_name }} </div>
                             <a href="#modal3" class="right btn-small red modal-trigger">Delete</a>
                             <div class="">Quantity: {{ item.quantity }}</div>
                         </div>
-                            <!-- Modal Structure -->
-                            <div id="modal3" class="modal">
-                                <div class="modal-content green white-text">
-                                    <h4>Are You Sure?</h4>
-                                    <p>To delete food item click 'Delete' below or click 'Cancel' to go back</p>
-                                </div>
-                                <div class="modal-footer">
-                                    <a href="{{ url_for('delete_waste', food_name=item._id) }}" 
-                                        class="modal-close btn-small blue lighten-1">
-                                        Delete
-                                    </a>
-                                    <a href="{{ url_for('waste_list') }}" class="modal-close left btn-small red text-shadow">
-                                        Cancel <i class="fas fa-times-circle"></i>
-                                    </a>
-                                </div>
+                        <!-- Modal Structure -->
+                        <div id="modal3" class="modal">
+                            <div class="modal-content green white-text">
+                                <h4>Are You Sure?</h4>
+                                <p>To delete food item click 'Delete' below or click 'Cancel' to go back</p>
                             </div>
+                            <div class="modal-footer">
+                                <a href="{{ url_for('delete_waste', food_name=item._id) }}"
+                                    class="modal-close btn-small blue lighten-1">
+                                    Delete
+                                </a>
+                                <a href="{{ url_for('waste_list') }}"
+                                    class="modal-close left btn-small red text-shadow">
+                                    Cancel <i class="fas fa-times-circle"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        {% endif %}
-        {% endfor %}
+            {% endif %}
+            {% endfor %}
+        </div>
     </div>
 </div>
 {% endblock %}
