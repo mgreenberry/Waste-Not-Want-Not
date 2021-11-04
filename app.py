@@ -249,7 +249,6 @@ def waste(food_name):
     del food["location"]
     del food["purchase_date"]
     del food["use_by_date"]
-    del food["short_date"]
     del food["barcode"]
 
     mongo.db.waste.insert_one(food)
