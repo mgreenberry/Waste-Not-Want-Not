@@ -1,9 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
+<div class="waste">
+    <div class="container green">
+        <h3 class="green white-text text-darken-4 text-shadow center-align">Wasted Food List</h3>
+    </div>
 
-    <h3 class="light-blue-text text-darken-4 center-align">Wasted Food List</h3>
-
-    <div class="row">
+    <div class="row container">
         {% for item in items %}
         {% if session.user|lower == item.created_by|lower %}
             <div class="col s12">
@@ -36,5 +38,5 @@
         {% endif %}
         {% endfor %}
     </div>
-<div class="waste"></div>
+</div>
 {% endblock %}
