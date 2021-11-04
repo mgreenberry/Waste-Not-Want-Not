@@ -34,10 +34,29 @@ main {
     display:inline-block;
 }
 .pantry {
-    background-image: url("static/css/pantry.jpg"); /* The image used */
-    background-color: #cccccc; /* Used if the image is unavailable */
-    height: 500px; /* You must set a specified height */
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover; /* Resize the background image to cover the entire container */
-  }
+    background: url("../css/pantry.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 25vh;
+}
+.shopping {
+    background: url("../css/shopping-list.png") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 25vh;
+}
+.waste {
+    background: url("../css/trash-bin.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 75vh;
+}
+.opacity    {
+    opacity: 0.2;
+}

@@ -19,7 +19,7 @@
                     <div class="card-content white-text">
                         <div class="card-title">
                             <span class="left">Item: {{ item.food_name }}</span>
-                            <!-- <a href="{{ url_for('edit_shopping', food_name=item._id) }}" class="right btn-small blue">Edit</a> -->
+                            <a href="{{ url_for('edit_shopping', food_name=item._id) }}" class="right btn-small blue">Edit</a>
                             <a href="#modal3" class="right btn-small red modal-trigger">Delete</a>
                             <span class="">Quantity: {{ item.quantity }}</span>
                         </div>
@@ -46,5 +46,5 @@
         {% endif %}
         {% endfor %}
     </div>
-
+    <div class="shopping"></div>
 {% endblock %}

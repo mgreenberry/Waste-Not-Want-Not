@@ -11,11 +11,11 @@
             </a> 
         </div>
     </div>
-
     {% for modify in modifies %}
     {% if session.user|lower == modify.created_by|lower %}
+    <div class="container">
     <ul class="collapsible">
-        <li>
+        <li>        
             <div class="collapsible-header white-text green darken-4 text-shadow">
                 <div class="col s12">
                     {% if modify.short_date == "on" %}
@@ -78,8 +78,9 @@
             </div>
         </li>
     </ul>
+</div>
     {% endif %}
     {% endfor %}
-
+    <div class="pantry"></div>
 
 {% endblock %}
