@@ -58,10 +58,12 @@ def login():
             {"username": request.form.get("username").lower()})
 
         if existing_user:
+            
             if check_password_hash(
-                existing_user["password"], request.form.get("password")):
+                    existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
                 flash("Welcome, {}".format(request.form.get("username")))
+
                 return redirect(url_for("modifies", username=session["user"]))
 
             else:
@@ -147,7 +149,7 @@ def delete_food(food_name):
     """
     Allows user to delete food item. User will have warning message displayed
     """
-    mongo.db.food.remove({"_id": ObjectId(food_name)})
+    mongo.db.food.delete_one({"_id": ObjectId(food_name)})
     flash("Food Item Deleted")
     return redirect(url_for("modifies"))
 
@@ -252,7 +254,7 @@ def waste(food_name):
     del food["barcode"]
 
     mongo.db.waste.insert_one(food)
-    mongo.db.food.remove({"food_name": food_name})
+    mongo.db.food.delete_one({"food_name": food_name})
     flash("Food Item added to Wasted Food List")
 
     items = list(mongo.db.waste.find().sort('food_name', 1))
@@ -273,7 +275,7 @@ def delete_waste(food_name):
     """
     Allows user to delete waste list item
     """
-    mongo.db.waste.remove({"_id": ObjectId(food_name)})
+    mongo.db.waste.delete_one({"_id": ObjectId(food_name)})
     flash("Waste Food Item Deleted")
     return redirect(url_for("waste_list"))
 
