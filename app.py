@@ -218,32 +218,14 @@ def edit_shopping(food_name):
         submit = {
             "food_name": request.form.get("food_name"),
             "quantity": request.form.get("quantity"),
+            "created_by": session["user"]
         }
-        mongo.db.shopping.update({"food_name": food_name}, submit)
+        mongo.db.shopping.update({"_id": ObjectId(food_name)}, submit)
         flash("Shopping List Item Updated Succesfully")
         return redirect(url_for("shopping_list"))
 
     shopping = mongo.db.shopping.find_one({"_id": ObjectId(food_name)})
     return render_template("edit_shopping.html", shopping=shopping)
-
-
-"""
-@app.route("/edit_shopping/<food_name>", methods=["GET", "POST"])
-def edit_shopping(food_name):
-    # Allows user to change food details if error in list
-    if request.method == "POST":
-        submit = {
-            "food_name": request.form.get("food_name"),
-            "created_by": session["user"]
-        }
-        mongo.db.shopping.update({"_id": ObjectId(food_name)}, submit)
-        flash("Shopping List Item Updated Succesfully")
-        return redirect(url_for("shopping"))
-
-    food = mongo.db.shopping.find_one({"_id": ObjectId(food_name)})
-    foods = mongo.db.shopping.find().sort("food_name", 1)
-    return render_template("edit_shopping.html", food=food, foods=foods)
-"""
 
 
 @app.route("/waste/<food_name>", methods=['GET', 'POST'])
