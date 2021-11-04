@@ -26,8 +26,8 @@
                             <h4 class="uppercase">Food: {{ modify.food_name}}</h4>
                             <p><span class="uppercase">Use By Date: {{ modify.use_by_date }}</span></p>
                             <!-- Modal for adding to shopping list -->
-                            <a href="#modal1" class="btn-small green accent-4 right modal-trigger">Eaten</a>
-                            <div id="modal1" class="modal green">
+                            <a href="#{{ modify.food_name}}" class="btn-small green accent-4 right modal-trigger">Eaten</a>
+                            <div id="{{ modify.food_name}}" class="modal green">
                                 <div class="modal-content">
                                     <h4 class="white-text">Would you like to add this item to your shopping list?</h4>
                                 </div>
@@ -60,9 +60,9 @@
                         <p>Date of Purchase: {{ modify.purchase_date }}</p>
                         <p><em>Created by: {{ modify.created_by }}</em></p>
                         <!-- Modal Trigger -->
-                        <a href="#modal2" class="btn-small red modal-trigger">Delete</a>
+                        <a href="#{{ modify.food_name}}" class="btn-small red modal-trigger">Delete</a>
                         <!-- Modal Structure -->
-                        <div id="modal2" class="modal">
+                        <div id="{{ modify.food_name}}" class="modal">
                             <div class="modal-content green white-text">
                                 <h4>Are You Sure?</h4>
                                 <p>To delete food item click 'Delete' below or click 'Cancel' to go back</p>

@@ -147,7 +147,7 @@ def delete_food(food_name):
 
 @app.route("/modifies")
 def modifies():  # Displays current food list
-    modifies = list(mongo.db.food.find().sort('use_by_date', 1))
+    modifies = mongo.db.food.find().sort('use_by_date', 1)
     return render_template("modifies.html", modifies=modifies)
 
 

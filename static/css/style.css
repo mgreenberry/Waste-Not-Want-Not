@@ -64,3 +64,11 @@ main {
 .brand-logo {
     margin-left: 2rem;
 }
+/*body {
+    background-image: url(../images/pantry.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 100vh;
+}*/
