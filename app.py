@@ -27,51 +27,48 @@ def index():
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    """
+    Allows new user to register for site
+    """
     if request.method == "POST":
-        # check if username already exists in db
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
-        # Displays message if username entered for registration already exists
         if existing_user:
             flash("Username already exists")
             return redirect(url_for("register"))
-        # Form for registration
         register = {
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password"))
         }
         mongo.db.users.insert_one(register)
-        # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
         return redirect(url_for("profile", username=session["user"]))
-    # Takes new user to their profile page once completed
+
     return render_template("register.html")
 
 
 @app.route("/index", methods=["GET", "POST"])
 def login():
+    """
+    Allows user to log in. Will check that username and password match database
+    """
     if request.method == "POST":
-        # check if username exists in db
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
         if existing_user:
-            # ensure hashed password matches user input
             if check_password_hash(
-                    existing_user["password"], request.form.get("password")):
-                        session["user"] = request.form.get("username").lower()
-                        flash("Welcome, {}".format(
-                            request.form.get("username")))
-                        return redirect(url_for(
-                            "modifies", username=session["user"]))
+                existing_user["password"], request.form.get("password")):
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome, {}".format(request.form.get("username")))
+                return redirect(url_for("modifies", username=session["user"]))
+
             else:
-                # invalid password match
                 flash("Incorrect Username and/or Password")
                 return redirect(url_for("index"))
 
         else:
-            # username doesn't exist
             flash("Incorrect Username and/or Password")
             return redirect(url_for("index"))
 
@@ -79,35 +76,41 @@ def login():
 
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
-def profile(username):  # displays current user's profile page.
+def profile(username):
+    """
+    Takes new user to profile page
+    """
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     return render_template("profile.html", username=username)
 
 
-@app.route("/logout")  # allows user to log out of current session
+@app.route("/logout")
 def logout():
-    # Logs user out
+    """
+    Logs user out from profile page
+    """
     flash("You have logged out")
     session.pop("user")
     return redirect(url_for("index"))
 
 
-@app.route("/add_food", methods=["GET", "POST"])  
-# Adds food item to current stock list
+@app.route("/add_food", methods=["GET", "POST"])
 def add_food():
+    """
+    Adds food item to current stock list
+    """
     if request.method == "POST":
-        food = {  # Form collects the food item entered
-            "location": request.form.get("location"),  # Fridge, cupboard, etc
-            "food_name": request.form.get("food_name"),  # Milk, bread, etc
-            "quantity": request.form.get("quantity"),  # quantity of product
+        food = {
+            "location": request.form.get("location"),
+            "food_name": request.form.get("food_name"),
+            "quantity": request.form.get("quantity"),
             "barcode": request.form.get("barcode"), 
-            # Barcode, batch code for packs or similar id number
             "purchase_date": request.form.get("purchase_date"),
             "use_by_date": request.form.get("use_by_date"),
             "created_by": session["user"]
         }
-        mongo.db.food.insert_one(food)  # inserts the completed form to the db
+        mongo.db.food.insert_one(food)
         flash("Food added succesfully")
         return redirect(url_for("modifies"))
 
@@ -117,7 +120,9 @@ def add_food():
 
 @app.route("/edit_food/<food_name>", methods=["GET", "POST"])
 def edit_food(food_name):
-    # Allows user to change food details if error in list
+    """
+    Allows user to change food details if error in list
+    """
     if request.method == "POST":
         submit = {
             "location": request.form.get("location"),
@@ -139,66 +144,75 @@ def edit_food(food_name):
 
 @app.route("/delete_food/<food_name>")
 def delete_food(food_name):
-    # Allows user to delete food item. User will have warning message displayed
+    """
+    Allows user to delete food item. User will have warning message displayed
+    """
     mongo.db.food.remove({"_id": ObjectId(food_name)})
     flash("Food Item Deleted")
     return redirect(url_for("modifies"))
 
 
 @app.route("/modifies")
-def modifies():  # Displays current food list
+def modifies():
+    """
+    Displays current food list
+    """
     modifies = mongo.db.food.find().sort('use_by_date', 1)
     return render_template("modifies.html", modifies=modifies)
 
 
 @app.route("/shopping/<food_name>", methods=['GET', 'POST'])
 def shopping(food_name):
-    # Finds the selected food item from the food list collection
+    """
+    Finds the selected food item from the food list collection and
+    moves to shopping list
+    """
     food = mongo.db.food.find_one({"food_name": food_name})
-    # Deletes the following unneeded fields from the record.
     del food["_id"]
     del food["location"]
     del food["purchase_date"]
     del food["use_by_date"]
     del food["barcode"]
-    # Inserts the food item, apart from 'id' to the shopping list collection
     mongo.db.shopping.insert_one(food)
-    # Removes the original item from the food list collection
     mongo.db.food.remove({"food_name": food_name})
-    # Displays a success message to the user
     flash("Food Item added to Shopping List")
-    # Sorts the new shopping list into alphabetical order
+
     items = list(mongo.db.shopping.find().sort('food_name', 1))
-    # Creates the shopping list on the 'shopping.html' page
     return render_template("shopping.html", items=items)
 
 
-@app.route("/shopping_list", methods=['GET', 'POST'])  # For navigation
-def shopping_list():  # With some great support from Sean and Scott from CI
+@app.route("/shopping_list", methods=['GET', 'POST'])
+def shopping_list():
+    """
+    For Navigation Link - with support from CI tutors
+    """
     items = list(mongo.db.shopping.find().sort('food_name', 1))
     return render_template("shopping.html", items=items)
 
 
 @app.route("/delete_shopping/<food_name>")
 def delete_shopping(food_name):
-    # Allows user to delete shopping list item. 
-    # User will have warning message displayed
+    """
+    Allows user to delete shopping list item.
+    """
     mongo.db.shopping.remove({"_id": ObjectId(food_name)})
     flash("Shopping List Item Deleted")
     return redirect(url_for("shopping_list"))
 
 
 @app.route("/add_shopping", methods=["GET", "POST"])  
-# Adds food item to current stock list
 def add_shopping():
+    """
+    Adds food item to current stock list
+    """
     if request.method == "POST":
-        food = {  # Form collects the food item entered
-            "food_name": request.form.get("food_name"),  # Milk, bread, etc
+        food = {
+            "food_name": request.form.get("food_name"),
             "quantity": request.form.get("quantity"),
             "created_by": session["user"]
         }
         mongo.db.shopping.insert_one(food)
-        # inserts the completed form to the db
+
         flash("Shopping Item Added succesfully")
         return redirect(url_for("shopping_list"))
 
@@ -208,7 +222,9 @@ def add_shopping():
 
 @app.route("/edit_shopping/<food_name>", methods=["GET", "POST"])
 def edit_shopping(food_name):
-    # Allows user to change food details if error in list
+    """
+    Allows user to change food details if error in list
+    """
     if request.method == "POST":
         submit = {
             "food_name": request.form.get("food_name"),
@@ -225,36 +241,39 @@ def edit_shopping(food_name):
 
 @app.route("/waste/<food_name>", methods=['GET', 'POST'])
 def waste(food_name):
-    # Finds the selected food item from the food list collection
+    """
+    Finds the selected food item from the food list collection
+    """
     food = mongo.db.food.find_one({"food_name": food_name})
-    # Deletes the following unneeded fields from the record.
     del food["_id"]
     del food["location"]
     del food["purchase_date"]
     del food["use_by_date"]
     del food["short_date"]
     del food["barcode"]
-    # Inserts the food item, apart from 'id' to the wasted food list collection
+
     mongo.db.waste.insert_one(food)
-    # Removes the original item from the food list collection
     mongo.db.food.remove({"food_name": food_name})
-    # Displays a success message to the user
     flash("Food Item added to Wasted Food List")
-    # Sorts the new waste list into alphabetical order
+
     items = list(mongo.db.waste.find().sort('food_name', 1))
-    # Creates the waste list on the 'waste.html' page
     return render_template("waste.html", items=items)
 
 
-@app.route("/waste_list", methods=['GET', 'POST'])  # For navigation
-def waste_list():  # With some great support from Sean and Scott from CI
+@app.route("/waste_list", methods=['GET', 'POST'])
+def waste_list():
+    """
+    For navigation from nav menu. Support from CI
+    """
     items = list(mongo.db.waste.find().sort('food_name', 1))
     return render_template("waste.html", items=items)
 
 
 @app.route("/delete_waste/<food_name>")
 def delete_waste(food_name):
-    # Allows user to delete waste list item. 
+    """
+    Allows user to delete waste list item
+    """
     mongo.db.waste.remove({"_id": ObjectId(food_name)})
     flash("Waste Food Item Deleted")
     return redirect(url_for("waste_list"))
