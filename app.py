@@ -29,7 +29,9 @@ def home():
 @app.route("/register", methods=["GET", "POST"])
 def register():
     """
+    Checks if username and/or password already taken
     Allows new user to register for site
+    Displays success or error message to user
     """
     if request.method == "POST":
         existing_user = mongo.db.users.find_one(
@@ -55,7 +57,9 @@ def register():
 @app.route("/login", methods=["GET", "POST"])
 def login():
     """
-    Allows user to log in. Will check that username and password match database
+    Will check that username and password match database
+    Allows user to log in
+    Displays success or error message to user
     """
     if request.method == "POST":
         existing_user = mongo.db.users.find_one(
@@ -96,7 +100,7 @@ def profile(username):
 @app.route("/logout")
 def logout():
     """
-    Logs user out from profile page
+    Logs user out from profile page and current session
     """
     flash("You have logged out")
     session.clear()
@@ -106,7 +110,8 @@ def logout():
 @app.route("/add_food", methods=["GET", "POST"])
 def add_food():
     """
-    Adds food item to current stock list
+    Adds food item to current food stock list
+    Displays success message to user
     """
     if request.method == "POST":
         food = {
@@ -130,6 +135,7 @@ def add_food():
 def edit_food(food_name):
     """
     Allows user to change food details if error in list
+    Displays success message to user
     """
     if request.method == "POST":
         submit = {
@@ -153,7 +159,8 @@ def edit_food(food_name):
 @app.route("/delete_food/<food_name>")
 def delete_food(food_name):
     """
-    Allows user to delete food item. User will have warning message displayed
+    Allows user to delete food item
+    User will have warning message displayed
     """
     mongo.db.food.delete_one({"_id": ObjectId(food_name)})
     flash("Food Item Deleted")
@@ -165,15 +172,15 @@ def modifies():
     """
     Displays current food list
     """
-    modifies = mongo.db.food.find().sort('use_by_date', 1)
-    return render_template("modifies.html", modifies=modifies)
+    groceries = mongo.db.food.find().sort('use_by_date', 1)
+    return render_template("modifies.html", modifies=groceries)
 
 
 @app.route("/shopping/<food_name>", methods=['GET', 'POST'])
 def shopping(food_name):
     """
-    Finds the selected food item from the food list collection and
-    moves to shopping list
+    Moves selected food item from the food list collection to the shopping list
+    Displays success message to user
     """
     food = mongo.db.food.find_one({"food_name": food_name})
     del food["_id"]
@@ -192,7 +199,7 @@ def shopping(food_name):
 @app.route("/shopping_list", methods=['GET', 'POST'])
 def shopping_list():
     """
-    For Navigation Link - with support from CI tutors
+    For Navigation
     """
     items = list(mongo.db.shopping.find().sort('food_name', 1))
     return render_template("shopping.html", items=items)
@@ -201,7 +208,8 @@ def shopping_list():
 @app.route("/delete_shopping/<food_name>")
 def delete_shopping(food_name):
     """
-    Allows user to delete shopping list item.
+    Allows user to delete shopping list item
+    Displays message to user
     """
     mongo.db.shopping.remove({"_id": ObjectId(food_name)})
     flash("Shopping List Item Deleted")
@@ -212,6 +220,7 @@ def delete_shopping(food_name):
 def add_shopping():
     """
     Adds food item to current stock list
+    Displays message to user
     """
     if request.method == "POST":
         food = {
@@ -231,7 +240,8 @@ def add_shopping():
 @app.route("/edit_shopping/<food_name>", methods=["GET", "POST"])
 def edit_shopping(food_name):
     """
-    Allows user to change food details if error in list
+    Allows user to change shopping list item details if error in list
+    Displays message to user
     """
     if request.method == "POST":
         submit = {
@@ -250,7 +260,8 @@ def edit_shopping(food_name):
 @app.route("/waste/<food_name>", methods=['GET', 'POST'])
 def waste(food_name):
     """
-    Finds the selected food item from the food list collection
+    Moves item from food list to wasted food item list
+    Displays message to user
     """
     food = mongo.db.food.find_one({"food_name": food_name})
     del food["_id"]
@@ -270,7 +281,7 @@ def waste(food_name):
 @app.route("/waste_list", methods=['GET', 'POST'])
 def waste_list():
     """
-    For navigation from nav menu. Support from CI
+    For navigation from nav menu
     """
     items = list(mongo.db.waste.find().sort('food_name', 1))
     return render_template("waste.html", items=items)
@@ -287,6 +298,13 @@ def delete_waste(food_name):
 
 
 if __name__ == "__main__":
+    """
+    MUST Change debug=True to 
+    if __name__ == '__main__':
+    app.run(host=os.environ.get('IP'),
+            port=int(os.environ.get('PORT')),
+            debug=os.environ.get("DEBUG"))
+    """
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
             debug=True)
