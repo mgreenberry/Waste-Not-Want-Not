@@ -2,8 +2,8 @@
 {% block content %}
 <div class="container-fluid">
     <div class="page-height">
-        <div class="green">
-            <h3 class="green white-text text-darken-4 text-shadow center-align">Shopping List</h3>
+        <div class="green text-border">
+            <h3 class="white-text text-darken-4 text-shadow center-align">Shopping List</h3>
         </div>
 
         <div class="row">
@@ -24,10 +24,10 @@
                             <span class="left uppercase center-align">Item: {{ item.food_name }}</span>
                             <span class="uppercase center-align">Quantity: {{ item.quantity }}</span>
                         </div>
-                        <a href="#modal3" class="btn-small red modal-trigger">Delete</a>
+                        <a href="#{{ item.food_name }}" class="btn-small red modal-trigger">Delete</a>
                         <a href="{{ url_for('edit_shopping', food_name=item._id) }}" class="btn-small blue">Edit</a>
                         <!-- Modal Structure -->
-                        <div id="modal3" class="modal">
+                        <div id="{{ item.food_name }}" class="modal">
                             <div class="modal-content green white-text">
                                 <h4>Are You Sure?</h4>
                                 <p>To delete food item click 'Delete' below or click 'Cancel' to go back</p>
