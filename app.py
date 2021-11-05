@@ -172,8 +172,8 @@ def groceries():
     """
     Displays current food list
     """
-    groceries = mongo.db.food.find().sort('use_by_date', 1)
-    return render_template("groceries.html", groceries=groceries)
+    items = mongo.db.food.find().sort('use_by_date', 1)
+    return render_template("groceries.html", groceries=items)
 
 
 @app.route("/shopping/<food_name>", methods=['GET', 'POST'])

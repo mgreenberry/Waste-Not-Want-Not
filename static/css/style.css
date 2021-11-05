@@ -1,3 +1,13 @@
+body {
+    background-image: url(../images/fruit.jpg);
+    /* Image by <a href="https://pixabay.com/users/victoria_borodinova-6314823/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=6620951">Artist and zabiyaka</a> 
+    from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=6620951">Pixabay</a> */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 100vh;
+}
 .text-shadow {
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
@@ -33,13 +43,7 @@ main {
     height:auto;
     display:inline-block;
 }
-.pantry {
-    min-height: 100vh;
-}
-.shopping {
-    min-height: 100vh;
-}
-.waste {
+.page-height {
     min-height: 100vh;
 }
 .sidenav-overlay {
@@ -47,14 +51,4 @@ main {
 }
 .brand-logo {
     margin-left: 2rem;
-}
-body {
-    background-image: url(../images/fruit.jpg);
-    /* Image by <a href="https://pixabay.com/users/victoria_borodinova-6314823/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=6620951">Artist and zabiyaka</a> 
-    from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=6620951">Pixabay</a> */
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    min-height: 100vh;
 }

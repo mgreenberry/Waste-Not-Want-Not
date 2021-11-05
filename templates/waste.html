@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="container-fluid">
-    <div class="waste">
+    <div class="page-height">
         <div class="green">
             <h3 class="green white-text text-darken-4 text-shadow center-align">Wasted Food List</h3>
         </div>
 
-        <div class="row container">
+        <div class="row">
             {% for item in items %}
             {% if session.user|lower == item.created_by|lower %}
             <div class="col s12">

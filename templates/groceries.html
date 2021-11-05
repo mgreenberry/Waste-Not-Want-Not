@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="container-fluid">
-    <div class="pantry">
+    <div class="page-height">
         <div class="green">
             <h3 class="green white-text text-darken-4 text-shadow center-align">Food List</h3>
             <h5 class="green white-text text-darken-4 text-shadow center-align">Sorted by 'Use By Date'</h5>
@@ -15,71 +15,68 @@
         </div>
         {% for grocery in groceries %}
         {% if session.user|lower == grocery.created_by|lower %}
-        <div class="container">
-            <ul class="collapsible">
-                <li>
-                    <div class="collapsible-header white-text green darken-4 text-shadow">
-                        <div class="col s12">
-                            <h4 class="uppercase">Food: {{ grocery.food_name}}</h4>
-                            <p><span class="uppercase">Use By Date: {{ grocery.use_by_date }}</span></p>
-                            <!-- Modal for adding to shopping list -->
-                            <a href="#{{ grocery.food_name}}" class="btn-small green accent-4 right modal-trigger">Eaten</a>
-                            <div id="{{ grocery.food_name}}" class="modal green">
-                                <div class="modal-content">
-                                    <h4 class="white-text">Would you like to add this item to your shopping list?</h4>
-                                </div>
-                                <div class="modal-footer">
-                                    <a href="{{ url_for('shopping', food_name=grocery.food_name) }}"
-                                        class="modal-close right btn-small blue text-shadow">
-                                        Yes
-                                    </a>
-                                    <div class="divider"></div>
-                                    <a href="{{ url_for('delete_food', food_name=grocery._id) }}"
-                                        class="modal-close btn-small red text-shadow">
-                                        No
-                                    </a>
-                                    <div class="divider"></div>
-                                    <a href="{{ url_for('groceries') }}"
-                                        class="modal-close left btn-small red text-shadow">
-                                        Cancel
-                                    </a>
-                                </div>
-                            </div>
-                            <a href="{{ url_for('waste', food_name=grocery.food_name) }}"
-                                class="btn-small red lighten-1 right">Thrown Away</a>
-                            <br>
-                            <i class="fas fa-caret-down"></i> Click for more information
-                        </div>
-                    </div>
-                    <div class=" white collapsible-body uppercase">
-                        <strong>Location: {{ grocery.location }}</strong>
-                        <p>Quantity: {{ grocery.quantity }}</p>
-                        <p>Barcode or ID number: {{ grocery.barcode }}</p>
-                        <p>Date of Purchase: {{ grocery.purchase_date }}</p>
-                        <p><em>Created by: {{ grocery.created_by }}</em></p>
-                        <!-- Modal Trigger -->
-                        <a href="#{{ grocery._id}}" class="btn-small red modal-trigger">Delete</a>
-                        <!-- Modal Structure -->
-                        <div id="{{ grocery._id}}" class="modal">
-                            <div class="modal-content green white-text">
-                                <h4>Are You Sure?</h4>
-                                <p>To delete food item click 'Delete' below or click 'Cancel' to go back</p>
+        <ul class="collapsible">
+            <li>
+                <div class="collapsible-header white-text green darken-4 text-shadow">
+                    <div class="col s12">
+                        <h4 class="uppercase">Food: {{ grocery.food_name}}</h4>
+                        <p><span class="uppercase">Use By Date: {{ grocery.use_by_date }}</span></p>
+                        <!-- Modal for adding to shopping list -->
+                        <a href="#{{ grocery.food_name}}" class="btn-small green accent-4 right modal-trigger">Eaten</a>
+                        <div id="{{ grocery.food_name}}" class="modal green">
+                            <div class="modal-content">
+                                <h4 class="white-text">Would you like to add this item to your shopping list?</h4>
                             </div>
                             <div class="modal-footer">
-                                <a href="{{ url_for('delete_food', food_name=grocery._id) }}"
-                                    class="modal-close btn-small blue lighten-1">
-                                    Delete
+                                <a href="{{ url_for('shopping', food_name=grocery.food_name) }}"
+                                    class="modal-close right btn-small blue text-shadow">
+                                    Yes
                                 </a>
+                                <div class="divider"></div>
+                                <a href="{{ url_for('delete_food', food_name=grocery._id) }}"
+                                    class="modal-close btn-small red text-shadow">
+                                    No
+                                </a>
+                                <div class="divider"></div>
                                 <a href="{{ url_for('groceries') }}" class="modal-close left btn-small red text-shadow">
-                                    Cancel <i class="fas fa-times-circle"></i>
+                                    Cancel
                                 </a>
                             </div>
                         </div>
-                        <a href="{{ url_for('edit_food', food_name=grocery._id) }}" class="btn-small blue">Edit</a>
+                        <a href="{{ url_for('waste', food_name=grocery.food_name) }}"
+                            class="btn-small red lighten-1 right">Thrown Away</a>
+                        <br>
+                        <i class="fas fa-caret-down"></i> Click for more information
                     </div>
-                </li>
-            </ul>
-        </div>
+                </div>
+                <div class=" white collapsible-body uppercase">
+                    <strong>Location: {{ grocery.location }}</strong>
+                    <p>Quantity: {{ grocery.quantity }}</p>
+                    <p>Barcode or ID number: {{ grocery.barcode }}</p>
+                    <p>Date of Purchase: {{ grocery.purchase_date }}</p>
+                    <p><em>Created by: {{ grocery.created_by }}</em></p>
+                    <!-- Modal Trigger -->
+                    <a href="#{{ grocery._id}}" class="btn-small red modal-trigger">Delete</a>
+                    <!-- Modal Structure -->
+                    <div id="{{ grocery._id}}" class="modal">
+                        <div class="modal-content green white-text">
+                            <h4>Are You Sure?</h4>
+                            <p>To delete food item click 'Delete' below or click 'Cancel' to go back</p>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="{{ url_for('delete_food', food_name=grocery._id) }}"
+                                class="modal-close btn-small blue lighten-1">
+                                Delete
+                            </a>
+                            <a href="{{ url_for('groceries') }}" class="modal-close left btn-small red text-shadow">
+                                Cancel <i class="fas fa-times-circle"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <a href="{{ url_for('edit_food', food_name=grocery._id) }}" class="btn-small blue">Edit</a>
+                </div>
+            </li>
+        </ul>
         {% endif %}
         {% endfor %}
     </div>
