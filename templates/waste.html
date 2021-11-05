@@ -10,13 +10,13 @@
             {% for item in items %}
             {% if session.user|lower == item.created_by|lower %}
             <div class="col s12">
-                <div class="card light-green darken-4 text-shadow center-align">
+                <div class="card light-green darken-4 text-shadow">
                     <div class="card-content white-text">
-                        <div class="card-title">
+                        <div class="card-title center-align">
                             <div class="left">Item: {{ item.food_name }} </div>
-                            <a href="#modal3" class="right btn-small red modal-trigger">Delete</a>
                             <div class="">Quantity: {{ item.quantity }}</div>
                         </div>
+                        <a href="#modal3" class="btn-small red modal-trigger">Delete</a>
                         <!-- Modal Structure -->
                         <div id="modal3" class="modal">
                             <div class="modal-content green white-text">
