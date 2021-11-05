@@ -67,11 +67,13 @@ def login():
                 return redirect(url_for("modifies", username=session["user"]))
 
             else:
-                flash("Incorrect Username and/or Password")
+                flash("Incorrect Username and/or Password.")
+                flash("Have you already registered?")
                 return redirect(url_for("index"))
 
         else:
-            flash("Incorrect Username and/or Password")
+            flash("Incorrect Username and/or Password.")
+            flash("Have you already registered?")
             return redirect(url_for("index"))
 
     return render_template("profile.html")

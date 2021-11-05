@@ -7,7 +7,7 @@
 
         <!-- Only displays Log In section if no user logged in -->
         {% if session.user|lower == username|lower %}
-        <h5 class="center-align">Log in</h5>
+        <h5 class="center-align">Existing User Login</h5>
 
         <div class="row">
             <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('index') }}">
