@@ -72,7 +72,7 @@ def login():
                 session["user"] = request.form.get("username").lower()
                 flash("Welcome, {}".format(request.form.get("username")))
 
-                return redirect(url_for("modifies", username=session["user"]))
+                return redirect(url_for("groceries", username=session["user"]))
 
             else:
                 flash("Incorrect Username and/or Password.")
@@ -125,7 +125,7 @@ def add_food():
         }
         mongo.db.food.insert_one(food)
         flash("Food added succesfully")
-        return redirect(url_for("modifies"))
+        return redirect(url_for("groceries"))
 
     foods = mongo.db.food.find().sort("food_name", 1)
     return render_template("add_food.html", foods=foods)
@@ -149,7 +149,7 @@ def edit_food(food_name):
         }
         mongo.db.food.update({"_id": ObjectId(food_name)}, submit)
         flash("Food updated succesfully")
-        return redirect(url_for("modifies"))
+        return redirect(url_for("groceries"))
 
     food = mongo.db.food.find_one({"_id": ObjectId(food_name)})
     foods = mongo.db.food.find().sort("food_name", 1)
@@ -164,16 +164,16 @@ def delete_food(food_name):
     """
     mongo.db.food.delete_one({"_id": ObjectId(food_name)})
     flash("Food Item Deleted")
-    return redirect(url_for("modifies"))
+    return redirect(url_for("groceries"))
 
 
-@app.route("/modifies")
-def modifies():
+@app.route("/groceries")
+def groceries():
     """
     Displays current food list
     """
     groceries = mongo.db.food.find().sort('use_by_date', 1)
-    return render_template("modifies.html", modifies=groceries)
+    return render_template("groceries.html", groceries=groceries)
 
 
 @app.route("/shopping/<food_name>", methods=['GET', 'POST'])

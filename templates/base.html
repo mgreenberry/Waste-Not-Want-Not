@@ -33,7 +33,7 @@
                 <ul class="right hide-on-med-and-down">
                     {% if session.user %}
                     <li>
-                        <a href="{{ url_for('modifies', username=session['user']) }}">Food List</a>
+                        <a href="{{ url_for('groceries', username=session['user']) }}">Food List</a>
                     </li>
                     {% if 'user' in session %}
                     <li>
@@ -57,7 +57,7 @@
             </li>
             {% if session.user %}
             <li>
-                <a href="{{ url_for('modifies', username=session['user']) }}" class="green-text text-darken-3">Food List</a>
+                <a href="{{ url_for('groceries', username=session['user']) }}" class="green-text text-darken-3">Food List</a>
             </li>
             {% if 'user' in session %}
             <li>
