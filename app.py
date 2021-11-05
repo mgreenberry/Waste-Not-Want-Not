@@ -19,10 +19,11 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
-@app.route("/index")
-def index():
-    foods = mongo.db.food.find()
-    return render_template("index.html", foods=foods)
+def home():
+    """
+    Function to load the homepage
+    """
+    return render_template("home.html")
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -48,7 +49,7 @@ def register():
     return render_template("register.html")
 
 
-@app.route("/index", methods=["GET", "POST"])
+@app.route("/login", methods=["GET", "POST"])
 def login():
     """
     Allows user to log in. Will check that username and password match database
@@ -69,12 +70,12 @@ def login():
             else:
                 flash("Incorrect Username and/or Password.")
                 flash("Have you already registered?")
-                return redirect(url_for("index"))
+                return redirect(url_for("home"))
 
         else:
             flash("Incorrect Username and/or Password.")
             flash("Have you already registered?")
-            return redirect(url_for("index"))
+            return redirect(url_for("home"))
 
     return render_template("profile.html")
 
@@ -95,8 +96,8 @@ def logout():
     Logs user out from profile page
     """
     flash("You have logged out")
-    session.pop("user")
-    return redirect(url_for("index"))
+    session.clear()
+    return redirect(url_for("home"))
 
 
 @app.route("/add_food", methods=["GET", "POST"])

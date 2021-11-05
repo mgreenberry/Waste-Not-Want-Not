@@ -4,25 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Want not, Waste not" content="food waste management app">
+    <!-- Favicon added to tab -->
+    <link rel="shortcut icon" type="image/ico" href="{{ url_for('static', filename='images/bin.jpeg') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
         integrity="sha512-xA6Hp6oezhjd6LiLZynuukm80f8BoZ3OpcEYaqKoCV3HKQDrYjDE1Gu8ocxgxoXmwmSzM4iqPvCsOkQNiu41GA=="
         crossorigin="anonymous" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
         type="text/css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="{{ url_for('static', filename='images/bin.jpeg') }}">
+    <script src="https://kit.fontawesome.com/24de4a11f0.js" crossorigin="anonymous"></script>
     {% block styles %}
     {% endblock %}
     <title>Waste Not Want Not</title>
 </head>
 
 <body>
-
     <header class="navbar-fixed">
         <!-- top navbar -->
         <nav class="nav-extended text-shadow green darken-1">
             <div class="nav-wrapper">
                 <div class="container-fluid">
-                    <a href="{{ url_for('index') }}" class="brand-logo left">Waste Not, Want Not!</a>
+                    <a href="{{ url_for('home') }}" class="brand-logo left">Waste Not, Want Not!</a>
                 </div>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
@@ -45,11 +50,10 @@
                 </ul>
             </div>
         </nav>
-
         <!-- mobile sidenav -->
         <ul class="sidenav" id="mobile-demo">
             <li>
-                <a href="{{ url_for('index') }}" class="green-text text-darken-3">Home</a>
+                <a href="{{ url_for('home') }}" class="green-text text-darken-3">Home</a>
             </li>
             {% if session.user %}
             <li>
@@ -91,13 +95,14 @@
         <div class="container center-align">
             <div class="row">
                 <div class="col s12">
-                    <h5>© Waste Not Want Not 2021</h5>
+                    <h5>Waste Not Want Not 2021</h5>
                     <p class="white-text text-lighten-4">Helping you to reduce food waste</p>
                 </div>
                 <div>
+                    <p>For educational purposes only</p>
                     <a class="left white-text text-lighten-4"
                         href="https://www.linkedin.com/in/michael-greenberry-637299108/" target="_blank"
-                        rel="noopener">&copy Michael Greenberry</a>
+                        rel="noopener">Michael Greenberry</a>
                     <a class="right white-text text-lighten-4">Contact Us: support@wastenot.com</a>
                 </div>
             </div>
