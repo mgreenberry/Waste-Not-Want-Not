@@ -1,4 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Open+Sans&display=swap');
+
 body {
+    font-family: 'Lato', sans-serif;
     background-image: url(../images/fruit.jpg);
     /* Image by <a href="https://pixabay.com/users/victoria_borodinova-6314823/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=6620951">Artist and zabiyaka</a> 
     from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=6620951">Pixabay</a> */
@@ -13,13 +17,14 @@ body {
 }
 .text-border {
     margin: .5rem;
-    padding: .05rem;
+    padding-bottom: .01rem;
 }
 .flashes h4 {
     line-height: 2;
 }
 .uppercase {
     text-transform:capitalize;
+    font-family: 'Open Sans', sans-serif;
 }
 .btn-small {
     margin: 5px;

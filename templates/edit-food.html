@@ -8,14 +8,6 @@
     <form class="col s12" method="POST" action="{{ url_for('edit_food', food_name=food._id) }}">
         <div class="row">
             <div class="input-field col s12">
-                <i class="fas fa-pencil-alt prefix light-blue-text text-darken-4"></i>
-                <input id="location" name="location" minlength="3" maxlength="50" value="{{ food.location }}"
-                    type="text" class="validate uppercase" required>
-                <label for="location">Location:</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
                 <i class="fas fa-pencil-alt prefix light-green-text text-darken-4"></i>
                 <input id="food_name" name="food_name" minlength="3" maxlength="50" value="{{ food.food_name }}"
                     type="text" class="validate uppercase" required>
@@ -28,6 +20,14 @@
                 <input id="quantity" name="quantity" minlength="1" maxlength="10" type="number"
                     value="{{ food.quantity }}" class="validate" required>
                 <label for="quantity">Quantity:</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-pencil-alt prefix light-blue-text text-darken-4"></i>
+                <input id="price" name="location" minlength="2" maxlength="10" value="{{ food.price }}"
+                    type="text" class="validate uppercase" required>
+                <label for="price">Price: £</label>
             </div>
         </div>
         <div class="row">

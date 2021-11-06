@@ -1,23 +1,27 @@
-![image]()
+![image](static/images/bin.jpeg)
 
 # Waste Not Want Not
 > ## To help households reduce food waste
 
-[View the website here](https://mgreenberry.github.io/MS2-Smart-Associates/)
+[View the website here](https://waste-not-project.herokuapp.com/)
 
 ## About
 
+Why is food waste a problem?
+
+Food waste presents a significant problem due to the volume of waste that is produced each year. In fact, in the UK alone, it’s estimated that we throw away around 9.5 million tonnes of food waste annually. The vast majority of food waste ends up in a landfill site – which are already overcrowded. While many people do not view this as an issue as food items degrade naturally over time, it contributes heavily to global warming and the erosion of the OZ layer.
+
+This is because food waste releases a great deal of methane gas as it breaks down. According to a report by the EPA, methane is 25 times more harmful than carbon dioxide because it can trap heat within the atmosphere.
+
+I created this website to provide a easy and simple website for a food waste app. The app targets users that would like to manage their food waste either at home or in a small corner shop.
+
 This is my MS3 Backend Development Milstone Project website created as part of a Full Stack Software Development in Code Institute by [Michael Greenberry](https://www.linkedin.com/in/michael-greenberry-637299108/).
 
-I created this website to provide a easy and simple website for a food waste app.
-
-The app targets users that would like to manage their food waste either at home or in a small corner shop.
-
-![Mockup]()
+![Mockup](static/images/responsive-screenshot.png)
 
 ## Table of contents
 1. [UX - User Experience](#ux-user-experience)
-   * [Project Goals](#project-goals)
+   * [User Goals](#user-goals)
    * [User Stories](#user-stories)
    * [Design Choices](#design-choices)
      1. [Typography](#typography)
@@ -59,60 +63,66 @@ The app targets users that would like to manage their food waste either at home 
 
 ## UX (User Experience)
 
-### Project Goals
+### User Goals
+* The website needs to work well on a variety of devices - mobile phones, tablets and desktop computers
 * To provide a simple, clean and easy website for the user
 * To provide an easy to use food stock that would highlight the order that food needs to be used by
-* To provide an 'About Us' page to explain the concept
-* To provide a 'Log In' page for users to access their account, which will allow them to edit food lists, delete and create food lists.
-There would also be a 'Log Out' section for the user so that no one else can change food lists.
+* To provide an 'Instructions' section to explain the concept
+* To provide a 'Log In' page for users to access their account, which will allow them to create, edit food and delete food lists.
+* To provide a 'Log Out' section for the user so that no one else can change food lists.
 * To provide a 'Register' to allow users to register for an account.
-* To provide a contact form which when filled in would send an email to the company.
 
 ### User Stories
 
 * As a user visiting the site for the first time:
-  1. I want to be able to use the website on any device they own or use
-  2. I want to able to learn and easily understand what the website is about
-  3. I want to easily understand about how the app works
-  4. I want to easily understand what each section of the app does
-  5. I want to click on navigation links to be taken to the correct page/section and to be able to return to the home page or another page without using the brower forward/backward buttons
-  6. I want these navigation links to include user friendly menus which are easy to uderstand and use
-  7. I want the content to be easy to read and have a predictable layout so that each page can be navigated easily
-  8. I want to access contact information, such as address, phone numbers and location
-* Technical User Stories
-    1. I want to be able to register for an account and log in wihtout difficulty
-    2. I want to be able to add food bought to a stock list
-    3. I want to be able to see a list of food listed by 'use by date' with the earliest date shown first
-    4. I want to be able to manipulate this list by doing the following: -
-      1. edit items on the stock list
-      2. delete items from this list
-    5. I want to be able to add expired or used food products to a shopping list
-    6. I want to be able to add expired food products to a waste list if items are thrown away
+  1. I would like to be able to register for the website so I can have my personal grocery list
+  2. I would like to easily log in once an account has been created and see my personal grocery list
+  3. I would like to see my existing food stock displayed in an easy to understand format
+  4. I would like to be able to add new items to this stock list
+  5. I would like to be able to edit any items added to add/amend information created in error
+  6. I would like to be able to delete food items no longer needed
+  7. I would like to be able to add an item that has been eaten to my shopping list if desired
+  8. I would like to be able to see what food I have wasted
+  9. I would like to be able to see a shopping list of items I need to buy again that have been eaten
+  10. I would like to be able to add items to this shopping list that were not on the original grocery/food list
+  11. I would like to be able to delete items from the shopping list once ordered or no longer needed
+  12. I would like to be able to see a list of food that has been wasted
+  13. I would like to be able to delete food items from the wasted food list
+  14. I want to able to learn and easily understand what the website is about
+  15. I want to easily understand about how the app works
+  16. I want to easily understand what each section of the app does
+  17. I want to click on navigation links to be taken to the correct page/section and to be able to return to the home page or another page without using the brower forward/backward buttons
+  18. I want these navigation links to include user friendly menus which are easy to uderstand and use
+  19. I want the content to be easy to read and have a predictable layout so that each page can be navigated easily
 
-* This app will do this by:-
-  1. Design a responisive website focussed for mobile devices and responsive to larger screens.
-  2. Design a home page with an 'about' section
-  3. Include instructions on the home page
-  4. Design navigation tabs which clearly display each section link
-  5. Design and impliment a navigation bar which contains links to different pages and sections in the website 
-  6. Design and label the navigation bar with clear and understandable text to direct users to the correct page  
-  7. Design the website to have good readability throughout
-  8. Design a contact us page with contact details
-* Technical solutions
-    1. Create a registration page which will store user details such as username as password safely
-    2. To link users inputs to a database to store food that user enters as bought
-    3. To use a sort function on the stock list to display food items in a 'use by date' list, with the earliest date first
-    4. To create buttons and modals which allow the user to edit and/or delete food items
-    5. To allow user to add used or thrown food to a shopping list
-    6. To allow user to add expired/thrown food to a waste list if they require to track their waste
+* The site owner has done the following:-
+  1. Created a registration section which directs new users to their profile which contains instructions, contact details and log out
+  2. Created a 'Log In' section on the very first page of the website so existing users do not have to find log in page
+  3. Created an existing food list in 'use by date' order allowing user to quickly see which items need using first
+  4. Created a page and a button which allows the user to add extra items to their existing food/grocery stock list
+  5. Created a page and a button which allows the user to be able to edit any items added to add/amend information created in error
+  6. Created a button which would allow the user to be able to delete food items no longer needed
+  7. Created a button which allows the user to add an item that has been eaten to my shopping list if desired
+  8. Created a html page which displays a page that shows the user the food items wasted
+  9. Created a html page which displays a page that shows the user a shopping list of items that the user may need to buy again
+  10. Created a page and a button which allows the user to add items to this shopping list that were not on the original grocery/food list
+  11. Created a button which will delete items from the shopping list once ordered or no longer needed
+  12. Created a page which displays a page that shows a list of food that has been wasted
+  13. Created a button that allows the user to delete food items from the wasted food list
+  14. Design a home page with an 'about' section
+  15. Include instructions on the home page
+  16. Design navigation tabs which clearly display each section link
+  17. Design and impliment a navigation bar which contains links to different pages and sections in the website 
+  18. Design and label the navigation bar with clear and understandable text to direct users to the correct page  
+  19. Design the website to have good readability throughout
 
 TO BE IMPLEMENTED!
-* As a user returning to the site:
+* As a new user or user returning to the site:
   1. To send an email with suggestions, complaints, etc.
   2. To search for a food item in any list - food stock, shopping and waste and to then edit/delete/add to lists.
   3. To able to add food by scanning a barcode
   4. To link with voice activated apps like Alexa
-  5. To allow push notifications to users mobile device to warn of items that need using.
+  5. To allow push notifications to users mobile device to warn of items that need using by use by date.
 
 [Back to content](#table-of-contents)
 ### Design Choices
@@ -121,49 +131,38 @@ TO BE IMPLEMENTED!
 
 For fonts, I used [Google Fonts](https://fonts.google.com) for my website. 
 
-I have chosen the font-family: [](), sans-serif; for the Headings and Menu sections of the website as it is easy to read and has a nice cursive font which matches the style of the website. I also felt this fitted in well with the design of the website.
+I have chosen the font-family: [Open Sans](https://fonts.google.com/specimen/Open+Sans) for the information displayed within the lists, and [Lato](https://fonts.google.com/specimen/Lato?query=lato); for the Headings and Menu sections of the website as it is easy to read and has a nice cursive font which matches the style of the website. I also felt this fitted in well with the design of the website.
 
 #### Colours
 
-For this website I chose a colour pallette that matched similar websites that are professional and clean. The background colour is black, the Nav bar and button text is Navy Blue and menus, some text and buttons are based on the blue and red logo.
+For this website I chose colours that would match food waste - greens and browns and kept buttons blue and red as this is expected convention for website forms, etc. 
 
-The colours I picked are as follows: -
-![Coolors Palette]()
+To style apart from materalize, Coloors was used to add colours to all elements that were needed that materalize wasn't used
 
-From: [Coolors Palette]()
+From: - (https://materializecss.com/color.html)
+
+Additonal colours from:- (https://coolors.co/8fb339-f7fff7-d62828-7494ea-4c934c)
+
+![](static/images/want-not-colours.png)
 
 #### Imagery
 
-All images and photographs were added by the creator/owner
+* Favicom: 
+  * Waste Bin: [Hero Image](static/images/bin.jpeg)
 
-* Favicom:
-  * Waste Bin: [Hero Image]()
-
-* index.html
-  1. Cover Images: [The main Image](assets/images/index/wastebin.jpg)
-
-* log-in.html & register.html
-  1. 
-
-* food-stock.html
-  * [Image 1]()
-  * [Image 2]()
   
-* contactUs.html
-
-  1. 
+* All pages
+  * Background Image: [Background Image](static/images/fruit.jpg)
 
 ### Icons
 
-LIST ICONS
+All icons from [Font Awesome](https://fontawesome.com/)
 
 ### Layout
 
-This website is designed with access from the home page to all other pages from the navigation bar. The error 404.html page also includes links to other pages, i.e. index.html.
+This website is designed with access from the home page to all other pages from the navigation bar. 
 
-However, the 404.html is not accessed from the navigation bar or from any of the pages of the website. The 404.html page only displays when a user enters or searches for a page that doens't exist. The 404.html page allows the user to navigate to the main website.
-
-[]() 
+[Proposed Layout](static/images/planned-layout.pdf) 
 
 This blueprint was then used to design the navigation and call-out buttons featured in the website.
 
@@ -173,34 +172,20 @@ I used Balsamiq to create my wireframes. I chose to do a mobile version first wi
 
 As I wanted to include this on all formats and devices I created my wireframes again for all pages and added the following to show mobile, tablet and desktop:
 
+## Structure 
+
+I have used [Materialize](https://materializecss.com/) to create the overall structure for my website. 
+Materialize is similar to Bootstrap in that it provides templates for items such as navigation, buttons, and structure
+The reason I choose Materiaize was mainly due to the various features they offer like a datepicker for the forms and card/modal elements
+
 **Mobile**
-* [Home](docs/mobile.pdf)
-* [Log In]()
-* [Register]()
-* [Food List]()
-* [Shopping List]()
-* [Waste List]()
-* [Contact-Us]()
+* [Mobile](static/images/mobile.pdf)
 
 **Tablet**
-* [Home Page]()
-* [Log In]()
-* [Register]()
-* [Food List]()
-* [Shopping List]()
-* [Waste List]()
-* [Contact-Us]()
+* [Tablet](static/images/tablet.pdf)
 
 **Desktop**
-* [Home Page]()
-* [Log In]()
-* [Register]()
-* [Food List]()
-* [Shopping List]()
-* [Waste List]()
-* [Contact-Us]()
-
-I then added a '404.html. page for when the user enters an incorrect page address in the browser. I didn't create a wireframe for this page.
+* [Desktop Computer](static/images/computer.pdf)
 
 [Back to content](#table-of-contents)
 ## Features
@@ -209,55 +194,45 @@ I then added a '404.html. page for when the user enters an incorrect page addres
 
 #### All Pages
 
+<strong>
+<em>ON USER REGISTRATION OR LOG IN</em>
+</strong>
+
 Every page contains the following features at the top of the website as standard: -
 * Text as a header reading "Waste Not Want Not" which also acts as a clickable event to take to the home page
 * A responsive navigation bar, which reduces into a 'hamburger' navigation bar on mobiles. Allows all users to click on the page they want and access said page easily. Each navigation bar has the following links: -
-  1. Food List/Home page - displays food stock list in the order of use-by-date
-  2. Log In - allows users to access the the editing, adding and deleting of food acitons
-  3. Register - allows users to sign up for the Log In page
-  4. About/Contact Us - Information on the app and it's creator
+  1. Home Page - Displays 'Log In' section if user not logged in. Displays an 'about' section
+  2. Food List - displays food stock list in the order of use-by-date
+  3. Shopping List - displays food items added to shopping list in alphabetical order
+  4. Wasted Food List - displays food wasted from stock list in alphabetical order
+  5. Profile Page - Instructions, contact details and log out function
 
-#### Log In
-Once logged in the user will then see additional navigation items: -
-  1. Food List/Home page - displays food stock list in the order of use-by-date
-  2. Add Food - allows users to add food to a food stock list
-    * Will also allow logged in users to edit food items, delete food items
-    * An option to add used or thrown out/expired food to a shopping list and/or a wast food list
-  3. A Log Out page
-
-Every page contains the following features in the footer: -
-* Copyright for the website
-* Copyright for Michael Greenberry (creator of this website)
+  Every page contains the following features in the footer: -
+* Site header and strapline
+* Contact details (fake)
 
 #### Food List
-* This page contains 1 section as follows: -
-  1. A list of food items currently stocked by the user in a use-by-date order (this will allow editing only when user is logged in)
-#### Log In/Register
-* This page contains 1 section as follows: -
-  1. A form for the user to register or log in to the app/website
+  1. Food List - displays food stock list in the order of use-by-date
+  2. Add Food - allows users to add food to a food stock list
+  3. Allows user to edit items on their food list
+  4. Allows user to add item from food list to a shopping list
+  5. Allows user to delete food item from their food list
+  6. Allows user to add food item to a food wasted list if food is thrown out
 
-#### Add Food
-* This page contains 1 section as follows: -
-  1. A form that allows the user to add food items to the food stock list
-    * Users will also be able to edit/delete items from stock list
-    * Users will also be able to add food wasted to a wasted food list
-    * Users will also be able to add food items from waste or used stock to a shopping list
+#### Shopping List
+  1. Shopping List - displays food stock list in alphabetical order
+  2. Add Food - allows users to add food to a shopping list
+  3. Allows user to edit items on their shopping list
+  4. Allows user to delete food item from their food list
 
-#### Shopping
-* This page contains 1 section as follows: -
-  1. A list of items that a user wishes to purchase taken from food used up/wasted or added by user
-
-#### Waste
-* This page contains 1 section as follows: -
+#### Wasted Food List
   1. A list of items that a user has had to waste taken from food used up/wasted or added by user  
+  2. A button which allows user to delete waste food items
 
-#### Log Out
-* Allows user to log out of current session
-
-#### About/contact-us
-* This page contains 1 section as follows: -
-  1. A contact form with 'First Name', 'Last Name', 'Email Address', and 'Message' fields. This allows the user to input their information and find out more details, ask questions about the business.
-* There are 2 call-out buttons under this form. The first button **Reset** resets the form in case of user input error. The second button **Submit** allows the user to send their form to the business. On doing this their email will be sent to the business. Users will need to provide information in all fields, with a valid @ email address in order to be able to submit forms. This allows the website to only recieve valid customer comments.
+#### Profile Page
+  1. A log out button which removes user from current session
+  2. A set of instructions on how to use the site
+  3. Contact detail information 
 
 #### 404
 * This page is not linked to any other page in the website
@@ -266,8 +241,56 @@ Every page contains the following features in the footer: -
   * A message notifying the user of an error. This then allows the user to recognise that the web address doens't exist.
   * There is 1 call-out button in this section. This allows the user to return to the home page of the main website - []()
 
-### Features Left to Implement
+## Structure
+[MongdoDB](https://www.mongodb.com/) was used to create the database. This allows the following functionality: -
+* Registration
+* Log In/Sign Out
+* Add multiple food/shopping/wasted food items to users collection
+* CRUD:-
+  * Create: Create a new user. Create a new food item in grocery/shopping or wasted food list
+  * Read: Collects information held within the database
+  * Update: Allows editing of items in database, such as food items in the grocery and shopping list
+  * Delete: Allows deleting of items in database, such as food items in the grocery, shopping and wasted list
+  
+The MongoDB database holds the following information: -
 
+### Users
+
+Key      | Value
+---------|-----------
+_id      | ObjectId
+username | String
+password | String
+
+### Food
+
+Key             | Value
+----------------|-----------
+_id             | ObjectId
+food_name       | String
+quantity        | String
+price.          | String
+purchase_date   | String
+use_by_date     | String
+created_by      | String
+
+### Shopping
+
+Key      | Value
+---------|-----------
+_id      | ObjectId
+food_name| String
+quantity | String
+price    | String
+
+### Wasted Food List
+
+Key      | Value
+---------|-----------
+_id      | ObjectId
+food_name| String
+quantity | String
+price    | String
 
 [Back to content](#table-of-contents)
 ## Technologies Used
@@ -276,13 +299,14 @@ Every page contains the following features in the footer: -
 * [CSS](https://en.wikipedia.org/wiki/CSS) Used to style the content of the website
 * [JavaScript](https://www.javascript.com/) Used with Bootstrap for the Navigation menu at the top and bottom of the website and for all interactive parts of the website
 * [JQuery](https://jquery.com/) Used for temperal literals in some javascript code.
-* [Python]()
-* [Flask]()
-* [Jinga]()
+* [Python](https://www.python.org/)
+* [Flask](https://flask.palletsprojects.com/en/2.0.x/)
+* [Jinga](https://jinja.palletsprojects.com/en/3.0.x/)
 
 ### Framework Library
 * [Materalize]() Used for a mobile first responsive website, display properties such as grid layout, preset css such as for containers, forms, etc
 * [JQuery](https://jquery.com/) Used for temperal literals in some javascript code.
+
 ### Tools
 * [Wireframes with Balsamiq](https://balsamiq.com/) To create mockups of the website to aid creation
 * [Github](https://github.com/) To store and host source code
@@ -290,12 +314,13 @@ Every page contains the following features in the footer: -
 * [Google Fonts](https://fonts.google.com) for the fonts used in the website
 * [Coolors](https://coolors.co/) to source the main colours for the website
 * [Favicons](https://www.favicon.cc) to create a favicon for the tab and website title
-* [Heroku]() 
+* [Heroku](https://id.heroku.com/login) to host the finished project
+
 ### Testing Tools
 * [hmtl validation](https://validator.w3.org) to check the html code had no errors
 * [css validation](https://jigsaw.w3.org/css-validator/) to check the css code had no errors
 * [JAVASCRIPT](https://jshint.com/) to check for warnings/errors
-* []() to text Python code
+* [pep8 Online](http://pep8online.com/) to test Python code
 * [Lighthouse](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?hl=en) an online validation tool that helps to improve performance and quality of the webpage with helpful tips to improve as each html page is scored.
 
 [Back to content](#table-of-contents)
@@ -309,13 +334,68 @@ Testing information can be found [here](TESTING.md)
 * The website project was created by going to [Github](https://github.com/), a code hosting platform, using the following steps: -
   1. Create an account using an email address and password or a google account
   2. Log in to account and create a new repository![](/assets/images/readme-images/creating-new-repository.png)
-  3. Give this new repository a creative name. Then click the green Gitpod button which will take you to [Gitpod](https://gitpod.io/workspaces). Gitpod is an open source platform for code development ![](assets/images/readme-images/creating-respository-step-one.png) ![](assets/images/readme-images/ms2-smart-associates-gitpod.png)
+  3. Give this new repository a creative name. Then click the green Gitpod button which will take you to [Gitpod](https://gitpod.io/workspaces). Gitpod is an open source platform for code development ![]() ![]()
   4. Then open this platform and start coding
   5. To save the work I had to do the following: - Click 'File', click 'auto save'
   6. To save the work to github I needed to do the following: -
-    * git add (either the name of the file, i.e. index.html or '.' which adds everything that has been worked on that day)
+    * git add (either the name of the file, i.e. home.html or '-A', or '.' which adds everything that has been worked on that day)
     * git commit (either the name of the file, i.e. index.html or '-m' and then add a comment in parenthesis "" and enter)
     * It is recommended to commit daily. To complete the necessary steps to upload to github I needed to use the command - git push. This then 'pushed' all the saved work back to Github
+
+### Linking site to mongoDB
+
+To clone the project: 
+1. From the repository, click the "code" button and download the zip of the repository.
+    Alternatively, you can clone the repository using the following line in your terminal:
+    
+    git clone https://github.com/mgreenberry/Waste-Not-Want-Not.git
+2. Access the folder in your terminal window and install the application's [required modules]() using the following command:
+
+    pip3 install -r requirements.txt
+3. Sign-in or sign-up to [MongoDB](https://www.mongodb.com/) and create a new cluster
+    * Within the Sandbox, click the collections button and after click Create Database
+    * Set up the following collections: users, food, shopping, waste
+    
+    [Click here to see the exact Database Structure](#database-structure)
+    * Under ***food_metrics*** and ***weight_metrics***, add your preferred metrics in the collection with the following structure: 
+        ```
+        Key             | Value
+        ----------------|-----------
+        _id             | ObjectId          This will be automatically generated by MongoDB
+        metric_name     | String            Replace string by kg, pounds, grams, ounces etc.
+        ```
+
+    * Under the Security Menu on the left, select Database Access.
+    * Add a new database user, and keep the credentials secure
+    * Within the Network Access option, add IP Address 0.0.0.0
+
+1. In your IDE, create a file containing your environmental variables called env.py at the root level of the application. 
+    It will need to contain the following lines and variables:
+    ```
+    import os
+
+    os.environ["IP"] = "0.0.0.0"
+    os.environ["PORT"] = "5000"
+    os.environ["SECRET_KEY"] = "YOUR_SECRET_KEY"
+    os.environ["DEBUG"] = "True"
+    os.environ["MONGO_URI"] = "YOUR_MONGODB_URI"
+    os.environ["MONGO_DBNAME"]= "DATABASE_NAME" 
+    ```
+
+    Please note that you will need to update the **SECRET_KEY** with your own secret key, as well as the **MONGO_URI** and **MONGO_DBNAME** variables with those provided by MongoDB.
+    Tip for your SECRET_KEY, you can use a [Password Generator](https://passwordsgenerator.net/) in order to have a secure secret key. 
+    I personlly recommend a length of 24 characters and exclude Symbols.
+    To find your MONGO_URI, go to your clusters and click on connect. Choose connect your application and copy the link provided. 
+    Don't forget to update the necessary fields like password and database name. 
+
+    If you plan on pushing this application to a public repository, ensure that env.py is added to your .gitignore file.
+
+1. The application can now be run locally. In your terminal, type the following command 
+    ```
+    python3 app.py. 
+    ```
+
+
 ### Deployment of existing site
 * The following steps were taken to deploy this site and make it 'live': - 
   1. On Github.com go to the repository, go the the project main page ![]()

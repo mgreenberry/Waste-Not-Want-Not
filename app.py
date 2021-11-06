@@ -115,10 +115,10 @@ def add_food():
     """
     if request.method == "POST":
         food = {
-            "location": request.form.get("location"),
+            "price": request.form.get("price"),
             "food_name": request.form.get("food_name"),
             "quantity": request.form.get("quantity"),
-            "barcode": request.form.get("barcode"), 
+            "barcode": request.form.get("barcode"),
             "purchase_date": request.form.get("purchase_date"),
             "use_by_date": request.form.get("use_by_date"),
             "created_by": session["user"]
@@ -128,7 +128,7 @@ def add_food():
         return redirect(url_for("groceries"))
 
     foods = mongo.db.food.find().sort("food_name", 1)
-    return render_template("add_food.html", foods=foods)
+    return render_template("add-food.html", foods=foods)
 
 
 @app.route("/edit_food/<food_name>", methods=["GET", "POST"])
@@ -139,7 +139,7 @@ def edit_food(food_name):
     """
     if request.method == "POST":
         submit = {
-            "location": request.form.get("location"),
+            "price": request.form.get("price"),
             "food_name": request.form.get("food_name"),
             "quantity": request.form.get("quantity"),
             "barcode": request.form.get("barcode"),
@@ -153,7 +153,7 @@ def edit_food(food_name):
 
     food = mongo.db.food.find_one({"_id": ObjectId(food_name)})
     foods = mongo.db.food.find().sort("food_name", 1)
-    return render_template("edit_food.html", food=food, foods=foods)
+    return render_template("edit-food.html", food=food, foods=foods)
 
 
 @app.route("/delete_food/<food_name>")
@@ -183,16 +183,19 @@ def shopping(food_name):
     Displays success message to user
     """
     food = mongo.db.food.find_one({"food_name": food_name})
-    del food["_id"]
-    del food["location"]
-    del food["purchase_date"]
-    del food["use_by_date"]
-    del food["barcode"]
-    mongo.db.shopping.insert_one(food)
-    mongo.db.food.remove({"food_name": food_name})
-    flash("Food Item added to Shopping List")
+    if food:
+        new_shopping_item = {
+            "food_name": food.get('food_name'),
+            "quanity": food.get('quanity') or 1,
+            "price": food.get('price'),
+            "created_by": session['user']
+        }
+        print(food.get("created_by"))
+        mongo.db.shopping.insert_one(new_shopping_item)
+        mongo.db.food.remove({"food_name": food_name})
+        flash("Food Item added to Shopping List")
 
-    items = list(mongo.db.shopping.find().sort('food_name', 1))
+    items = mongo.db.shopping.find().sort('food_name', 1)
     return render_template("shopping.html", items=items)
 
 
@@ -201,7 +204,7 @@ def shopping_list():
     """
     For Navigation
     """
-    items = list(mongo.db.shopping.find().sort('food_name', 1))
+    items = mongo.db.shopping.find().sort('food_name', 1)
     return render_template("shopping.html", items=items)
 
 
@@ -216,7 +219,7 @@ def delete_shopping(food_name):
     return redirect(url_for("shopping_list"))
 
 
-@app.route("/add_shopping", methods=["GET", "POST"])  
+@app.route("/add_shopping", methods=["GET", "POST"])
 def add_shopping():
     """
     Adds food item to current stock list
@@ -226,6 +229,7 @@ def add_shopping():
         food = {
             "food_name": request.form.get("food_name"),
             "quantity": request.form.get("quantity"),
+            "price": request.form.get("price"),
             "created_by": session["user"]
         }
         mongo.db.shopping.insert_one(food)
@@ -234,7 +238,7 @@ def add_shopping():
         return redirect(url_for("shopping_list"))
 
     foods = mongo.db.shopping.find().sort("food_name", 1)
-    return render_template("add_shopping.html", foods=foods)
+    return render_template("add-shopping.html", foods=foods)
 
 
 @app.route("/edit_shopping/<food_name>", methods=["GET", "POST"])
@@ -247,6 +251,7 @@ def edit_shopping(food_name):
         submit = {
             "food_name": request.form.get("food_name"),
             "quantity": request.form.get("quantity"),
+            "price": request.form.get("price"),
             "created_by": session["user"]
         }
         mongo.db.shopping.update({"_id": ObjectId(food_name)}, submit)
@@ -254,7 +259,7 @@ def edit_shopping(food_name):
         return redirect(url_for("shopping_list"))
 
     shopping = mongo.db.shopping.find_one({"_id": ObjectId(food_name)})
-    return render_template("edit_shopping.html", shopping=shopping)
+    return render_template("edit-shopping.html", shopping=shopping)
 
 
 @app.route("/waste/<food_name>", methods=['GET', 'POST'])
@@ -265,7 +270,6 @@ def waste(food_name):
     """
     food = mongo.db.food.find_one({"food_name": food_name})
     del food["_id"]
-    del food["location"]
     del food["purchase_date"]
     del food["use_by_date"]
     del food["barcode"]

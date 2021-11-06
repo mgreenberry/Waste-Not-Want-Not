@@ -2,9 +2,9 @@
 {% block content %}
 <div class="container-fluid">
     <div class="page-height">
-        <div class="green text-border">
-            <h3 class="green white-text text-darken-4 text-shadow center-align">Food List</h3>
-            <h5 class="green white-text text-darken-4 text-shadow center-align">Sorted by 'Use By Date'</h5>
+        <div class="brown lighten-2 text-border">
+            <h3 class="white-text text-darken-4 text-shadow center-align">Food List</h3>
+            <h5 class="white-text text-darken-4 text-shadow center-align">Sorted by 'Use By Date'</h5>
         </div>
         <div class="row">
             <div class="col s12 center-align">
@@ -22,7 +22,7 @@
                         <h4 class="uppercase">Food: {{ grocery.food_name}}</h4>
                         <p><span class="uppercase">Use By Date: {{ grocery.use_by_date }}</span></p>
                         <!-- Modal for adding to shopping list -->
-                        <a href="#{{ grocery.food_name}}" class="btn-small green accent-4 right modal-trigger">Eaten</a>
+                        <a href="#{{ grocery.food_name}}" class="btn-small blue accent-4 right modal-trigger">Eaten</a>
                         <div id="{{ grocery.food_name}}" class="modal green">
                             <div class="modal-content">
                                 <h4 class="white-text">Would you like to add this item to your shopping list?</h4>
@@ -49,9 +49,9 @@
                         <i class="fas fa-caret-down"></i> Click for more information
                     </div>
                 </div>
-                <div class=" white collapsible-body uppercase">
-                    <strong>Location: {{ grocery.location }}</strong>
+                <div class="white collapsible-body uppercase">
                     <p>Quantity: {{ grocery.quantity }}</p>
+                    <p>Price: £{{ grocery.price }}</p>
                     <p>Barcode or ID number: {{ grocery.barcode }}</p>
                     <p>Date of Purchase: {{ grocery.purchase_date }}</p>
                     <p><em>Created by: {{ grocery.created_by }}</em></p>
