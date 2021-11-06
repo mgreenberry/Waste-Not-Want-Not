@@ -17,7 +17,7 @@ I created this website to provide a easy and simple website for a food waste app
 
 This is my MS3 Backend Development Milstone Project website created as part of a Full Stack Software Development in Code Institute by [Michael Greenberry](https://www.linkedin.com/in/michael-greenberry-637299108/).
 
-![Mockup](static/images/responsive-screenshot.png)
+![Mockup](docs/readme-images/responsive-screenshot.png)
 
 ## Table of contents
 1. [UX - User Experience](#ux-user-experience)
@@ -147,7 +147,7 @@ From: - (https://materializecss.com/color.html)
 
 Additonal colours from:- (https://coolors.co/8fb339-f7fff7-d62828-7494ea-4c934c)
 
-![](static/images/want-not-colours.png)
+![](docs/readme-images/want-not-colours.png)
 
 #### Imagery
 
@@ -165,7 +165,7 @@ All icons from [Font Awesome](https://fontawesome.com/)
 
 This website is designed with access from the home page to all other pages from the navigation bar. 
 
-[Proposed Layout](static/images/planned-layout.pdf) 
+[Proposed Layout](docs/readme-images/planned-layout.pdf) 
 
 This blueprint was then used to design the navigation and call-out buttons featured in the website.
 
@@ -183,13 +183,13 @@ I used Balsamiq to create my wireframes. I chose to do a mobile version first wi
 As I wanted to include this on all formats and devices I created my wireframes again for all pages and added the following to show mobile, tablet and desktop designs:
 
 **Mobile**
-* [Mobile](static/images/mobile.pdf)
+* [Mobile](docs/readme-images/mobile.pdf)
 
 **Tablet**
-* [Tablet](static/images/tablet.pdf)
+* [Tablet](docs/readme-images/tablet.pdf)
 
 **Desktop**
-* [Desktop Computer](static/images/computer.pdf)
+* [Desktop Computer](docs/readme-images/computer.pdf)
 
 [Back to content](#table-of-contents)
 ## Features
@@ -241,7 +241,7 @@ Every page contains the following features at the top of the website as standard
 * These pages are not linked to any other page in the website
 * These pages are only accessed if the user encounters an error within the navigation process
 * The error page displays a message to the user to notify them of the error
-* There is 1 call-out button in this section. This allows the user to return to the home page of the main website - [e.g.](https://waste-not-project.herokuapp.com/)
+* There is 1 call-out button in this section. This allows the user to return to the home page of the main website - [Home Page](https://waste-not-project.herokuapp.com/)
 
 ## Structure
 [MongdoDB](https://www.mongodb.com/) was used to create the database. This allows the following functionality: -
@@ -301,12 +301,12 @@ price    | String
 * [CSS](https://en.wikipedia.org/wiki/CSS) Used to style the content of the website
 * [JavaScript](https://www.javascript.com/) Used with Bootstrap for the Navigation menu at the top and bottom of the website and for all interactive parts of the website
 * [JQuery](https://jquery.com/) Used for temperal literals in some javascript code.
-* [Python](https://www.python.org/)
+* [Python](https://www.python.org/) 
 * [Flask](https://flask.palletsprojects.com/en/2.0.x/)
 * [Jinga](https://jinja.palletsprojects.com/en/3.0.x/)
 
 ### Framework Library
-* [Materalize]() Used for a mobile first responsive website, display properties such as grid layout, preset css such as for containers, forms, etc
+* [Materalize](https://materializecss.com/) Used for a mobile first responsive website, display properties such as grid layout, preset css such as for containers, forms, etc
 * [JQuery](https://jquery.com/) Used for temperal literals in some javascript code.
 
 ### Tools
