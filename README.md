@@ -29,20 +29,19 @@ This is my MS3 Backend Development Milstone Project website created as part of a
      3. [Imagery](#imagery)
      4. [Icons](#icons)
      5. [Layout](#layout)
-   * [structure](#structure)
+   * [Structure](#structure)
    * [Wireframes](#wireframes)
 2. [Features](#features)
-   * [Existing Features](#existing-features)
-     1. [All Pages](#all-pages)
-     2. [Food List](#food-list)
-     3. [Shopping List](#shopping-list)
-     4. [Wasted Food List](#wasted-food-list)
-     5. [404.html](#404)
+   * [All Pages](#all-pages)
+   * [Food List](#food-list)
+   * [Shopping List](#shopping-list)
+   * [Wasted Food List](#wasted-food-list)
+   * [Error Pages](#error-pages)
 3. [Structure](#structure)
-  * [Users](#users)
-  * [Food List](#food)
-  * [Shopping List](#shopping-list)
-  * [Wasted Food List](#wasted-food-list)
+   * [Users](#users)
+   * [Food List](#food)
+   * [Shopping List](#shopping)
+   * [Wasted Food List](#wasted-food)
 4. [Technologies Used](#technologies-used)
    * [Languages](#languages)
    * [Framework Library](#framework-library)
@@ -60,9 +59,6 @@ This is my MS3 Backend Development Milstone Project website created as part of a
    * [Media](#media)
    * [Icons](#icons)
    * [Code](#code)
-     1. [HTML](#html)
-     2. [CSS](#css)
-     3. [JavaScript](#javascript)
 8. [Acknowledgements](#acknowledgements)
 9. [Author Information](#author-information)
 
@@ -100,6 +96,8 @@ As a user visiting the site for the first time:
 17. I want to click on navigation links to be taken to the correct page/section and to be able to return to the home page or another page without using the brower forward/backward buttons
 18. I want these navigation links to include user friendly menus which are easy to uderstand and use
 19. I want the content to be easy to read and have a predictable layout so that each page can be navigated easily
+
+[Back to content](#table-of-contents)
 
 The site owner has done the following:-
 1. Created a registration section which directs new users to their profile which contains instructions, contact details and log out
@@ -287,7 +285,7 @@ food_name| String
 quantity | String
 price    | String
 
-### Wasted Food List
+### Wasted Food
 
 Key      | Value
 ---------|-----------
