@@ -74,10 +74,12 @@ All CSS code was put through the W3C Validation Service. The following message w
 ![css testing results](docs/testing-images/css-testing.png)
 
 * [JsQuery testing using jshint.com](https://jshint.com/).
-  * [script.js](docs/testing-images/jshint-results.png)
+  
+  * ![script.js](docs/testing-images/jshint-results.png)
 
-* ![pep8 Testing](docs/testing-images/pep8-test.png) - white spaces flagged in python code
-* ![pep8 Testing](docs/testing-images/pep8-changed.png) - after spaces removed
+* [Pep8 Testing](http://pep8online.com/)
+  * ![pep8 Testing](docs/testing-images/pep8-test.png) - white spaces flagged in python code
+  * ![pep8 Testing](docs/testing-images/pep8-changed.png) - after spaces removed
 
 All unused variables appeared to be called when required and code was seen to be functioning as intended.
 
