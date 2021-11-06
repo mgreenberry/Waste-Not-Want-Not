@@ -66,7 +66,7 @@ def login():
             {"username": request.form.get("username").lower()})
 
         if existing_user:
-            
+
             if check_password_hash(
                     existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
@@ -303,7 +303,7 @@ def delete_waste(food_name):
 
 if __name__ == "__main__":
     """
-    MUST Change debug=True to 
+    MUST Change debug=True to
     if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
