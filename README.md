@@ -29,6 +29,7 @@ This is my MS3 Backend Development Milstone Project website created as part of a
      3. [Imagery](#imagery)
      4. [Icons](#icons)
      5. [Layout](#layout)
+   * [structure](#structure)
    * [Wireframes](#wireframes)
 2. [Features](#features)
    * [Existing Features](#existing-features)
@@ -64,6 +65,7 @@ This is my MS3 Backend Development Milstone Project website created as part of a
 ## UX (User Experience)
 
 ### User Goals
+
 * The website needs to work well on a variety of devices - mobile phones, tablets and desktop computers
 * To provide a simple, clean and easy website for the user
 * To provide an easy to use food stock that would highlight the order that food needs to be used by
@@ -74,55 +76,55 @@ This is my MS3 Backend Development Milstone Project website created as part of a
 
 ### User Stories
 
-* As a user visiting the site for the first time:
-  1. I would like to be able to register for the website so I can have my personal grocery list
-  2. I would like to easily log in once an account has been created and see my personal grocery list
-  3. I would like to see my existing food stock displayed in an easy to understand format
-  4. I would like to be able to add new items to this stock list
-  5. I would like to be able to edit any items added to add/amend information created in error
-  6. I would like to be able to delete food items no longer needed
-  7. I would like to be able to add an item that has been eaten to my shopping list if desired
-  8. I would like to be able to see what food I have wasted
-  9. I would like to be able to see a shopping list of items I need to buy again that have been eaten
-  10. I would like to be able to add items to this shopping list that were not on the original grocery/food list
-  11. I would like to be able to delete items from the shopping list once ordered or no longer needed
-  12. I would like to be able to see a list of food that has been wasted
-  13. I would like to be able to delete food items from the wasted food list
-  14. I want to able to learn and easily understand what the website is about
-  15. I want to easily understand about how the app works
-  16. I want to easily understand what each section of the app does
-  17. I want to click on navigation links to be taken to the correct page/section and to be able to return to the home page or another page without using the brower forward/backward buttons
-  18. I want these navigation links to include user friendly menus which are easy to uderstand and use
-  19. I want the content to be easy to read and have a predictable layout so that each page can be navigated easily
+As a user visiting the site for the first time:
+1. I would like to be able to register for the website so I can have my personal grocery list
+2. I would like to easily log in once an account has been created and see my personal grocery list
+3. I would like to see my existing food stock displayed in an easy to understand format
+4. I would like to be able to add new items to this stock list
+5. I would like to be able to edit any items added to add/amend information created in error
+6. I would like to be able to delete food items no longer needed
+7. I would like to be able to add an item that has been eaten to my shopping list if desired
+8. I would like to be able to see what food I have wasted
+9. I would like to be able to see a shopping list of items I need to buy again that have been eaten
+10. I would like to be able to add items to this shopping list that were not on the original grocery/food list
+11. I would like to be able to delete items from the shopping list once ordered or no longer needed
+12. I would like to be able to see a list of food that has been wasted
+13. I would like to be able to delete food items from the wasted food list
+14. I want to able to learn and easily understand what the website is about
+15. I want to easily understand about how the app works
+16. I want to easily understand what each section of the app does
+17. I want to click on navigation links to be taken to the correct page/section and to be able to return to the home page or another page without using the brower forward/backward buttons
+18. I want these navigation links to include user friendly menus which are easy to uderstand and use
+19. I want the content to be easy to read and have a predictable layout so that each page can be navigated easily
 
-* The site owner has done the following:-
-  1. Created a registration section which directs new users to their profile which contains instructions, contact details and log out
-  2. Created a 'Log In' section on the very first page of the website so existing users do not have to find log in page
-  3. Created an existing food list in 'use by date' order allowing user to quickly see which items need using first
-  4. Created a page and a button which allows the user to add extra items to their existing food/grocery stock list
-  5. Created a page and a button which allows the user to be able to edit any items added to add/amend information created in error
-  6. Created a button which would allow the user to be able to delete food items no longer needed
-  7. Created a button which allows the user to add an item that has been eaten to my shopping list if desired
-  8. Created a html page which displays a page that shows the user the food items wasted
-  9. Created a html page which displays a page that shows the user a shopping list of items that the user may need to buy again
-  10. Created a page and a button which allows the user to add items to this shopping list that were not on the original grocery/food list
-  11. Created a button which will delete items from the shopping list once ordered or no longer needed
-  12. Created a page which displays a page that shows a list of food that has been wasted
-  13. Created a button that allows the user to delete food items from the wasted food list
-  14. Design a home page with an 'about' section
-  15. Include instructions on the home page
-  16. Design navigation tabs which clearly display each section link
-  17. Design and impliment a navigation bar which contains links to different pages and sections in the website 
-  18. Design and label the navigation bar with clear and understandable text to direct users to the correct page  
-  19. Design the website to have good readability throughout
+The site owner has done the following:-
+1. Created a registration section which directs new users to their profile which contains instructions, contact details and log out
+2. Created a 'Log In' section on the very first page of the website so existing users do not have to find log in page
+3. Created an existing food list in 'use by date' order allowing user to quickly see which items need using first
+4. Created a page and a button which allows the user to add extra items to their existing food/grocery stock list
+5. Created a page and a button which allows the user to be able to edit any items added to add/amend information created in error
+6. Created a button which would allow the user to be able to delete food items no longer needed
+7. Created a button which allows the user to add an item that has been eaten to my shopping list if desired
+8. Created a html page which displays a page that shows the user the food items wasted
+9. Created a html page which displays a page that shows the user a shopping list of items that the user may need to buy again
+10. Created a page and a button which allows the user to add items to this shopping list that were not on the original grocery/food list
+11. Created a button which will delete items from the shopping list once ordered or no longer needed
+12. Created a page which displays a page that shows a list of food that has been wasted
+13. Created a button that allows the user to delete food items from the wasted food list
+14. Design a home page with an 'about' section
+15. Include instructions on the home page
+16. Design navigation tabs which clearly display each section link
+17. Design and impliment a navigation bar which contains links to different pages and sections in the website 
+18. Design and label the navigation bar with clear and understandable text to direct users to the correct page  
+19. Design the website to have good readability throughout
 
 TO BE IMPLEMENTED!
-* As a new user or user returning to the site:
-  1. To send an email with suggestions, complaints, etc.
-  2. To search for a food item in any list - food stock, shopping and waste and to then edit/delete/add to lists.
-  3. To able to add food by scanning a barcode
-  4. To link with voice activated apps like Alexa
-  5. To allow push notifications to users mobile device to warn of items that need using by use by date.
+As a new user or user returning to the site:
+1. To send an email with suggestions, complaints, etc.
+2. To search for a food item in any list - food stock, shopping and waste and to then edit/delete/add to lists.
+3. To able to add food by scanning a barcode
+4. To link with voice activated apps like Alexa
+5. To allow push notifications to users mobile device to warn of items that need using by use by date.
 
 [Back to content](#table-of-contents)
 ### Design Choices
@@ -149,16 +151,15 @@ Additonal colours from:- (https://coolors.co/8fb339-f7fff7-d62828-7494ea-4c934c)
 
 * Favicom: 
   * Waste Bin: [Hero Image](static/images/bin.jpeg)
-
   
 * All pages
   * Background Image: [Background Image](static/images/fruit.jpg)
 
-### Icons
+#### Icons
 
 All icons from [Font Awesome](https://fontawesome.com/)
 
-### Layout
+#### Layout
 
 This website is designed with access from the home page to all other pages from the navigation bar. 
 
@@ -167,16 +168,17 @@ This website is designed with access from the home page to all other pages from 
 This blueprint was then used to design the navigation and call-out buttons featured in the website.
 
 [Back to content](#table-of-contents)
-## Wireframes
-I used Balsamiq to create my wireframes. I chose to do a mobile version first with the pages I wanted and then create a desktop version after. I did this as this was going to be the way I designed my website, mobile first.
 
-As I wanted to include this on all formats and devices I created my wireframes again for all pages and added the following to show mobile, tablet and desktop:
-
-## Structure 
+### Structure 
 
 I have used [Materialize](https://materializecss.com/) to create the overall structure for my website. 
 Materialize is similar to Bootstrap in that it provides templates for items such as navigation, buttons, and structure
 The reason I choose Materiaize was mainly due to the various features they offer like a datepicker for the forms and card/modal elements
+
+## Wireframes
+I used Balsamiq to create my wireframes. I chose to do a mobile version first with the pages I wanted and then create a desktop version after. I did this as this was going to be the way I designed my website, mobile first.
+
+As I wanted to include this on all formats and devices I created my wireframes again for all pages and added the following to show mobile, tablet and desktop designs:
 
 **Mobile**
 * [Mobile](static/images/mobile.pdf)
@@ -193,15 +195,13 @@ The reason I choose Materiaize was mainly due to the various features they offer
 ### Existing Features
 
 #### All Pages
-
-<strong>
-<em>ON USER REGISTRATION OR LOG IN</em>
-</strong>
-
+```
+ON USER REGISTRATION OR LOG IN
+```
 Every page contains the following features at the top of the website as standard: -
 * Text as a header reading "Waste Not Want Not" which also acts as a clickable event to take to the home page
 * A responsive navigation bar, which reduces into a 'hamburger' navigation bar on mobiles. Allows all users to click on the page they want and access said page easily. Each navigation bar has the following links: -
-  1. Home Page - Displays 'Log In' section if user not logged in. Displays an 'about' section
+  1. MOBILE ONLY - Home Page - Displays 'Log In' section if user not logged in. Displays an 'about' section
   2. Food List - displays food stock list in the order of use-by-date
   3. Shopping List - displays food items added to shopping list in alphabetical order
   4. Wasted Food List - displays food wasted from stock list in alphabetical order
@@ -210,6 +210,7 @@ Every page contains the following features at the top of the website as standard
   Every page contains the following features in the footer: -
 * Site header and strapline
 * Contact details (fake)
+* Website creator with link to LinkedIn page
 
 #### Food List
   1. Food List - displays food stock list in the order of use-by-date
@@ -234,12 +235,11 @@ Every page contains the following features at the top of the website as standard
   2. A set of instructions on how to use the site
   3. Contact detail information 
 
-#### 404
-* This page is not linked to any other page in the website
-* This page is only accessed if a user types an incorrect web address in the browser navigation bar
-* This page contains the following section: -
-  * A message notifying the user of an error. This then allows the user to recognise that the web address doens't exist.
-  * There is 1 call-out button in this section. This allows the user to return to the home page of the main website - []()
+#### Error Pages
+* These pages are not linked to any other page in the website
+* These pages are only accessed if the user encounters an error within the navigation process
+* The error page displays a message to the user to notify them of the error
+* There is 1 call-out button in this section. This allows the user to return to the home page of the main website - [e.g.](https://waste-not-project.herokuapp.com/)
 
 ## Structure
 [MongdoDB](https://www.mongodb.com/) was used to create the database. This allows the following functionality: -
@@ -333,8 +333,8 @@ Testing information can be found [here](TESTING.md)
 ### Project creation
 * The website project was created by going to [Github](https://github.com/), a code hosting platform, using the following steps: -
   1. Create an account using an email address and password or a google account
-  2. Log in to account and create a new repository![](/assets/images/readme-images/creating-new-repository.png)
-  3. Give this new repository a creative name. Then click the green Gitpod button which will take you to [Gitpod](https://gitpod.io/workspaces). Gitpod is an open source platform for code development ![]() ![]()
+  2. Log in to account and create a new repository!
+  3. Give this new repository a creative name. Then click the green Gitpod button which will take you to [Gitpod](https://gitpod.io/workspaces). Gitpod is an open source platform for code development
   4. Then open this platform and start coding
   5. To save the work I had to do the following: - Click 'File', click 'auto save'
   6. To save the work to github I needed to do the following: -
@@ -347,13 +347,13 @@ Testing information can be found [here](TESTING.md)
 To clone the project: 
 1. From the repository, click the "code" button and download the zip of the repository.
     Alternatively, you can clone the repository using the following line in your terminal:
-    
+    ```
     git clone https://github.com/mgreenberry/Waste-Not-Want-Not.git
-
-2. Access the folder in your terminal window and install the application's [required modules]() using the following command:
-
+    ```
+2. Access the folder in your terminal window and install the application's [required modules](https://github.com/mgreenberry/Waste-Not-Want-Not/blob/main/requirements.txt) using the following command:
+    ```
     pip3 install -r requirements.txt
-
+    ```
 3. Sign-in or sign-up to [MongoDB](https://www.mongodb.com/) and create a new cluster
   * Within the Sandbox, click the collections button and after click Create Database
   * Set up the following collections: users, food, shopping, waste
@@ -372,7 +372,7 @@ To clone the project:
   * Within the Network Access option, add IP Address 0.0.0.0
 4. In your IDE, create a file containing your environmental variables called env.py at the root level of the application. 
     It will need to contain the following lines and variables:
-
+    ```
     import os
 
     os.environ["IP"] = "0.0.0.0"
@@ -381,7 +381,7 @@ To clone the project:
     os.environ["DEBUG"] = "True"
     os.environ["MONGO_URI"] = "YOUR_MONGODB_URI"
     os.environ["MONGO_DBNAME"]= "DATABASE_NAME" 
-
+    ```
     Please note that you will need to update the **SECRET_KEY** with your own secret key, as well as the **MONGO_URI** and **MONGO_DBNAME** variables with those provided by MongoDB.
 
     To find your MONGO_URI, go to your clusters and click on connect. Choose connect your application and copy the link provided. 
@@ -389,47 +389,47 @@ To clone the project:
 
     If you plan on pushing this application to a public repository, ensure that env.py is added to your .gitignore file.
 5. The application can now be run locally. In your terminal, type the following command 
-
+    ```
     python3 app.py. 
-
+    ```
 ### Deploying on Heroku: 
 
 1. Register for your free Heroku account and create a new app. Choose your region. 
 2. Name the app something unique and choose what region you are in then click 'Create app'.
 3. Go to the settings tab and find the Config Vars section. Click 'Reveal Config Vars'.
 4. Ensure the Procfile and requirements.txt files exist are present and up-to-date in your local repository. For example: -
-    
+    ```
     pip3 freeze --local > requirements.txt
-
+    ```
     Procfile: echo web: python app.py > Procfile
-
+    ```
 3. The Procfile should contain the following line:
-
+    ```
     web: python app.py
-    
+    ```    
 4. Scroll down to "deployment method"-section. Choose "Github" for automatic deployment.
 5. From the inputs below, make sure your github user is selected, and then enter the name for your repo. Click "search". When it finds the repo, click the "connect" button.
 6. Scroll back up and click "settings". 
     Scroll down and click "Reveal config vars". 
     Set up the same variables as in your env.py (IP, PORT, SECRET_KEY, MONGO_URI and MONGODB_NAME):
     Do not set the DEBUG variable here. This should be set to False before deployment.
-
+    ```
     IP = 0.0.0.0
     PORT = 5000
     SECRET_KEY = YOUR_SECRET_KEY
     MONGO_URI = YOUR_MONGODB_URI
     MONGO_DBNAME = DATABASE_NAME
-
+    ```
 7. Scroll back up and click "Deploy". Scroll down and click "Enable automatic deployment".
 8. Just beneath, click "Deploy branch". Heroku will now start building the app. 
     When the build is complete, click "view app" to open it.
-9. In order to commit your changes to the branch, use git push to push your changes. 
+9. In order to commit your changes to the branch, use git push within gitpod to push your changes. 
 
 ### Forking  
 * If you wish to use this repository as a starting point for your own design, or to contribute to this project, you can fork it. Follow the steps below.
   1. Navigate to the repository in [github](https://github.com/). 
-  2. Choose the correct repository. In this case it is []()
-  2. Click 'Fork' in the top-right corner. ![]()
+  2. Choose the correct repository. In this case it is [waste not want not](https://github.com/mgreenberry/Waste-Not-Want-Not)
+  2. Click 'Fork' in the top-right corner.
   4. This will then create a copy (make sure you have already created your own github account) in your repository
   5. Now follow the steps outlined in [project creation](#project-creation) 
   6. Click 'Pull Requests' and seclect 'New Pull Request' button
@@ -437,9 +437,9 @@ To clone the project:
 ### Cloning and Implementing Locally
 * To clone the website please use the following steps: -
   1. Navigate to the repository in [github](https://github.com/). 
-  2. Choose the correct repository. In this case it is []()
+  2. Choose the correct repository. In this case it is [](https://github.com/mgreenberry/Waste-Not-Want-Not)
   3. Click the 'Code' button
-  4. You will now be given options to make a clone of the website, to download it or to open with GitHub Desktop. You can choose to clone the 'HTTPS', the 'SSH' or 'GitHub CLI' ![]()
+  4. You will now be given options to make a clone of the website, to download it or to open with GitHub Desktop. You can choose to clone the 'HTTPS', the 'SSH' or 'GitHub CLI'
   5. Open Git Bash or similar
   6. Navigate to your desired directory for the cloned project.
   7. Type 'git clone' followed by the URL copied in step 3.
@@ -449,14 +449,15 @@ To clone the project:
 
 ## Credits
 
-All coding content was created by Michael Greenberry, the website creator/owner.
+Coding is credited where necessary within code. Most of the python code was amended from the task mini project from Code Institute with additional help from tutors and mentor. 
 
 ### Content
-The text and photograph content was provided by the creator
+The text content was provided by the creator
 
 ### Media
-* All pages
-  * All content from creator
+* Favicom created by designer
+* background image - [Artist and zabiyaka](https://pixabay.com/users/victoria_borodinova-6314823/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=6620951)
+    from [Pixabay](https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=6620951)
 
 ### Icons
 All icons used were sourced form [Font Awesome](https://fontawesome.com/)
@@ -464,13 +465,13 @@ All icons used were sourced form [Font Awesome](https://fontawesome.com/)
 ### Code
 
 #### HTML
-All HTML code was written by the creator Michael Greenberry unless stated
+HTML code was written by the creator Michael Greenberry unless stated
 
 #### CSS
-All CSS code was written by the creator Michael Greenberry unless stated
+CSS code was written by the creator Michael Greenberry unless stated
 
 #### JavaScript/JQuery
-All JQuery code was taken from Materalize or task mini project apart from navbar collapse
+JQuery code was taken from Materalize or task mini project apart from navbar collapse
 
 #### Python
 Python, Flask and Jinga code adapted from the task mini project with extra code written by Michael Greenberry
