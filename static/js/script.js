@@ -4,9 +4,19 @@ $(document).ready(function(){
     $('.tooltipped').tooltip();
     $('select').formSelect();
     $('.modal').modal();
-    $('.datepicker').datepicker({
+    $('.datepicker1').datepicker({
       format: "dd mmmm, yyyy",
-      yearRange: 3,
+      maxDate: new Date(),
+      showClearBtn: true,
+      autoClose: true,
+      i18n: {
+        done: "Select"
+      }
+    });
+    $('.datepicker2').datepicker({
+      format: "dd mmmm, yyyy",
+      minDate: new Date(),
+      autoClose: true,
       showClearBtn: true,
       i18n: {
         done: "Select"

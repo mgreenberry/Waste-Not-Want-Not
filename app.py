@@ -186,7 +186,7 @@ def shopping(food_name):
     if food:
         new_shopping_item = {
             "food_name": food.get('food_name'),
-            "quanity": food.get('quanity') or 1,
+            "quantity": food.get('quantity'),
             "price": food.get('price'),
             "created_by": session['user']
         }
