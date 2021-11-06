@@ -20,92 +20,144 @@
 * [html testing with W3C Markup Validation Service](https://validator.w3.org/)
 All errors attributed to the jinga code added to each page.
 
-  * add-food.html - 2 pages of errors. 
+  * add-food.html - 2 pages of errors
 
-  [Image 1](docs/testing-images/html-testing-images/add-food-errors-1.png)
-
-  [Image 2](docs/testing-images/html-testing-images/add-food-errors-2.png)
+    * [Image 1](docs/testing-images/html-testing-images/add-food-errors-1.png)
+    * [Image 2](docs/testing-images/html-testing-images/add-food-errors-2.png)
 
   * add-shopping.html - 1 page of errors
 
-  [Image](docs/testing-images/html-testing-images/add-shopping-errors.png)
+    * [Image 1](docs/testing-images/html-testing-images/add-shopping-errors.png)
 
   * base.html - 6 pages of errors
 
-  [Image 1](docs/testing-images/html-testing-images/base-errors-1.png)
-  [Image 2](docs/testing-images/html-testing-images/base-errors-2.png)
-  [Image 3](docs/testing-images/html-testing-images/base-errors-3.png)
-  [Image 4](docs/testing-images/html-testing-images/base-errors-4.png)
-  [Image 5](docs/testing-images/html-testing-images/base-errors-5.png)
-  [Image 6](docs/testing-images/html-testing-images/base-errors-6.png)
-  * [edit-food.html]() - 
-  * [edit-shopping.html]() - 
-  * [groceries.html]() - 
-  * [home.html]() - 
-  * [profile.html]() - 
-  * [register.html]() -
-  * [shopping.html]() - 
-  * [waste.html]() - 
+    * [Image 1](docs/testing-images/html-testing-images/base-errors-1.png)
+    * [Image 2](docs/testing-images/html-testing-images/base-errors-2.png)
+    * [Image 3](docs/testing-images/html-testing-images/base-errors-3.png)
+    * [Image 4](docs/testing-images/html-testing-images/base-errors-4.png)
+    * [Image 5](docs/testing-images/html-testing-images/base-errors-5.png)
+    * [Image 6](docs/testing-images/html-testing-images/base-errors-6.png)
 
-All errors listed were resolved. [contactUs.js](docs/w3c-html/contactUs-solved.png), [index.hmtl](docs/w3c-html/index-html-solved.png), [projects.js](docs/w3c-html/mainprojects-solved.png), [services](docs/w3c-html/services-solved.png),
+  * edit-food.html - 1 page of errors
+    * [Image 1](docs/testing-images/html-testing-images/edit-food-errors.png)
+
+  * edit-shopping.html - 1 page of errors 
+    * [Image 1](docs/testing-images/html-testing-images/edit-shopping-errors.png)
+
+  * groceries.html - 3 oages if errors
+    * [Image 1](docs/testing-images/html-testing-images/groceries-errors-1.png)
+    * [Image 2](docs/testing-images/html-testing-images/groceries-errors-2.png)
+    * [Image 3](docs/testing-images/html-testing-images/groceries-errors-3.png)
+
+  * home.html - 1 page of errors
+    * [Image 1](docs/testing-images/html-testing-images/home-errors.png)
+
+  * profile.html - 1 page of errors
+    * [Image 1](docs/testing-images/html-testing-images/profile-errors.png)
+
+  * register.html - 2 pages of errors
+    * [Image 1](docs/testing-images/html-testing-images/register-errors-1.png)
+    * [Image 2](docs/testing-images/html-testing-images/register-errors-2.png)
+
+  * shopping.html - 2 pages of errors
+    * [Image 1](docs/testing-images/html-testing-images/shopping-errors-1.png)
+    * [Image 2](docs/testing-images/html-testing-images/shopping-errors-2.png)
+
+  * waste.html - 2 pages of errors
+    * [Image 1](docs/testing-images/html-testing-images/waste-errors-1.png)
+    * [Image 2](docs/testing-images/html-testing-images/waste-errors-2.png)
+
+All errors listed could not be solved as errors point to jinga code within HTML which is needed to render the different pages and messages
 
 * [css testing using W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/)
 All CSS code was put through the W3C Validation Service. The following message was shown: -
-![css testing results](docs/css-test.png)
+![css testing results](docs/testing-images/css-testing.png)
 
-* [JavaScript testing using jshint.com](https://jshint.com/). The following messages were found on the javascript code: -
-  * [contactUs.js](docs/jshint/contactUs-jshint.png) - 9 warnings listed relate to the use of 'let' or 'template literal syntax'. Underfined and unused variables checked, variables required for function to work.
-  * [homePage.js](docs/jshint/homePage-jshint.png) - 6 warnings listed. Missing semicolon added to code for warning 3 and 11. Other warnings related to 'let'. Undefined variables checked agains functionality.
-  * [map.js](docs/jshint/maps-jhint.png) - 5 warnings listed. All warnings relate to the use of 'let'. 2 undefined variables checked and unused variables are required.
-  * [projects.js](docs/jshint/projects-jhint-errors.png) - 8 warnings listed. Missing semicolon added. Other errors list 'template literal syntax' as message. 2 undefined variable and 6 unused all checked but required.
-  * [services.js](docs/jshint/services-jhint.png) - 1 warning listed. 'template literal syntax' message.
+* [JsQuery testing using jshint.com](https://jshint.com/).
+  * [script.js](docs/testing-images/jshint-results.png)
 
-Warnings were checked and unused code was also checked. Very often there wasn't anything that could be done to stop the warnings from displaying. All unused variables appeared to be called when required and code was seen to be functioning as intended.
+* ![pep8 Testing](docs/testing-images/pep8-test.png) - white spaces flagged in python code
+* ![pep8 Testing](docs/testing-images/pep8-changed.png) - after spaces removed
+
+All unused variables appeared to be called when required and code was seen to be functioning as intended.
 
 [Back to content](#table-of-contents)
+
+
+TO CONTINUE!!!!!
+
+
+
 ## Lighthouse Testing
 ### Mobile phone
 * 1st test
-  * [index.html](docs/lighthouse/mobile-lighthouse1.png)
-
-The main issues were the performance and Best Practices which both scored under 90% on all pages. The errors were mainly that the pictures were too big and that I was calling a lot of javascript pages. As all other pages were loaded via javascript I was unable to run lighthouse on any of the folloiwng pages: -
-  services.js
-  projects.js
-  contactUs.js 
+  * [home.html]()
+  * [Food List]()
+  * [Shopping List]()
+  * [Wasted Food List]()
+  * [Add Food Item]()
+  * [Add Shopping Item]()
+  * [Edit Food Item]()
+  * [Edit Shopping Item]()
+  * [Profile Page]()
+  * [Registeration Page]()
 
 I also noticed that running more than one lighthouse test on this page delivered a different set of results.
 
 * 2nd test
-  * [index.html](docs/lighthouse/lighthouse-mobile2.png) - Performance now at 80% and Best Practices at 100% depending on how many times the test was run.
+  * [home.html]()
+  * [Food List]()
+  * [Shopping List]()
+  * [Wasted Food List]()
+  * [Add Food Item]()
+  * [Add Shopping Item]()
+  * [Edit Food Item]()
+  * [Edit Shopping Item]()
+  * [Profile Page]()
+  * [Registeration Page]()
  
 ### Desktop
 * 1st test
-  * [index.html](docs/lighthouse/desktop-lighthouse1.png)
-
-All scores were over 90% apart from Best Practices. This was then tweaked to improve the scores by amending how the website ran.
+  * [home.html]()
+  * [Food List]()
+  * [Shopping List]()
+  * [Wasted Food List]()
+  * [Add Food Item]()
+  * [Add Shopping Item]()
+  * [Edit Food Item]()
+  * [Edit Shopping Item]()
+  * [Profile Page]()
+  * [Registeration Page]()
 
 * 2nd test
-  * [index.html](docs/lighthouse/lighthouse-desktop2.png) - All scores were over 90% at the time of the 2nd test.
-
-* [Warning Message](docs/lighthouse/console-warning-lighthouse.png) - This message appeared in the console when running the lighthouse tests. These javascript errors were not from the user code but appeared to come from the navigation via bootstrap.
+  * [home.html]()
+  * [Food List]()
+  * [Shopping List]()
+  * [Wasted Food List]()
+  * [Add Food Item]()
+  * [Add Shopping Item]()
+  * [Edit Food Item]()
+  * [Edit Shopping Item]()
+  * [Profile Page]()
+  * [Registeration Page]()
 
 [Back to content](#table-of-contents)
 
 ## Chrome DevTools
 The following warning messages were displayed in the console when loading some of the javascript pages: -
 
-* [Projects Page Console Messages](docs/console-message-projects.png) - 2 warnings realted to non-passive listeners.
-* [Contact Us Page Console Messages](docs/console-message-contactUs.png) - 23 warnings related to non-passive listeners.
+* []() - 2 warnings realted to non-passive listeners.
+* []() - 23 warnings related to non-passive listeners.
 
 ## Manual Testing  
 
 The layout of the website is as follows: -
-[layout](docs/ms2-website-layout.pdf)
+[layout](docs/readme-images/planned-layout.pdf)
 
 The most common path through the website is: -
-* Home > Services > Projects > Contact Us
-  * On completion of the form in Contact Us a message should appear to the user to show them an email was sent successfully
-  * On entering the wrong address in the web browser > 404.html
+* Home/Log In > Food List > Shopping List > Wasted Food List > Profile
+  * 
+  * 
 
 ### All Pages
 **Each page contains a navigation bar at the top of the page.**
