@@ -57,7 +57,8 @@
             </li>
             {% if session.user %}
             <li>
-                <a href="{{ url_for('groceries', username=session['user']) }}" class="green-text text-darken-3">Food List</a>
+                <a href="{{ url_for('groceries', username=session['user']) }}" class="green-text text-darken-3">Food
+                    List</a>
             </li>
             {% if 'user' in session %}
             <li>
@@ -68,7 +69,8 @@
             </li>
             {% endif %}
             <li>
-                <a href="{{ url_for('profile', username=session['user']) }}" class="green-text text-darken-3">Profile</a>
+                <a href="{{ url_for('profile', username=session['user']) }}"
+                    class="green-text text-darken-3">Profile</a>
             </li>
             {% endif %}
         </ul>
@@ -103,7 +105,8 @@
                     <a class="left white-text text-shadow"
                         href="https://www.linkedin.com/in/michael-greenberry-637299108/" target="_blank"
                         rel="noopener">Michael Greenberry</a>
-                    <a class="right white-text text-shadow" href="mailto:support@wastenot.com?" subject="HTML link">Contact Us via email</a>
+                    <a class="right white-text text-shadow" href="mailto:support@wastenot.com?"
+                        subject="HTML link">Contact Us via email</a>
                 </div>
             </div>
         </div>

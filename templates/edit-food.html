@@ -1,76 +1,78 @@
 {% extends "base.html" %}
 {% block content %}
-
-<div class="green text-border">
-    <h3 class="white-text text-shadow text-darken-4 center-align">Edit food item</h3>
+<div class="container-fluid">
+    <div class="page-height">
+        <div class="green text-border">
+            <h3 class="white-text text-shadow text-darken-4 center-align">Edit food item</h3>
+        </div>
+        <div class="row card-panel grey lighten-5 uppercase">
+            <form class="col s12" method="POST" action="{{ url_for('edit_food', food_name=food._id) }}">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-pencil-alt prefix light-green-text text-darken-4"></i>
+                        <input id="food_name" name="food_name" minlength="3" maxlength="50" value="{{ food.food_name }}"
+                            type="text" class="validate uppercase" required>
+                        <label for="food_name">Food Name:</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-pencil-alt prefix light-green-text text-darken-4"></i>
+                        <input id="quantity" name="quantity" type="number" value="{{ food.quantity }}" class="validate"
+                            required>
+                        <label for="quantity">Quantity:</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-pencil-alt prefix light-blue-text text-darken-4"></i>
+                        <input id="price" name="location" minlength="2" maxlength="10" value="{{ food.price }}"
+                            type="text" class="validate uppercase" required>
+                        <label for="price">Price: £</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-pencil-alt prefix light-green-text text-darken-4"></i>
+                        <input id="barcode" name="barcode" minlength="3" maxlength="50" value="{{ food.barcode }}"
+                            type="text" class="validate uppercase">
+                        <label for="barcode"> Barcode or ID: </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-calendar-alt prefix light-green-text text-darken-4"></i>
+                        <input id="purchase_date" name="purchase_date" type="text" value="{{ food.purchase_date }}"
+                            class="datepicker" required>
+                        <label for="purchase_date">Purchase Date: </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="fas fa-calendar-alt prefix light-green-text text-darken-4"></i>
+                        <input id="use_by_date" name="use_by_date" type="text" value="{{ food.use_by_date }}"
+                            class="datepicker" required>
+                        <label for="use_by_date">Use by Date: </label>
+                    </div>
+                </div>
+                <!-- Submit -->
+                <div class="row">
+                    <div class="col s12 center-align">
+                        <!-- cancel button -->
+                        <div class="divider">
+                            <a href="{{ url_for('groceries') }}" class="btn red text-shadow">
+                                Cancel <i class="fas fa-times-circle right"></i>
+                            </a>
+                        </div>
+                        <div class="divider">
+                            <button type="submit" class="btn light-blue darken-1 text-shadow">
+                                Edit Food Item <i class="fas fa-edit right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
-<div class="row card-panel grey lighten-5 uppercase">
-    <form class="col s12" method="POST" action="{{ url_for('edit_food', food_name=food._id) }}">
-        <div class="row">
-            <div class="input-field col s12">
-                <i class="fas fa-pencil-alt prefix light-green-text text-darken-4"></i>
-                <input id="food_name" name="food_name" minlength="3" maxlength="50" value="{{ food.food_name }}"
-                    type="text" class="validate uppercase" required>
-                <label for="food_name">Food Name:</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <i class="fas fa-pencil-alt prefix light-green-text text-darken-4"></i>
-                <input id="quantity" name="quantity" type="number"
-                    value="{{ food.quantity }}" class="validate" required>
-                <label for="quantity">Quantity:</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <i class="fas fa-pencil-alt prefix light-blue-text text-darken-4"></i>
-                <input id="price" name="location" minlength="2" maxlength="10" value="{{ food.price }}"
-                    type="text" class="validate uppercase" required>
-                <label for="price">Price: £</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <i class="fas fa-pencil-alt prefix light-green-text text-darken-4"></i>
-                <input id="barcode" name="barcode" minlength="3" maxlength="50" value="{{ food.barcode }}" type="text"
-                    class="validate uppercase">
-                <label for="barcode"> Barcode or ID: </label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <i class="fas fa-calendar-alt prefix light-green-text text-darken-4"></i>
-                <input id="purchase_date" name="purchase_date" type="text" value="{{ food.purchase_date }}"
-                    class="datepicker" required>
-                <label for="purchase_date">Purchase Date: </label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <i class="fas fa-calendar-alt prefix light-green-text text-darken-4"></i>
-                <input id="use_by_date" name="use_by_date" type="text" value="{{ food.use_by_date }}" class="datepicker"
-                    required>
-                <label for="use_by_date">Use by Date: </label>
-            </div>
-        </div>
-        <!-- Submit -->
-        <div class="row">
-            <div class="col s12 center-align">
-                <!-- cancel button -->
-                <div class="divider">
-                    <a href="{{ url_for('groceries') }}" class="btn red text-shadow">
-                        Cancel <i class="fas fa-times-circle right"></i>
-                    </a>
-                </div>
-                <div class="divider">
-                    <button type="submit" class="btn light-blue darken-1 text-shadow">
-                    Edit Food Item <i class="fas fa-edit right"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </form>
 </div>
-
 {% endblock %}
