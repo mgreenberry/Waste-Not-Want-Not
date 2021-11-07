@@ -91,11 +91,10 @@ As a user visiting the site for the first time:
 12. I would like to be able to see a list of food that has been wasted
 13. I would like to be able to delete food items from the wasted food list
 14. I want to able to learn and easily understand what the website is about
-15. I want to easily understand about how the app works
-16. I want to easily understand what each section of the app does
-17. I want to click on navigation links to be taken to the correct page/section and to be able to return to the home page or another page without using the brower forward/backward buttons
-18. I want these navigation links to include user friendly menus which are easy to uderstand and use
-19. I want the content to be easy to read and have a predictable layout so that each page can be navigated easily
+15. I want to easily understand what each section of the app does
+16. I want to click on navigation links to be taken to the correct page/section and to be able to return to the home page or another page without using the brower forward/backward buttons
+17. I want these navigation links to include user friendly menus which are easy to uderstand and use
+18. I want the content to be easy to read and have a predictable layout so that each page can be navigated easily
 
 [Back to content](#table-of-contents)
 
@@ -114,11 +113,10 @@ The site owner has done the following:-
 12. Created a page which displays a page that shows a list of food that has been wasted
 13. Created a button that allows the user to delete food items from the wasted food list
 14. Design a home page with an 'about' section
-15. Include instructions on the home page
-16. Design navigation tabs which clearly display each section link
-17. Design and impliment a navigation bar which contains links to different pages and sections in the website 
-18. Design and label the navigation bar with clear and understandable text to direct users to the correct page  
-19. Design the website to have good readability throughout
+15. Design navigation tabs which clearly display each section link
+16. Design and impliment a navigation bar which contains links to different pages and sections in the website 
+17. Design and label the navigation bar with clear and understandable text to direct users to the correct page  
+18. Design the website to have good readability throughout
 
 TO BE IMPLEMENTED!
 As a new user or user returning to the site:

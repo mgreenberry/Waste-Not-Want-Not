@@ -7,12 +7,9 @@
 2. [Lighthouse Testing](#lighthouse-testing)
    * [Mobile Phone](#mobile-phone)
    * [Desktop](#desktop)
-3. [Chrome DevTools](#chrome-devtools)
 3. [Manual Testing](#manual-testing)
    * [All Pages](#all-pages)
-   * [projects](#projects)
-   * [contact-us](#contact-us)
-      * [form in contact us](#form)
+   * [Forms](#forms)
 4. [User Story Testing](#user-story-testing)
 5. [Bugs](#bugs)
 
@@ -85,188 +82,252 @@ All unused variables appeared to be called when required and code was seen to be
 
 [Back to content](#table-of-contents)
 
-
-TO CONTINUE!!!!!
-
-
-
 ## Lighthouse Testing
 ### Mobile phone
 * 1st test
-  * [home.html]()
-  * [Food List]()
-  * [Shopping List]()
-  * [Wasted Food List]()
-  * [Add Food Item]()
-  * [Add Shopping Item]()
-  * [Edit Food Item]()
-  * [Edit Shopping Item]()
-  * [Profile Page]()
-  * [Registeration Page]()
+  * [home.html](docs/testing-images/lighthouse-testing/home.png) - I adjusted the contrast on the footer, and reduced image size
+  * [Log In](docs/testing-images/lighthouse-testing/login-1.png)
+  * [Food List](docs/testing-images/lighthouse-testing/groceries-1.png)
+  * [Shopping List](docs/testing-images/lighthouse-testing/shopping-1.png)
+  * [Wasted Food List](docs/testing-images/lighthouse-testing/waste-1.png)
+  * [Add Food Item](docs/testing-images/lighthouse-testing/add-food-1.png)
+  * [Add Shopping Item](docs/testing-images/lighthouse-testing/add-shopping-1.png)
+  * [Edit Food Item](docs/testing-images/lighthouse-testing/edit-food-1.png)
+  * [Edit Shopping Item](docs/testing-images/lighthouse-testing/edit-shopping-1.png)
+  * [Profile Page](docs/testing-images/lighthouse-testing/profile-1.png)
+  * [Registeration Page](docs/testing-images/lighthouse-testing/registeration-1.png)
 
 I also noticed that running more than one lighthouse test on this page delivered a different set of results.
 
 * 2nd test
-  * [home.html]()
-  * [Food List]()
-  * [Shopping List]()
-  * [Wasted Food List]()
-  * [Add Food Item]()
-  * [Add Shopping Item]()
-  * [Edit Food Item]()
-  * [Edit Shopping Item]()
-  * [Profile Page]()
-  * [Registeration Page]()
+  * [home.html](docs/testing-images/lighthouse-testing/home-2.png)
+
+All other pages had scored well into the 90's with lighthouse testing
  
 ### Desktop
 * 1st test
-  * [home.html]()
-  * [Food List]()
-  * [Shopping List]()
-  * [Wasted Food List]()
-  * [Add Food Item]()
-  * [Add Shopping Item]()
-  * [Edit Food Item]()
-  * [Edit Shopping Item]()
-  * [Profile Page]()
-  * [Registeration Page]()
+  * [home.html](docs/testing-images/lighthouse-testing/home-1.png)
+  * [Log In](docs/testing-images/lighthouse-testing/log-in-1.png)
+  * [Food List](docs/testing-images/lighthouse-testing/groceries.png)
+  * [Shopping List](docs/testing-images/lighthouse-testing/shopping-list.png)
+  * [Wasted Food List](docs/testing-images/lighthouse-testing/waste.png)
+  * [Add Food Item](docs/testing-images/lighthouse-testing/add-food.png)
+  * [Add Shopping Item](docs/testing-images/lighthouse-testing/add-shopping.png)
+  * [Edit Food Item](docs/testing-images/lighthouse-testing/edit-food.png)
+  * [Edit Shopping Item](docs/testing-images/lighthouse-testing/edit-shopping.png)
+  * [Profile Page](docs/testing-images/lighthouse-testing/profile-desktop.png)
+  * [Registeration Page](docs/testing-images/lighthouse-testing/register.png)
+
+All the above test scores show a low score for SEO highlighting a missing meta tag. However the website does have a meta tag within the base.html
 
 * 2nd test
-  * [home.html]()
-  * [Food List]()
-  * [Shopping List]()
-  * [Wasted Food List]()
-  * [Add Food Item]()
-  * [Add Shopping Item]()
-  * [Edit Food Item]()
-  * [Edit Shopping Item]()
-  * [Profile Page]()
-  * [Registeration Page]()
+A second test wasn't undertaken due to time restraints but more work would be done on the colour contrast to fix most issues that appear.
 
 [Back to content](#table-of-contents)
-
-## Chrome DevTools
-The following warning messages were displayed in the console when loading some of the javascript pages: -
-
-* []() - 2 warnings realted to non-passive listeners.
-* []() - 23 warnings related to non-passive listeners.
 
 ## Manual Testing  
 
 The layout of the website is as follows: -
 [layout](docs/readme-images/planned-layout.pdf)
 
-The most common path through the website is: -
-* Home/Log In > Food List > Shopping List > Wasted Food List > Profile
-  * 
-  * 
+A new user must register for an account > Profile page
+
+An existing user must log in: - 
+  > Food List > Add/Edit Food Item > Move Food Item to Shopping List/Wasted Food List > Delete Food Item
+
+  > Shopping List > Add/Edit Shopping List Item > Delete Food Item
+
+  > Wasted Food List > Delete Food Item
+
+  > Profile Page > Log Out > Home Page
 
 ### All Pages
+
 **Each page contains a navigation bar at the top of the page.**
 * Expectation: -  
   * A user can go directly to any part of the website by clicking the relevant page link within the navigation bar. 
   * On a mobile device, this will mean clicking the 'hamburger' icon, which will then display all the pages for a user to choose from.
-* Test: - Each page link was clicked to go to the chosen page, i.e. services clicked should take user to services information.
+* Test: - Each page link was clicked to go to the chosen page, i.e. shopping list clicked should take user to their shopping list.
 * Result: - Each page link took me to the page I had clicked on. No link was broken and each page was reachable as intended.
 * Verdict: - Working as intended
 
-**Each page contained an image and 'Smart Associates' text within the navigation bar in the header**
-* Expectation: - The  'Smart Associates' text should take a user back to the home (index.html) page
+**Each page contained an image and 'Waste Not Want Not' text within the navigation bar in the header**
+* Expectation: - The  'Waste Not Want Not' text should take a user back to the home (home.html) page
 * Test: - I clicked the text on every page
-* Result: -  I then directed me back to the home (index.html) page, i.e - clicking the 'Smart Associates' text on projects (projects.js) directed me back to the Home (index.html) page
+* Result: -  I then directed me back to the home (home.html) page, i.e - clicking the 'Waste Not Want Not' text on the shopping list page  (shopping-list.html) directed me back to the Home (home.html) page
 * Verdict: - Working as intended
 
 **Each page also contains the following links within the navigaiton bar**
-1. Services
-   * Expectation: - A user clicks the 'Services' link and is directed to the 'Services' content
-   * Test: - Click the link and be directed to the 'Services' content
+1. Food List
+   * Expectation: - A user clicks the 'Food List' link and is directed to the 'Food List' content
+   * Test: - Click the link and be directed to the 'Food List' content
    * Result: - I clicked this button on every page and was directed to the correct content
    * Verdict: - Working as intended
 
-2. Projects
-   * Expectation: - A user clicks the 'Projects' link and is directed to the 'Projects' content
-   * Test: - Click the link and be directed to the 'Projects' content
+    1. Add Food Item
+       * Expectation: - A user clicks the "Add Food Item" button and is directed to the "Add Food" html page to add food item
+       * Test: - Clicked the button and was directed to the correct content
+       * Result: - Added food item which then appeared on the Food List
+       * Verdict: - Working as intended
+
+     2. Edit Food Item
+        * Expectation: - A user clicks the "Edit Food Item" button and is directed to the "Edit Food" html page to edit existing food item
+        * Test: - Clicked the button and was directed to the correct content
+        * Result: - Edited a food item which then appeared on the Food List
+        * Verdict: - Working as intended
+
+     3. 'Eaten' - for when user uses an item on their food list
+        
+        * Expectation: - A user clicks the "Eaten" button and the food item is added to their shopping list after confirmation modal is shown
+        * Test: - Clicked the button and was directed to the correct content
+        * Result: - Added the button and the food item then appeared on the user's shopping list (directed user to shopping.html)
+        * Verdict: - Working as intended
+    
+     4. 'Thrown Away' - for when a user has to throw food away
+        
+        * Expectation: - A user clicks the "Throw Away" button and is directed to the "Wasted Food List" html page which displays food wasted
+        * Test: - Clicked the button and was directed to the correct content
+        * Result: - Wasted food item on wasted food list
+        * Verdict: - Working as intended
+
+     5. Delete Food Item
+
+        * Expectation: - A user clicks the "Delete" button the food item is deleted after a warning message is shown
+        * Test: - Clicked the button and food item deleted
+        * Result: - Deleted food item
+        * Verdict: - Working as intended
+
+[Back to content](#table-of-contents)
+
+2. Shopping List
+   * Expectation: - A user clicks the 'Shopping List' link and is directed to the 'Shopping List' content
+   * Test: - Click the link and be directed to the 'Shopping List' content
    * Result: - I clicked this button on every page and was directed to the correct content
    * Verdict: - Working as intended
 
-3. Contact Us
-   * Expectation: - A user clicks the 'contact us' link and is directed to the 'Contact Us' content
-   * Test: - Click the link and be directed to the 'Contact Us' content
+     1. Add Shopping Item
+        * Expectation: - A user clicks the "Add Shopping Item" button and is directed to the "Add Shopping" html page to add shopping item
+        * Test: - Clicked the button and was directed to the correct content
+        * Result: - Added shopping item which then appeared on the Shopping List
+        * Verdict: - Working as intended
+
+     2. Edit Shopping Item
+        * Expectation: - A user clicks the "Edit Shopping Item" button and is directed to the "Edit Shopping" html page to edit existing shopping item
+        * Test: - Clicked the button and was directed to the correct content
+        * Result: - Edited a shopping item which then appeared on the Shopping List
+        * Verdict: - Working as intended
+
+     3. Delete Food Item
+        * Expectation: - A user clicks the "Delete" button the shopping item is deleted after a warning message is shown
+        * Test: - Clicked the button and shopping item deleted
+        * Result: - Deleted shopping item
+        * Verdict: - Working as intended
+
+3. Wasted Food List
+   * Expectation: - A user clicks the 'Wasted Food List' link and is directed to the 'Wasted Food List' content
+   * Test: - Click the link and be directed to the 'Wasted Food List' content
+   * Result: - I clicked this button on every page and was directed to the correct content
+   * Verdict: - Working as intended
+
+        1. Delete Wasted Food Item
+        * Expectation: - A user clicks the "Delete" button the wasted item is deleted
+        * Test: - Clicked the button and waste item deleted
+        * Result: - Deleted waste food item
+        * Verdict: - Working as intended
+
+4. Profile Page
+   * Expectation: - A user clicks the 'Profile Page' link and is directed to the 'Profile' content
+   * Test: - Click the link and be directed to the 'Profile' content
    * Result: - I clicked this button on every page and was directed to the correct content
    * Verdict: - Working as intended
 
 [Back to content](#table-of-contents)
 
-### projects
+#### forms
 
-This has six 'call-out' buttons: -
+There are multiple forms within the website: -
 
-1. All of the six 'call-out buttons perform the same function. They close/hide the carousel/slideshow and refresh the called javascript.
-   * Expectation: - A user clicks the 'close' button and the extra information (slideshow/carousel and extra paragraph is hidden).
-   * Test: - Clicked this button
-   * Result: - Closed the extra content and refreshed the page.
+1. Register containing username and password
+2. Log In containing username and password
+3. Add Food Item allowing the user to enter food into their current stock list
+4. Edit Food Item allowing the user to edit the food item if error made
+5. Add Shopping Food Item allowing the user to add an item to their shopping list
+6. Edit Shopping Food Item allowing the user to edit the item in their shopping list if error made 
+
+**Registration Form**
+1. User Name (required) - Text entered - michael
+2. Password (required) - Text entered - michael01
+   * Expectation: - Entering text in the right format in all fields and then pressing 'Submit' button allows the form to be submitted
+   * Test: - Created an account using the username - michael and password michael01
+   * Result: - I was directed to the 'profile' page once registered
+   * Result: - A message was displayed on the profile page
    * Verdict: - Working as intended
 
-It was my intention to use Event Listenerers for each project that would then load the carousel/slideshow and extra information. Sadly, the projects html content is also using an Event Listener so the extra javascript didn't seem to want to work as an additional listener. To solve this I added an 'onclick="myFunc();"' to each image and to the end of the slideshow/carousel information. 
-
-[Back to content](#table-of-contents)
-
-### contact us
-There are two 'call-out' buttons: -
-1. The first **reset** button resets the form and deletes any input from the user in the form above
-   * Expectation: - A user fills in the form, makes an error and clicks the 'call-out' **Reset** button and deletes any input from the user in the form above
-   * Test: - I entered some dummy information and clicked the **Reset** button
-   * Result: - The information was cleared
-   * Verdict: - Working as intended
-2. The second **submit** button 'sends' the information in the form and sends an email to the company. There should also be a **success.message**
-   * Expectation: - A user fills in the form correctly and clicks the 'call-out' **Submit** button and an email is sent to the company email account. The user then receives a success message within the HTML under the form.
-   * Test: - I filled out all form sections correctly and clicked this button
-   * Result: -  I was able to send an email and received a success message
-   * Verdict: - Working as intended.
-
-[Back to content](#table-of-contents)
-#### form
-This form contained 4 fields to be filled in by the user. All fields were set to **'required'**
-
-**First Test - Correct Information added to all fields**
-1. Full Name - Text entered
-2. Email Address - Text entered with an "@" email dummy address
-3. Confirm Email Address - Text entered with an "@" email dummy address
-4. Message - Text entered
-   * Expectation 1: - Entering text in the right format in all fields and then pressing 'Submit' button allows the form to be submitted
-   * Expectation 2: - Entering the correct email address in both email address and confirm email address fields.
-   * Test: - Filled in form using my name, email address and dummy message
-   * Result: - I accessed the google account and saw messages I had typed.
-   * Result: - A message 'Thank you for confirming your email address' appears in the form
+**Registration Form - Incorrect/Duplicate Entry**
+1. User name (required) - Entered the same username - michael
+2. Password (required) - Entered the same password - michael01
+   * Expectation: - Error message displayed informing user that username and/or password has already been taken
+   * Test: - Filled in the same username and password as the previous registration
+   * Result: - A warning message displayed informing me that username and/or password was already taken
    * Verdict: - Working as intended
 
-**Second Test - Incorrect/Information missing**
-1. Full Name - Text 'NOT' entered
-2. Email Address - Text entered with an "@" email dummy address
-3. Confirm Email Address - Text entered with an "@" email dummy address
-4. Message - Text entered
-   * Expectation: - Missing text in the right format in the 'First Name' field and then pressing the **Submit** button brings up an error message and won't submit the form.
-   * Test: - Filled in form without filling in the 'First Name' field and using my last name only, email address and dummy message
-   * Result: - A warning message displayed asking me to fill in the 'First Name' field
+**Log In Form**
+1. User Name - Text entered - michael
+2. Password - Text entered - michael01
+   * Expectation: - Directed to my current Food/Stock List
+   * Test: - Filled in form using my previously registered username and password
+   * Result: - A welcome message appears on my Food/Stock List
    * Verdict: - Working as intended
 
-**This test was repeated for 'Last Name', 'Email Address' 'Repeat Email Address' and 'Message' with the same warning/error message. The form would not allow me to submit with missing fields.**
-
-**Third Test - Incorrect Email entered in 'Confirm Email Address' field**
-1. Full Name - Text entered
-2. Email Address - Text entered with an "@" email dummy address
-3. Confirm Email Address - Incorrect Text entered with an "@" email dummy address
-4. Message - Text entered
-   * Expectation 1: - Entered the correct email address in the first 'email address' box and an incorrect eamil address in the 'confirm email address' field.
-   * Test: - Filled in form using my name, email address and dummy message
-   * Result: - A message 'Sorry the email addresses don't match. Please enter the same email address and confirm the email address' appears in the form
+**Log In Form - Incorrect Entry** 
+1. User Name - Text entered - mickey
+2. Password - Text entered - michael01
+   * Expectation: - Error message telling user that the username and/or password is incorrect. A second messge displayed asking user to register
+   * Test: - Logged in with incorrect username
+   * Result: - An error message displayed telling user that name and/or password incorrect and asking user to register
    * Verdict: - Working as intended
 
-**Email Address - '@' symbol must be used** 
-* Expectation: - Incorrectly entering an email address without the '@' symbol displays an error
-* Test: - Entered a dummy email address without the '@' part of the address
-* Result: - An error/warning message was displayed asking me to type an email address with a '@' symbol
-* Verdice: - Working as intended. The form would not allow me to submit with a missing '@' symbol
+**Add Food Item**
+1. Food Name (required) - Milk entered (not entering data doens't allow submission of form)
+2. Quantity (required) - 1 entered (not entering data doens't allow submission of form)
+3. Price (required) - 0.99 entered (not entering data doens't allow submission of form)
+4. Barcode/ID No. - 12345 entered as test
+5. Purchase Date - 07/11/21 entered (current date)
+6. Use by Date (required) - 10/11/21 entered (not entering data doens't allow submission of form)
+   * Expectation: - Submitting form adds a food item to current stock/food list
+   * Test: - Submitted the above information into the form
+   * Result: - Food Item displayed on the Food/Stock List (groceries.html)
+   * Verdict: - Working as intended
+
+**Edit Food Item**
+1. Food Name (required) - Milk entered
+2. Quantity (required) - 5 entered (changed the quantity)
+3. Price (required) - 0.99 entered
+4. Barcode/ID No. - 12345 entered as test
+5. Purchase Date - 07/11/21 entered (current date)
+6. Use by Date (required) - 10/11/21 entered
+   * Expectation: - Submitting form edits the food item selected in the current stock/food list
+   * Test: - Submitted the above information into the form
+   * Result: - Food Item displayed on the Food/Stock List (groceries.html) with changes made
+   * Verdict: - Working as intended
+
+**Add Shopping Food Item**
+1. Food Name (required) - Bread entered (not entering data doens't allow submission of form)
+2. Quantity (required) - 2 entered (not entering data doens't allow submission of form)
+3. Price (required) - 1.09 entered (not entering data doens't allow submission of form)
+   * Expectation: - Submitting form adds a Shopping item to current Shopping List
+   * Test: - Submitted the above information into the form
+   * Result: - Shopping Item displayed on the Shopping List (shopping-list.html)
+   * Verdict: - Working as intended
+
+**Edit Shopping Food Item**
+1. Food Name (required) - Eggs entered - Changed from Bread entered earlier
+2. Quantity (required) - 2 entered (not entering data doens't allow submission of form)
+3. Price (required) - 1.09 entered (not entering data doens't allow submission of form)
+   * Expectation: - Submitting form edits a Shopping item in the current Shopping List
+   * Test: - Submitted the above information into the form
+   * Result: - Shopping Item displayed on the Shopping List (shopping-list.html) with amendments made
+   * Verdict: - Working as intended
 
 [Back to content](#table-of-contents)
 
@@ -274,163 +335,309 @@ This form contained 4 fields to be filled in by the user. All fields were set to
 
 The following are the User Stories from the README.md page and the resulting Test and Result
 
+### User Stories
+
 * As a user visiting the site for the first time:
-  1. I want to be able to use the website on any device I own or use
-     * Test: - I tested the website on a Samsung Note 8, an iPad Pro and a MacBook Pro 2021 model
-     * Result: - The website worked on all devices
+  1. I would like to be able to register for the website so I can have my personal grocery list
+     * Test: - I registered for an account using username - michael, and password - michael01
+     * Result: - I was directed to the profile page on the site
      * Verdict: - Success
-  2. I want to able to learn and easily understand what the website is about
+  2. I would like to easily log in once an account has been created and see my personal grocery list
+     * Test: - I logged into the site from the home page with username - michael, and password - michael01
+     * Result: - I was directed to the Food List page (current stock list)
+     * Verdict: - Success
+  3. I would like to see my existing food stock displayed in an easy to understand format
+     * Test: - I added a list of food items to my stock list
+     * Result: - The food items were displayed in 'use by date' order
+     * Verdict: - Success
+  4. I would like to be able to add new items to this stock list
+     * Test: - I added a list of food items to my stock list
+     * Result: - The food items was added to my existing stock/food list in use-by-date order
+     * Verdict: - Success
+  5. I would like to be able to edit any items added to add/amend information created in error
+     * Test: - I clicked the 'edit' button and editing an existing food item
+     * Result: - The food items was sucessefully changed with the new information
+     * Verdict: - Success
+  6. I would like to be able to delete food items no longer needed
+     * Test: - I clicked the 'delete' button and a warning message was displayed to confirm deletion
+     * Result: - The food items was sucessefully deleted from the food/stock list
+     * Verdict: - Success
+  7. I would like to be able to add an item that has been eaten to my shopping list if desired. If not the item is deleted
+     * Test: - I clicked the 'eaten' button and a message was displayed to confirm adding item to shopping list
+     * Result: - The food item was sucessefully added to the shopping list
+     * Verdict: - Success
+  8. I would like to be able to see what food I have wasted
+     * Test: - I clicked the 'thrown away' button on a food item
+     * Result: - The food item was sucessefully added to the wasted food list
+     * Verdict: - Success
+  9. I would like to be able to see a shopping list of items I need to buy again that have been eaten
+     * Test: - Click the 'shopping list' text in the navigation bar/hamburger menu
+     * Result: - The shopping list displayed items I had in my shopping list in alphabetical order
+     * Verdict: - Success
+  10. I would like to be able to add items to this shopping list that were not on the original grocery/food list
+     * Test: - I added a food item to my shopping list
+     * Result: - The food items was added to my existing shopping list in alphabetical order
+     * Verdict: - Success
+  11. I would like to be able to edit/delete items from the shopping list once ordered or no longer needed
+     * Test: - I clicked the 'edit' button and editing an existing shopping item. I clicked the 'delete' button and the item was deleted after a warning message was displayed
+     * Result: - The shopping item was sucessefully changed with the new information or deleted as required
+     * Verdict: - Success
+  12. I would like to be able to see a list of food that has been wasted
+     * Test: - Click the 'wasted food list' text in the navigation bar/hamburger menu
+     * Result: - The wasted food list displayed items I had thrown away from my stock/food list in alphabetical order
+     * Verdict: - Success
+  13. I would like to be able to delete food items from the wasted food list
+     * Test: - I clicked the 'delete' button
+     * Result: - The wasted food item was sucessefully deleted from the wasted food list
+     * Verdict: - Success
+  14. I want to able to learn and easily understand what the website is about
+     * Test: - I clicked the 'waste not want not' text. I also clicked the instructions menu within the profile page
+     * Result: - Once logged in the home page displays an 'about' section. There is also more informaition in the profile page
+     * Verdict: - Success
+  15. I want to easily understand what each section of the app does
      * Test: - To make sure that all headers, paragraphs and other content was clear and readable
-     * Result: - I created the website using Bootstrap v.4 and the "row" and "col" tags to make the site responsive to all devices, but especially mobile
+     * Result: - I created the website using Materalize and the "row" and "col" tags to make the site responsive to all devices, but especially mobile
      * Verdict: - Success
-  3. I want to easily understand what the company is
-     * Test: - The **Home Page or About Us Page** describes the company with a strapline and interactive rotating gallery of images.
-     * Result: - Clicking the 'Smart Associates' text within the navigation bar directed to the 'Home Page (index.html) page.
-     * Verdict: - Success
-  4. I want an attractive 'services' page explaining the types of services the company offers
-     * Test: - Every page should have a hero image and page header title text and subheading
-     * Result: - A hero image and text appeared on every page
-     * Verdict: - Success
-  5. I want to click on navigation links to be taken to the correct page/section and to be able to return to the home page or another page without using the brower forward/backward buttons
-     * Test: - Each link was tested for each page, i.e. the 'services' text directs me to the 'services' section
+  16. I want to click on navigation links to be taken to the correct page/section and to be able to return to the home page or another page without using the brower forward/backward buttons
+     * Test: - Each link was tested for each page, i.e. the 'shopping list' text directs me to the 'shopping list' section
      * Result: - Each link directed to the correct page
      * Verdict: - Success
-  6. I want these navigation links to include user friendly menus which are easy to uderstand and use
-     * Test: - I tested the navigation links on a Samsung Note 8, an iPad Pro and a MacBook Pro 2021 model
+  17. I want these navigation links to include user friendly menus which are easy to uderstand and use
+     * Test: - I tested the navigation links on a Samsung Fold 3, an iPad Pro and a MacBook Pro 2021 model
      * Result: - The navigation links worked on all devices
      * Verdict: - Success
-  7. I want the content to be easy to read and have a predictable layout so that each page can be navigated easily
-     * Test: - I tested the website on a Samsung Note 8, an iPad Pro and a MacBook Pro 2021 model
+  18. I want the content to be easy to read and have a predictable layout so that each page can be navigated easily
+     * Test: - I tested the website on a Samsung Fold 3, an iPad Pro and a MacBook Pro 2021 model
      * Result: - The website worked on all devices and was responsive so that all content was easily readable
      * Verdict: - Success
-  8. I want to see some of the projects that the company have been involved with
-     * Test: - Clicked the 'projects' link, was taken to the 'projects' content. I clicked on each image to display extra information, a carousel and a closing button
-     * Result: - Each project picture displayed a carousel of extra images and information with a 'close' button to close the function.
-     * Verdict: - Success
-  9. I want to access contact information, such as address, phone numbers and location
-     * Test: - Clicked on the 'Contact Us' wording/link and was directed to the correct content. Address, Phone Number and Map were under the form
-     * Result: - Page displayed contact information
-     * Verdict: - Success
-  10. I want to send an email to the company using th form provided.
-      * Test: - The 'Contact Us' links in the top Navigation and Footer bars directed to the 'Contact Us' content. I entered information into the form
-      * Result: - The information in the form was then available to see in the email
-      * Verdict: - Success
 
 * For the above, when designing the website I did the following to resolve the User Story desires:-
-  1. Designed a responisive website focussed for mobile devices and responsive to larger screens.
-  2. Designed a home page (index.html) with a interactive changing picture and static text and strapline
-  3. Designed 2 distinct sections which highlight the services provided by the company
-  4. Designed 1 section on the home page about the company Smart Associates as an 'about us'
-  5. Designed and implimented a navigation bar which contains links to different pages and sections in the website 
-  6. Designed and labelled the navigation bar with clear and understandable text to direct users to the correct page  
-  7. Designed the website to have good readability throughout
-  8. Designed a projects page that shows a sample of projects the company have been involved in with extra information 
-  9. Designed a contact us page with contact details
-  10. Designed a contact form which can be submitted (or cleared if errors made) which will then send an email to the company
-
-* As a user returning to the site:
-  1. I want to be able to see additional projects when returning to the website
-  2. I want to be able to easily find content I am interested in
-
-* I will do this by:
-  1. Design extra content that will display when more project infromation is available from the directors
-  2. Design an easy to use and friendly navigation bar and clickable buttons on each page
+1. Created a registration section which directs new users to their profile which contains instructions, contact details and log out
+2. Created a 'Log In' section on the very first page of the website so existing users do not have to find log in page
+3. Created an existing food list in 'use by date' order allowing user to quickly see which items need using first
+4. Created a page and a button which allows the user to add extra items to their existing food/grocery stock list
+5. Created a page and a button which allows the user to be able to edit any items added to add/amend information created in error
+6. Created a button which would allow the user to be able to delete food items no longer needed
+7. Created a button which allows the user to add an item that has been eaten to my shopping list if desired
+8. Created a html page which displays a page that shows the user the food items wasted
+9. Created a html page which displays a page that shows the user a shopping list of items that the user may need to buy again
+10. Created a page and a button which allows the user to add items to this shopping list that were not on the original grocery/food list
+11. Created a button which will delete items from the shopping list once ordered or no longer needed
+12. Created a page which displays a page that shows a list of food that has been wasted
+13. Created a button that allows the user to delete food items from the wasted food list
+14. Designed a home page with an 'about' section
+15. Designed navigation tabs which clearly display each section link
+16. Designed and impliment a navigation bar which contains links to different pages and sections in the website 
+17. Designed and label the navigation bar with clear and understandable text to direct users to the correct page  
+18. Designed the website to have good readability throughout
 
 [Back to content](#table-of-contents)
 
 ## Bugs
 
-JavaScript presented many challenges for me in understanding. I have really struggled to understand how it works. This was especially true of JSQuery. So I am sure that the majority of 'bugs' and code could have been simplified. On top of this I am quite often calling a function on top of a function, one after another. I have tried to write about as many of the issues as I can. Please see a list below:-
+* add-food.html
+Some bugs with food not being added or page not displaying on mobile devices very well
 
-* index.html
-  1. Navigation Bar. I created a navigation which I designed to load javascript content rather than html. I did this by using the following code: -
+Edited page with additional css/html to render page on mobile device.
 
-  E.G - document.getElementById("contact-us").addEventListener("click", contactUs);
+* add-shopping.html
+There was a bug with the url_for function for adding food items as this wasn't allowing me to link up the username at first. Most of this is shown below in the app.py section
+* base.html
+Creating the jinga templates and app.py for base.html was amended from the task mini project
 
-  This then would load the contactUs function (javascript) when the user clicked on the 'Contact Us' link in the navigation bar. There were a few teething issues with doing this, such as missing 'div' elements which would have been easier to spot had I just created html pages instead. The reason I didn't do this was that I wanted to have as much javascript in my website as possible and wasn't sure how much I would need to include and how good it would be.
+* edit-food.html
+```
+Message sent to tutor support October 16th 2021:-
 
-  2. Picture. I created a main picture that I wanted to change via a javascript function when the user clicked on other pages. I did this with the following code: -
+I am trying to display a form which is already filled out from a database. This form will then be edited by the user.
+I am following along the mini-project for tasks on the course but adapting for my own needs.
+I have created a 'add_food.html' which is working as intended but my 'edit_food.html is not working at present.
+So far I am not getting pre-filled in fields in my 'edit_food.html table in my preview.
+My app.py seems to be calling the correct _id number related to the item that was added but is not displaying the name, date, etc in the form that it has found.
+```
+> To solve the issue I needed to 'inject' the properties of the food into the respective fields - e.g. ```<p>{{ food.description }}</p>```
 
-   document.getElementById("services").addEventListener("click", choosePic);
-   document.getElementById("projects").addEventListener("click", choosePic);
-   document.getElementById("contact-us").addEventListener("click", choosePic);
-  
-   let projectImages = new Array("assets/images/index/coverimage1.jpg", "assets/images/index/coverimage2.jpg", "assets/images/index/coverimage3.jpg","assets/images/index/coverimage4.jpg", "assets/images/index/coverimage5.jpg", "assets/images/index/coverimage6.jpg");
+* edit-shopping.html
+See app.py for issues relating to editing the shopping - Issues 3
 
-   function choosePic() {
-      let randomPix = Math.floor(Math.random() * projectImages.length);
-      document.getElementById("myImg").src = projectImages[randomPix];
-   }
+* groceries.html
+No issues
 
-   This would then load a random image from a selection of 6 images of various projects that the company have been involved with. There were a few bugs with images appearing at different sizes and positions but creating an id=#myImg seemed to solve this.
+* home.html
+No issues
 
-   I also realised quite late that the image on desktop was very big and stretched. Also I received feedback that the image was quite below the 'fold' of the website so tried to remedy that by reducing the image using css.
+* profile.html
+Username wasn't displaying once user logged in but this was amended
 
-   The original idea was to have the main image in the css as a background-image. However, I did have issues targeting this and changing the image to a random one. Moving the image into the html worked a lot better.
+* register.html
+No issues
 
-   This was the original code used for the main image which wouldn't work. Moving into the html and using a different function worked better. The new function used can be found in the homePage.js file.
+* shopping.html
+Major issues moving items from the Food/Stock List to the Shopping List - see app.py - Issue 1
+Issue seeing items moved into Shopping List when clicking the navigation link -  see app.py Issue 2
 
-   #main-image {
-   background: url(../images/index/cover-image1.jpg) no-repeat center center fixed;
-   background-size: cover;
-   margin-left: 10rem;
-   padding: 25rem;
-   }
+* waste.html
+No issues
 
-   // Change the cover picture for different picture
-   document.body.style.backgroundImage = "url('../assets/images/index/cover-image2.jpg')";
+* app.py
+  1. Error on moving item from the Stock/Food List to the Shopping List
+```
+@app.route("/shopping")
+def shopping():
+mongo.db.food.pop("food_name")
+mongo.db.shopping.insert_one("food_name")
+flash("You have added an item to your shopping list")
+```
+> I was trying to move an item from one list in my Mongdo.db collection to another collection. For example. I wanted the user to be able to click on a button which will move a food item from the food list and put it on a shopping list.
+Both the food list and shopping list appear on my mongo.db database.
+I tried a pop method and searched slack and asked other students too. I also tried reading and understanding the documentation in mongo website
 
-   const coverImages = ['../assets/images/index/cover-image1', '../assets/images/index/cover-image2', 'cover-image3', 'cover-image4', 'cover-image5', 'cover-image6', 'cover-image7', 'cover-image8'];
+> I tried the following: - https://www.w3schools.com/python/python_mongodb_delete.asp
 
-   const image = document.querySelector("main-image");
-   window.onload = () => generateRandomPicture(coverImages);
+``` 
+I then tried the following code in my app.py: -
 
-   function generateRandomPicture(array) {
-      let randomNum = Math.floor(Math.random() * array.length);
-      image.setAttribute("img", array[randomNum]);
-   }
+@app.route("/add_food", methods=["GET", "POST"])
+def add_food():
+if request.method == "POST":
+short_date = "on" if request.form.get("short_date") else "off"
+food = {
+"location": request.form.get("location"),
+"food_name": request.form.get("food_name"),
+"barcode": request.form.get("barcode"),
+"purchase_date": request.form.get("purchase_date"),
+"use_by_date": request.form.get("use_by_date"),
+"short_date": short_date,
+"created_by": session["user"]
+}
+mongo.db.food.insert_one(food)
+flash("Food added succesfully")
+return redirect(url_for("modifies"))
+foods = mongo.db.food.find().sort("food_name", 1)
+return render_template("add_food.html", foods=foods)
+```
+> Tutor support helped me to rewrite this to: - 
+```
+<a href="/add_to_list/{{ item_id }}"
+@app.route('/add_to_list/<item_id>/)
+def add_to_list(item_id):
+# get the item by id from the first collection
+# copy the item as a dictionary
+# delete the id from the copy
+# delete the item from the first list
+# insert the copy into the second list
+```
+```
+I then created new code to move the food item to the shopping list: -
 
-* Services page. I had to change the layout several times to get it to display as intended. This meant removing the 'centered' class from some elements as this didn't display so well on desktop appliances.
+@app.route("/shopping/<food_name>", methods=['GET', 'POST'])
+def shopping(food_name):
+# get the item by id from the first collection
+print(food_name)
+food = mongo.db.food.find_one(
+{"food_name": "food_name"})
+print(food)
+return render_template("modifies.html")
+```
+> I then had some issues with testing that meant that I would get the following [error message](docs/testing-images/move-error.jpg)
+```
+The final working code with help from my mentor was: -
 
-* Projecs page. Loading the 6 projects didn't create too many issues. However, I did have to adjust the size of the pictures, resolution and make sure they were all the same for each project. I wanted to be able to display more information and a slideshow/carousel of images of the building to the user for each project. As all of this would be loaded to the innerHTML of the index page, I would need to make sure that all 'div' elements had matching end tags. Most of the main issues were reasoanably easy to fix. Images displaying full width rather than in columns was fixed by adding missing end 'div' tags. I also tried to use a javascript function to run the slideshow/carousel and had reasoanble success but found that I was getting a lot of errors where the website would try to call this additional function but not finding it as the content hadn't been loaded that it was attached to. The javascript for such a carousel is found here: - http://kenwheeler.github.io/slick/
+@app.route("/shopping/<food_name>", methods=['GET', 'POST'])
+def shopping(food_name):
+    """
+    Moves selected food item from the food list collection to the shopping list
+    Displays success message to user
+    """
+    food = mongo.db.food.find_one({"food_name": food_name})
+    if food:
+        new_shopping_item = {
+            "food_name": food.get('food_name'),
+            "quantity": food.get('quantity'),
+            "price": food.get('price'),
+            "created_by": session['user']
+        }
+        print(food.get("created_by"))
+        mongo.db.shopping.insert_one(new_shopping_item)
+        mongo.db.food.remove({"food_name": food_name})
+        flash("Food Item added to Shopping List")
 
-The main issues however were: - 
-  1. The Individual Project Information. The extra information on each project would display until a user clicked the 'close' button which worked fine. However, if the user opened a second project after already opening a first project then clicking the 'close' button on 1 project would close all other projects.
+    items = mongo.db.shopping.find().sort('food_name', 1)
+    return render_template("shopping.html", items=items)
+```
+[Back to content](#table-of-contents)
 
-  This was solved by calling the function projects(); from each project function, e.g. functionInfo1() had the projects(); at the end of the fomula so that this would be called after the user clicked the 'close' button. The function was amended with help from my mentor.
+  2. Error on listing items in Shopping List after user had moved them or added them
+```
+Message sent to tutor support
 
-  2. The Interactive Map. The map function, although taken directly from Code Institute and only slightly amended wasn't displaying as intended. Also I was getting the following error: -
+So my base.html has a nav link which is this: -
+{{ url_for('shopping', username=session['user']) }}
+However, I keep getting errors on the username part. I want the page to display for the current user so copied the code from one of the nav links above.
+```
+> The main issue was that I was getting a jinga message telling me that 'user' could not be found. A secondary issue was that I had a function which added an itme to the Shopping List from the original stock/food list which was working.
+```
+In the groceries.html there is a button 'Eaten'.
+Clicking the "eaten' button then adds this item to the shopping list and deletes from the food list.
+I am hoping to then be able to show the shopping list to the user from the nav link when they are logged in.
+At the moment, I can delete an item from the food item list, it then does display a html page showing a shopping list but I can't access this page from the nav bar.
+```
+> I was trying to add a navigation and a function at the same time. With tutor support I created a separate function for the navigation. The navigation bar now links to the following function ![function](docs/testing-images/nav-function.png)
 
-  /#projects:1 Uncaught (in promise) lf {message: “Map: Expected mapDiv of type Element but was passed null.“, name: “InvalidValueError”, stack: “Error\n    at new lf (https://maps.googleapis.com/m…d7aOY&callback=initMap&libraries=&v=weekly:165:50”} 
+[Back to content](#table-of-contents)
 
-  The issue appears that the projects.js script hasn't finished loading before the initMap function was being was called. Removing the initMap text from the 'script' in line 140 from the index.html fixed the error message from showing. Thanks to Matt from ci who helped me work out the issue. 
+  3. Clicking the edit shopping item on the shopping.html brings up the edit_shopping.html page and also shows the data to be edited.
+However, changing any of the items has no effect on the database when submitting the form.
+ ```
+edit_shopping.html 
 
-* Contact Us Page
-   1. I had an issue displaying the map correctly as would stay very small as I decided to use an 'iframe' to hold the map as when I used a 'div' it would not display as intended. 
+<form class="col s12" method="POST" action="{{ url_for('edit_shopping', food_name=shopping._id) }}">
+```
+```
+app.py
 
-   2. Contact Form. The form has 2 javascript functions. The first checks that the user has entered the same email address into both the 'email' and 'confirm email' fields (this was created solely to add javascript to the website and will not be used for the company). The main issue was that the clicking submit on an empty form would bring a 'Thank you for confirming your email address' message even though no email addresses were added. I was also using a onmouseenter to activate the function but this wasn't working as intended.
+@app.route("/edit_shopping/<food_name>", methods=["GET", "POST"])
+def edit_shopping(food_name):
+# Allows user to change food details if error in list
+if request.method == "POST":
+submit = {
+"food_name": request.form.get("food_name"),
+"created_by": session["user"]
+}
+mongo.db.shopping.update({"_id": ObjectId(food_name)}, submit)
+flash("Shopping List Item Updated Succesfully")
+return redirect(url_for("shopping"))
+food = mongo.db.shopping.find_one({"_id": ObjectId(food_name)})
+foods = mongo.db.shopping.find().sort("food_name", 1)
+return render_template("edit_shopping.html", food=food, foods=foods)
+```
+However I seemed to get errors with each fix. 
+[Image 1](docs/testing-images/shopping-error.png)
+[Image 2](docs/testing-images/shopping-error-2.png)
+[Image 3](docs/testing-images/shopping-food-name-error.png)
 
-   With help from another student, as credited in the javascript code, I was able to create a function that would check that the email fields were filled in before any other check was made. This javascript also then checks that the email address in the 'email' field matches that entered in the 'confirm email' and vice versa.
+> This was finally fixed by using the following code with help from tutors
+```
+@app.route("/edit_shopping/<food_name>", methods=["GET", "POST"])
+def edit_shopping(food_name):
+    """
+    Allows user to change shopping list item details if error in list
+    Displays message to user
+    """
+    if request.method == "POST":
+        submit = {
+            "food_name": request.form.get("food_name"),
+            "quantity": request.form.get("quantity"),
+            "price": request.form.get("price"),
+            "created_by": session["user"]
+        }
+        mongo.db.shopping.update({"_id": ObjectId(food_name)}, submit)
+        flash("Shopping List Item Updated Succesfully")
+        return redirect(url_for("shopping_list"))
 
-   The 2nd bug was that the submit button was sending an email message as intended but the user was unaware that their message had been sent successfully. With help from Igor, Tutor Support, and others, I was able to get a javascript function that would display the following message: - 'Thank you for your message. We will get back to you as soon as possible' when submitting a correctly filled form.
-
-* Log in page
-I had the following problems with creating a log in page - 
-
-When a user clicks the projects and contact us links they get new html which replaced the existing html. This was done with javascript I have.
-
-However, for the log in. I wanted to have a modal type form pop up in front of the picture, and then run a javascript validation to check if correct details were submitted like repeat email address or password, then click the submit button on the modal form (not the link on the website) would then direct them to a dedicated staff.html.
-
-I would then create a staff.js for this page with some extra interactivity like a time sheet as an example.
-
-Most w3school ideas on running a modal use an on click button which I've been told I cant use and instead must use a Event Listener but haven't been able to get this to work.
-
-I can create an alert using the event Listener which says hello but if I swap this text with my sign in form it doesn't work.
-
-I abadoned this in the end as didn't have enough time and skill to create it. I also wanted to check if a user was registered with the website and allow cookies to be collected.
-
-**Other Bugs**
-
-There were lots of smaller issues mainly with the javascript functions. Most of these issues were due to the fact I was already using an Event Listener to create the new html and then trying to run more functions on this newly created html. However, this caused multiple issues of 'event listener null' errors as the additonal functions were loading and not finding the id that was required.
+    shopping = mongo.db.shopping.find_one({"_id": ObjectId(food_name)})
+    return render_template("edit-shopping.html", shopping=shopping)
+```
+* other
 
 [Back to content](#table-of-contents)
