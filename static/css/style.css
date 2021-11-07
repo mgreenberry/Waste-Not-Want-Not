@@ -12,6 +12,11 @@ body {
     background-size: cover;
     min-height: 100vh;
 }
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
 .text-shadow {
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
@@ -33,11 +38,6 @@ body {
     margin: 5px;
     line-height: 42px;
 }
-body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
 main {
     flex: 1 0 auto;
 }
