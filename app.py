@@ -269,16 +269,19 @@ def waste(food_name):
     Displays message to user
     """
     food = mongo.db.food.find_one({"food_name": food_name})
-    del food["_id"]
-    del food["purchase_date"]
-    del food["use_by_date"]
-    del food["barcode"]
+    if food:
+        waste_item = {
+            "food_name": food.get('food_name'),
+            "quantity": food.get('quantity'),
+            "price": food.get('price'),
+            "created_by": session['user']
+        }
+        print(food.get("created_by"))
+        mongo.db.waste.insert_one(waste_item)
+        mongo.db.food.remove({"food_name": food_name})
+        flash("Food Item added to Wasted Food List")
 
-    mongo.db.waste.insert_one(food)
-    mongo.db.food.delete_one({"food_name": food_name})
-    flash("Food Item added to Wasted Food List")
-
-    items = list(mongo.db.waste.find().sort('food_name', 1))
+    items = mongo.db.waste.find().sort('food_name', 1)
     return render_template("waste.html", items=items)
 
 
