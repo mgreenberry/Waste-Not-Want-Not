@@ -164,38 +164,38 @@ An existing user must log in: -
    * Result: - I clicked this button on every page and was directed to the correct content
    * Verdict: - Working as intended
 
-    1. Add Food Item
-       * Expectation: - A user clicks the "Add Food Item" button and is directed to the "Add Food" html page to add food item
-       * Test: - Clicked the button and was directed to the correct content
-       * Result: - Added food item which then appeared on the Food List
-       * Verdict: - Working as intended
+     1. Add Food Item
+         * Expectation: - A user clicks the "Add Food Item" button and is directed to the "Add Food" html page to add food item
+         * Test: - Clicked the button and was directed to the correct content
+         * Result: - Added food item which then appeared on the Food List
+         * Verdict: - Working as intended
 
      2. Edit Food Item
-        * Expectation: - A user clicks the "Edit Food Item" button and is directed to the "Edit Food" html page to edit existing food item
-        * Test: - Clicked the button and was directed to the correct content
-        * Result: - Edited a food item which then appeared on the Food List
-        * Verdict: - Working as intended
+         * Expectation: - A user clicks the "Edit Food Item" button and is directed to the "Edit Food" html page to edit existing food item
+         * Test: - Clicked the button and was directed to the correct content
+         * Result: - Edited a food item which then appeared on the Food List
+         * Verdict: - Working as intended
 
      3. 'Eaten' - for when user uses an item on their food list
         
-        * Expectation: - A user clicks the "Eaten" button and the food item is added to their shopping list after confirmation modal is shown
-        * Test: - Clicked the button and was directed to the correct content
-        * Result: - Added the button and the food item then appeared on the user's shopping list (directed user to shopping.html)
-        * Verdict: - Working as intended
+         * Expectation: - A user clicks the "Eaten" button and the food item is added to their shopping list after confirmation modal is shown
+         * Test: - Clicked the button and was directed to the correct content
+         * Result: - Added the button and the food item then appeared on the user's shopping list (directed user to shopping.html)
+         * Verdict: - Working as intended
     
      4. 'Thrown Away' - for when a user has to throw food away
         
-        * Expectation: - A user clicks the "Throw Away" button and is directed to the "Wasted Food List" html page which displays food wasted
-        * Test: - Clicked the button and was directed to the correct content
-        * Result: - Wasted food item on wasted food list
-        * Verdict: - Working as intended
+         * Expectation: - A user clicks the "Throw Away" button and is directed to the "Wasted Food List" html page which displays food wasted
+         * Test: - Clicked the button and was directed to the correct content
+         * Result: - Wasted food item on wasted food list
+         * Verdict: - Working as intended
 
      5. Delete Food Item
 
-        * Expectation: - A user clicks the "Delete" button the food item is deleted after a warning message is shown
-        * Test: - Clicked the button and food item deleted
-        * Result: - Deleted food item
-        * Verdict: - Working as intended
+         * Expectation: - A user clicks the "Delete" button the food item is deleted after a warning message is shown
+         * Test: - Clicked the button and food item deleted
+         * Result: - Deleted food item
+         * Verdict: - Working as intended
 
 [Back to content](#table-of-contents)
 
@@ -218,10 +218,10 @@ An existing user must log in: -
         * Verdict: - Working as intended
 
      3. Delete Food Item
-        * Expectation: - A user clicks the "Delete" button the shopping item is deleted after a warning message is shown
-        * Test: - Clicked the button and shopping item deleted
-        * Result: - Deleted shopping item
-        * Verdict: - Working as intended
+         * Expectation: - A user clicks the "Delete" button the shopping item is deleted after a warning message is shown
+         * Test: - Clicked the button and shopping item deleted
+         * Result: - Deleted shopping item
+         * Verdict: - Working as intended
 
 3. Wasted Food List
    * Expectation: - A user clicks the 'Wasted Food List' link and is directed to the 'Wasted Food List' content
@@ -229,11 +229,11 @@ An existing user must log in: -
    * Result: - I clicked this button on every page and was directed to the correct content
    * Verdict: - Working as intended
 
-        1. Delete Wasted Food Item
-        * Expectation: - A user clicks the "Delete" button the wasted item is deleted
-        * Test: - Clicked the button and waste item deleted
-        * Result: - Deleted waste food item
-        * Verdict: - Working as intended
+     1. Delete Wasted Food Item
+         * Expectation: - A user clicks the "Delete" button the wasted item is deleted
+         * Test: - Clicked the button and waste item deleted
+         * Result: - Deleted waste food item
+         * Verdict: - Working as intended
 
 4. Profile Page
    * Expectation: - A user clicks the 'Profile Page' link and is directed to the 'Profile' content
@@ -339,79 +339,80 @@ The following are the User Stories from the README.md page and the resulting Tes
 
 As a user visiting the site for the first time:
 1. I would like to be able to register for the website so I can have my personal grocery list
-  * Test: - I registered for an account using username - michael, and password - michael01
-  * Result: - I was directed to the profile page on the site
-  * Verdict: - Success
+   * Test: - I registered for an account using username - michael, and password - michael01
+   * Result: - I was directed to the profile page on the site
+   * Verdict: - Success
 2. I would like to easily log in once an account has been created and see my personal grocery list
-  * Test: - I logged into the site from the home page with username - michael, and password - michael01
-  * Result: - I was directed to the Food List page (current stock list)
-  * Verdict: - Success
+   * Test: - I logged into the site from the home page with username - michael, and password - michael01
+   * Result: - I was directed to the Food List page (current stock list)
+   * Verdict: - Success
 3. I would like to see my existing food stock displayed in an easy to understand format
-  * Test: - I added a list of food items to my stock list
-  * Result: - The food items were displayed in 'use by date' order
-  * Verdict: - Success
+   * Test: - I added a list of food items to my stock list
+   * Result: - The food items were displayed in 'use by date' order
+   * Verdict: - Success
 4. I would like to be able to add new items to this stock list
-  * Test: - I added a list of food items to my stock list
-  * Result: - The food items was added to my existing stock/food list in use-by-date order
-  * Verdict: - Success
+   * Test: - I added a list of food items to my stock list
+   * Result: - The food items was added to my existing stock/food list in use-by-date order
+   * Verdict: - Success
 5. I would like to be able to edit any items added to add/amend information created in error
-  * Test: - I clicked the 'edit' button and editing an existing food item
-  * Result: - The food items was sucessefully changed with the new information
-  * Verdict: - Success
+   * Test: - I clicked the 'edit' button and editing an existing food item
+   * Result: - The food items was sucessefully changed with the new information
+   * Verdict: - Success
 6. I would like to be able to delete food items no longer needed
-  * Test: - I clicked the 'delete' button and a warning message was displayed to confirm deletion
-  * Result: - The food items was sucessefully deleted from the food/stock list
-  * Verdict: - Success
+   * Test: - I clicked the 'delete' button and a warning message was displayed to confirm deletion
+   * Result: - The food items was sucessefully deleted from the food/stock list
+   * Verdict: - Success
 7. I would like to be able to add an item that has been eaten to my shopping list if desired. If not the item is deleted
-  * Test: - I clicked the 'eaten' button and a message was displayed to confirm adding item to shopping list
-  * Result: - The food item was sucessefully added to the shopping list
-  * Verdict: - Success
+   * Test: - I clicked the 'eaten' button and a message was displayed to confirm adding item to shopping list
+   * Result: - The food item was sucessefully added to the shopping list
+   * Verdict: - Success
 8. I would like to be able to see what food I have wasted
-  * Test: - I clicked the 'thrown away' button on a food item
-  * Result: - The food item was sucessefully added to the wasted food list
-  * Verdict: - Success
+   * Test: - I clicked the 'thrown away' button on a food item
+   * Result: - The food item was sucessefully added to the wasted food list
+   * Verdict: - Success
 9. I would like to be able to see a shopping list of items I need to buy again that have been eaten
-  * Test: - Click the 'shopping list' text in the navigation bar/hamburger menu 
-  * Result: - The shopping list displayed items I had in my shopping list in alphabetical order
-  * Verdict: - Success
+   * Test: - Click the 'shopping list' text in the navigation bar/hamburger menu 
+   * Result: - The shopping list displayed items I had in my shopping list in alphabetical order
+   * Verdict: - Success
 10. I would like to be able to add items to this shopping list that were not on the original grocery/food list
-  * Test: - I added a food item to my shopping list
-  * Result: - The food items was added to my existing shopping list in alphabetical order
-  * Verdict: - Success
+   * Test: - I added a food item to my shopping list
+   * Result: - The food items was added to my existing shopping list in alphabetical order
+   * Verdict: - Success
 11. I would like to be able to edit/delete items from the shopping list once ordered or no longer needed
-  * Test: - I clicked the 'edit' button and editing an existing shopping item. I clicked the 'delete' button and the item was deleted after a warning message was displayed
-  * Result: - The shopping item was sucessefully changed with the new information or deleted as required
-  * Verdict: - Success
+   * Test: - I clicked the 'edit' button and editing an existing shopping item. I clicked the 'delete' button and the item was deleted after a warning message was displayed
+   * Result: - The shopping item was sucessefully changed with the new information or deleted as required
+   * Verdict: - Success
 12. I would like to be able to see a list of food that has been wasted
-  * Test: - Click the 'wasted food list' text in the navigation bar/hamburger menu
-  * Result: - The wasted food list displayed items I had thrown away from my stock/food list in alphabetical order
-  * Verdict: - Success
+   * Test: - Click the 'wasted food list' text in the navigation bar/hamburger menu
+   * Result: - The wasted food list displayed items I had thrown away from my stock/food list in alphabetical order
+   * Verdict: - Success
 13. I would like to be able to delete food items from the wasted food list
-  * Test: - I clicked the 'delete' button
-  * Result: - The wasted food item was sucessefully deleted from the wasted food list
-  * Verdict: - Success
+   * Test: - I clicked the 'delete' button
+   * Result: - The wasted food item was sucessefully deleted from the wasted food list
+   * Verdict: - Success
 14. I want to able to learn and easily understand what the website is about
-  * Test: - I clicked the 'waste not want not' text. I also clicked the instructions menu within the profile page
-  * Result: - Once logged in the home page displays an 'about' section. There is also more informaition in the profile page
-  * Verdict: - Success
+   * Test: - I clicked the 'waste not want not' text. I also clicked the instructions menu within the profile page
+   * Result: - Once logged in the home page displays an 'about' section. There is also more informaition in the profile page
+   * Verdict: - Success
 15. I want to easily understand what each section of the app does
-  * Test: - To make sure that all headers, paragraphs and other content was clear and readable
-  * Result: - I created the website using Materalize and the "row" and "col" tags to make the site responsive to all devices, but especially mobile
-  * Verdict: - Success
+   * Test: - To make sure that all headers, paragraphs and other content was clear and readable
+   * Result: - I created the website using Materalize and the "row" and "col" tags to make the site responsive to all devices, but especially mobile
+   * Verdict: - Success
 16. I want to click on navigation links to be taken to the correct page/section and to be able to return to the home page or another page without using the brower forward/backward buttons
-  * Test: - Each link was tested for each page, i.e. the 'shopping list' text directs me to the 'shopping list' section
-  * Result: - Each link directed to the correct page
-  * Verdict: - Success
+   * Test: - Each link was tested for each page, i.e. the 'shopping list' text directs me to the 'shopping list' section
+   * Result: - Each link directed to the correct page
+   * Verdict: - Success
 17. I want these navigation links to include user friendly menus which are easy to uderstand and use
-  * Test: - I tested the navigation links on a Samsung Fold 3, an iPad Pro and a MacBook Pro 2021 model
-  * Result: - The navigation links worked on all devices
-  * Verdict: - Success
+   * Test: - I tested the navigation links on a Samsung Fold 3, an iPad Pro and a MacBook Pro 2021 model
+   * Result: - The navigation links worked on all devices
+   * Verdict: - Success
 18. I want the content to be easy to read and have a predictable layout so that each page can be navigated easily
-  * Test: - I tested the website on a Samsung Fold 3, an iPad Pro and a MacBook Pro 2021 model
-  * Result: - The website worked on all devices and was responsive so that all content was easily readable
-  * Verdict: - Success
+   * Test: - I tested the website on a Samsung Fold 3, an iPad Pro and a MacBook Pro 2021 model
+   * Result: - The website worked on all devices and was responsive so that all content was easily readable
+   * Verdict: - Success
 
-* For the above, when designing the website I did the following to resolve the User Story desires:-
+For the above, when designing the website I did the following to resolve the User Story desires:-
+
 1. Created a registration section which directs new users to their profile which contains instructions, contact details and log out
 2. Created a 'Log In' section on the very first page of the website so existing users do not have to find log in page
 3. Created an existing food list in 'use by date' order allowing user to quickly see which items need using first
