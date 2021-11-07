@@ -243,7 +243,7 @@ An existing user must log in: -
 
 [Back to content](#table-of-contents)
 
-#### forms
+#### Forms
 
 There are multiple forms within the website: -
 

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container-fluid">
+    <div class="page-height">
+        
+            <div class="row">
+                <div class="col s6">
+                    <h1>This cupboard is empty so something has gone wrong</h1>
+                    <p> {{ error_message }} </p>
+                    <a href="{{ url_for('home') }}" class="form-buttons">Click here to go back to the home page</a>
+                </div>
+            </div>
+
+    </div>
+</div>
+{% endblock %}

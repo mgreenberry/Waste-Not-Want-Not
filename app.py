@@ -301,6 +301,36 @@ def delete_waste(food_name):
     return redirect(url_for("waste_list"))
 
 
+@app.errorhandler(404)
+def page_not_found(error):
+    """
+    Renders errors.html with 404 message
+    """
+    message = str(error)
+    return render_template(
+        'errors.html', message=message), 404
+
+
+@app.errorhandler(405)
+def server_error(error):
+    """
+    Renders errors.html with 500 message.
+    """
+    message = str(error)
+    return render_template(
+        'errors.html', message=message), 405
+
+
+@app.errorhandler(500)
+def server_error(error):
+    """
+    Renders error.html with 500 message.
+    """
+    message = str(error)
+    return render_template(
+        'errors.html', message=message), 500
+
+
 if __name__ == "__main__":
     """
     MUST Change debug=True to False before submitting
