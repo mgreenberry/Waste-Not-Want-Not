@@ -59,16 +59,12 @@
                 <div class="row">
                     <div class="col s12 center-align">
                         <!-- cancel button -->
-                        <div class="divider">
-                            <a href="{{ url_for('groceries') }}" class="btn red text-shadow">
-                                Cancel <i class="fas fa-times-circle right"></i>
-                            </a>
-                        </div>
-                        <div class="divider">
-                            <button type="submit" class="btn light-blue darken-1 text-shadow">
-                                Edit Food Item <i class="fas fa-edit right"></i>
-                            </button>
-                        </div>
+                        <a href="{{ url_for('groceries') }}" class="btn red text-shadow">
+                            Cancel <i class="fas fa-times-circle right"></i>
+                        </a>
+                        <button type="submit" class="btn light-blue darken-1 text-shadow">
+                            Edit Food Item <i class="fas fa-edit right"></i>
+                        </button>
                     </div>
                 </div>
             </form>
