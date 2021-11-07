@@ -21,9 +21,12 @@
                 <div class="card light-green darken-4 text-shadow">
                     <div class="card-content white-text">
                         <div class="card-title center-align">
-                            <span class="left uppercase center-align">Item: {{ item.food_name }}</span>
-                            <span class="uppercase center-align">Quantity: {{ item.quantity }}</span>
-                            <span class="right uppercase center-align">Price: £{{ item.price }}</span>
+                            <span class="left uppercase">Item: {{ item.food_name }}</span>
+                            <br>
+                            <span class="left uppercase">Quantity: {{ item.quantity }}</span>
+                            <br>
+                            <span class="left uppercase">Price: £{{ item.price }}</span>
+                            <br>
                         </div>
                         <a href="#{{ item.food_name }}" class="btn-small red modal-trigger">Delete</a>
                         <a href="{{ url_for('edit_shopping', food_name=item._id) }}" class="btn-small blue">Edit</a>
