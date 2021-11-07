@@ -1,13 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="container-fluid">
-    <div class="page-height">
-        
+    <div class="page-height white">
             <div class="row">
-                <div class="col s6">
+                <div class="col s12 center-align">
                     <h1>This cupboard is empty so something has gone wrong</h1>
                     <p> {{ error_message }} </p>
-                    <a href="{{ url_for('home') }}" class="form-buttons">Click here to go back to the home page</a>
+                </div>
+                <div>
+                    <a class="col btn green darken-4 text-shadow left"
+                    href="{{ url_for('home') }}">Register <i class="fas fa-sign-in-alt"></i>
+                    </a>
                 </div>
             </div>
 
