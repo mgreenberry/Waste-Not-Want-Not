@@ -147,7 +147,7 @@ def edit_food(food_name):
             "use_by_date": request.form.get("use_by_date"),
             "created_by": session["user"]
         }
-        mongo.db.food.update({"_id": ObjectId(food_name)}, submit)
+        mongo.db.food.update_one({"_id": ObjectId(food_name)}, submit)
         flash("Food updated succesfully")
         return redirect(url_for("groceries"))
 
@@ -192,7 +192,7 @@ def shopping(food_name):
         }
         print(food.get("created_by"))
         mongo.db.shopping.insert_one(new_shopping_item)
-        mongo.db.food.remove({"food_name": food_name})
+        mongo.db.food.delete_one({"food_name": food_name})
         flash("Food Item added to Shopping List")
 
     items = mongo.db.shopping.find().sort('food_name', 1)
@@ -214,7 +214,7 @@ def delete_shopping(food_name):
     Allows user to delete shopping list item
     Displays message to user
     """
-    mongo.db.shopping.remove({"_id": ObjectId(food_name)})
+    mongo.db.shopping.delete_one({"_id": ObjectId(food_name)})
     flash("Shopping List Item Deleted")
     return redirect(url_for("shopping_list"))
 
@@ -254,7 +254,7 @@ def edit_shopping(food_name):
             "price": request.form.get("price"),
             "created_by": session["user"]
         }
-        mongo.db.shopping.update({"_id": ObjectId(food_name)}, submit)
+        mongo.db.shopping.update_one({"_id": ObjectId(food_name)}, submit)
         flash("Shopping List Item Updated Succesfully")
         return redirect(url_for("shopping_list"))
 
@@ -278,7 +278,7 @@ def waste(food_name):
         }
         print(food.get("created_by"))
         mongo.db.waste.insert_one(waste_item)
-        mongo.db.food.remove({"food_name": food_name})
+        mongo.db.food.delete_one({"food_name": food_name})
         flash("Food Item added to Wasted Food List")
 
     items = mongo.db.waste.find().sort('food_name', 1)
