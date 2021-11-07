@@ -7,7 +7,7 @@
 
         <!-- Only displays Log In section if no user logged in -->
         {% if session.user|lower == username|lower %}
-        <h5 class="center-align">Existing User Login</h5>
+        <h4 class="center-align">Existing User Login</h4>
 
         <div class="row">
             <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('login') }}">
@@ -47,9 +47,9 @@
         {% endif %}
         <!-- About -->
         <div class="text-darken-4 center-align">
-            <h3>
+            <h5>
                 Food waste at home
-            </h3>
+            </h5>
             <p>Food waste also occurs every day within our homes.</p>
             <p>However, it can easily be reduced by:</p>
             <ul>
