@@ -5,6 +5,12 @@
 
 [View the website here](https://waste-not-project.herokuapp.com/)
 
+## Author Note
+
+With more time I would like to tidy up the html pages so that they are more modular. I would also work on the colours of the website and some of the css using classes to target differing elements.
+
+I would also use something like [blueprint](https://exploreflask.com/en/latest/blueprints.html#what-is-a-blueprint) to tidy and make my app.py file more modular
+
 ## About
 
 Why is food waste a problem?
