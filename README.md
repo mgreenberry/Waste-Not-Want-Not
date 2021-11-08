@@ -307,7 +307,7 @@ price    | String
 * [JQuery](https://jquery.com/) Used for temperal literals in some javascript code.
 * [Python](https://www.python.org/) 
 * [Flask](https://flask.palletsprojects.com/en/2.0.x/)
-* [Jinga](https://jinja.palletsprojects.com/en/3.0.x/)
+* [Jinja](https://jinja.palletsprojects.com/en/3.0.x/)
 
 ### Framework Library
 * [Materalize](https://materializecss.com/) Used for a mobile first responsive website, display properties such as grid layout, preset css such as for containers, forms, etc
@@ -496,6 +496,6 @@ Code Institute Slack Students for their feedback and help with my questions
 
 [Back to content](#table-of-contents)
 ## Author information
-Michael Greenberry is the creator and owner of this website. This is a Interactive Frontend Development Milstone Project website created as part of a Full Stack Software Development in Code Institute by [Michael Greenberry](https://www.linkedin.com/in/michael-greenberry-637299108/).
+Michael Greenberry is the creator and owner of this website. This is a MS3 Milstone Project website created as part of a Full Stack Software Development in Code Institute by [Michael Greenberry](https://www.linkedin.com/in/michael-greenberry-637299108/).
 
 [Back to content](#table-of-contents)
