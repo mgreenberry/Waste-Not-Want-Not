@@ -3,11 +3,11 @@
 <div class="container-fluid">
     <div class="page-height white">
         <h1 class="light-green-text text-darken-4 center-align">Waste Not Want Not</h1>
-        <h3 class="light-green-text text-darken-4 center-align">Helping you to reduce food waste</h3>
+        <h2 class="light-green-text text-darken-4 center-align">Helping you to reduce food waste</h2>
 
         <!-- Only displays Log In section if no user logged in -->
         {% if session.user|lower == username|lower %}
-        <h4 class="center-align">Existing User Login</h4>
+        <h3 class="center-align">Existing User Login</h3>
 
         <div class="row">
             <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('login') }}">
@@ -47,9 +47,9 @@
         {% endif %}
         <!-- About -->
         <div class="text-darken-4 center-align">
-            <h5>
+            <h4>
                 Food waste at home
-            </h5>
+            </h4>
             <p>Food waste also occurs every day within our homes.</p>
             <p>However, it can easily be reduced by:</p>
             <ul>

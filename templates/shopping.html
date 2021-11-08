@@ -5,7 +5,6 @@
         <div class="green text-border">
             <h3 class="white-text text-darken-4 text-shadow center-align">Shopping List</h3>
         </div>
-
         <div class="row">
             <div class="col s12 center-align">
                 <a type="submit" class="btn-large blue darken-1 text-shadow" href="{{ url_for('add_shopping') }}">
@@ -13,7 +12,6 @@
                 </a>
             </div>
         </div>
-
         <div class="row">
             {% for item in items %}
             {% if session.user|lower == item.created_by|lower %}

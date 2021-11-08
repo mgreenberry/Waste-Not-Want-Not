@@ -4,7 +4,7 @@
     <div class="page-height">
         <div class="brown lighten-2 text-border">
             <h3 class="white-text text-darken-4 text-shadow center-align">Food List</h3>
-            <h5 class="white-text text-darken-4 text-shadow center-align">Sorted by 'Use By Date'</h5>
+            <h4 class="white-text text-darken-4 text-shadow center-align">Sorted by 'Use By Date'</h4>
         </div>
         <div class="row">
             <div class="col s12 center-align">
@@ -19,13 +19,16 @@
             <li>
                 <div class="collapsible-header white-text green darken-4 text-shadow">
                     <div class="col s12">
-                        <h4 class="uppercase">Food: {{ grocery.food_name}}</h4>
+                        <h5 class="uppercase">Food: {{ grocery.food_name}}</h5>
                         <p><span class="uppercase">Use By Date: {{ grocery.use_by_date }}</span></p>
                         <!-- Modal for adding to shopping list -->
                         <a href="#{{ grocery.food_name}}" class="btn-small blue accent-4 right modal-trigger">Eaten</a>
                         <div id="{{ grocery.food_name}}" class="modal green">
+                            <div class="modal-header">
+                                <h6>Add to Shopping List</h6>
+                            </div>
                             <div class="modal-content">
-                                <h4 class="white-text">Would you like to add this item to your shopping list?</h4>
+                                <p class="white-text">Click 'Yes' to add item to Shopping List, 'No' to just delete item or 'Cancel' to go back</p>
                             </div>
                             <div class="modal-footer">
                                 <a href="{{ url_for('shopping', food_name=grocery.food_name) }}"
@@ -60,7 +63,7 @@
                     <!-- Modal Structure -->
                     <div id="{{ grocery._id}}" class="modal">
                         <div class="modal-content green white-text">
-                            <h4>Are You Sure?</h4>
+                            <h6>Are You Sure?</h6>
                             <p>To delete food item click 'Delete' below or click 'Cancel' to go back</p>
                         </div>
                         <div class="modal-footer">
