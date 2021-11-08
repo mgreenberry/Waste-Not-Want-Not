@@ -56,10 +56,10 @@
         </nav>
         <!-- mobile sidenav -->
         <ul class="sidenav" id="mobile-demo">
+            {% if session.user %}
             <li>
                 <a href="{{ url_for('home') }}" class="green-text text-darken-3">Home</a>
             </li>
-            {% if session.user %}
             <li>
                 <a href="{{ url_for('groceries', username=session['user']) }}" class="green-text text-darken-3">Food
                     List</a>
