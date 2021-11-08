@@ -24,11 +24,8 @@
                         <!-- Modal for adding to shopping list -->
                         <a href="#{{ grocery.food_name}}" class="btn-small blue accent-4 right modal-trigger">Eaten</a>
                         <div id="{{ grocery.food_name}}" class="modal green">
-                            <div class="modal-header">
-                                <h6>Add to Shopping List</h6>
-                            </div>
                             <div class="modal-content">
-                                <p class="white-text">Click 'Yes' to add item to Shopping List, 'No' to just delete item or 'Cancel' to go back</p>
+                                <h6 class="white-text">Would you like to add this item to your shopping list?</h6>
                             </div>
                             <div class="modal-footer">
                                 <a href="{{ url_for('shopping', food_name=grocery.food_name) }}"
