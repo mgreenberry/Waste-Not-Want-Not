@@ -8,9 +8,9 @@
         </div>
         <div class="row">
             <div class="col s12 center-align">
-                <a type="submit" class="btn-large blue darken-1 text-shadow" href="{{ url_for('add_food') }}">
+                <button type="submit" class="btn-large blue darken-1 text-shadow" href="{{ url_for('add_food') }}">
                     Add Food Item <i class="fas fa-plus-square right"></i>
-                </a>
+                </button>
             </div>
         </div>
         {% for grocery in groceries %}
@@ -25,7 +25,8 @@
                         <a href="#{{ grocery.food_name}}" class="btn-small blue accent-4 right modal-trigger">Eaten</a>
                         <div id="{{ grocery.food_name}}" class="modal green">
                             <div class="modal-content">
-                                <h6 class="white-text">Would you like to add this item to your shopping list?</h6>
+                                <h6 class="white-text">Add to Shopping List?</h6>
+                                <p>Click 'Yes' to add item to shopping list, 'No' to delete food item or 'Cancel' to go back</p>
                             </div>
                             <div class="modal-footer">
                                 <a href="{{ url_for('shopping', food_name=grocery.food_name) }}"
