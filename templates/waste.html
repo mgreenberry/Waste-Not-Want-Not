@@ -5,7 +5,7 @@
         <div class="green text-border">
             <h3 class="green white-text text-darken-4 text-shadow center-align">Wasted Food List</h3>
         </div>
-
+        <!-- Shows food that has been wasted to user when logged -->
         <div class="row">
             {% for item in items %}
             {% if session.user|lower == item.created_by|lower %}

@@ -6,6 +6,7 @@
             <h3 class="white-text text-darken-4 text-shadow center-align">Food List</h3>
             <h4 class="white-text text-darken-4 text-shadow center-align">Sorted by 'Use By Date'</h4>
         </div>
+        <!-- Add Food Item to Grocery/Stock List -->
         <div class="row">
             <div class="col s12 center-align">
                 <a class="btn-large blue darken-1 text-shadow" href="{{ url_for('add_food') }}">
@@ -13,6 +14,7 @@
                 </a>
             </div>
         </div>
+        <!-- Displays food items in user's stock list -->
         {% for grocery in groceries %}
         {% if session.user|lower == grocery.created_by|lower %}
         <ul class="collapsible">

@@ -1,11 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
+
 <div class="container-fluid">
     <div class="page-height">
         <div class="green text-border">
             <h3 class="white-text text-shadow text-darken-4 center-align">Add an Item to the Shopping List</h3>
         </div>
-        <!-- amended from the task mini-project from CI -->
+        <!-- Add food item amended from the add task mini-project from CI -->
         <div class="row card-panel grey lighten-5">
             <form class="col s12" method="POST" action="{{ url_for('add_shopping') }}">
                 <!-- Add food item to the food list -->
@@ -45,4 +46,5 @@
         </div>
     </div>
 </div>
+
 {% endblock %}

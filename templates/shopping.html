@@ -12,6 +12,7 @@
                 </a>
             </div>
         </div>
+        <!-- Displays shopping list items to user when logged in -->
         <div class="row">
             {% for item in items %}
             {% if session.user|lower == item.created_by|lower %}
@@ -26,6 +27,7 @@
                             <span class="left uppercase">Price: £{{ item.price }}</span>
                             <br>
                         </div>
+                        <!-- Modal for user warning deleting food item -->
                         <a href="#{{ item.food_name }}" class="btn-small red modal-trigger">Delete</a>
                         <a href="{{ url_for('edit_shopping', food_name=item._id) }}" class="btn-small blue">Edit</a>
                         <!-- Modal Structure -->
