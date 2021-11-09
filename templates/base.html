@@ -80,17 +80,15 @@
         </ul>
     </header>
     <div class="container">
-        <section>
-            {% with messages = get_flashed_messages() %}
-            {% if messages %}
-            {% for message in messages %}
-            <div class="container-fluid row flashes">
-                <h4 class="uppercase light-green lighten-4 center-align">{{ message }}</h4>
-            </div>
-            {% endfor %}
-            {% endif %}
-            {% endwith %}
-        </section>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in messages %}
+        <div class="container-fluid row flashes">
+            <h4 class="uppercase light-green lighten-4 center-align">{{ message }}</h4>
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
         <div class="container-fluid">
             {% block content %}
             {% endblock %}
