@@ -1,5 +1,8 @@
 $(document).ready(function(){
-    $(".sidenav").sidenav({edge: "right"});
+    $(".sidenav").sidenav({
+      edge: "right",
+      closeonClick: false
+    });
     $('.collapsible').collapsible();
     $('.tooltipped').tooltip();
     $('select').formSelect();
@@ -24,6 +27,11 @@ $(document).ready(function(){
     });
   });
 
-  $('.navbar-collapse a').click(function(){
+/*$('.navbar-collapse a').click(function(){
     $(".navbar-collapse").collapse('hide');
   });
+
+$('.navbar-collapse a').click(function () {
+    $(".navbar-collapse").collapse('hide');
+    $("#navBtn").attr('aria-expanded', false);
+  });*/
