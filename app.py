@@ -144,7 +144,7 @@ def edit_food(food_name):
             "use_by_date": request.form.get("use_by_date"),
             "created_by": session["user"]
         }
-        mongo.db.food.update_one({"_id": ObjectId(food_name)}, submit)
+        mongo.db.food.replace_one({"_id": ObjectId(food_name)}, submit)
         flash("Food updated succesfully")
         return redirect(url_for("groceries"))
 
@@ -187,7 +187,6 @@ def shopping(food_name):
             "price": food.get('price'),
             "created_by": session['user']
         }
-        print(food.get("created_by"))
         mongo.db.shopping.insert_one(new_shopping_item)
         mongo.db.food.delete_one({"food_name": food_name})
         flash("Food Item added to Shopping List")
@@ -251,7 +250,7 @@ def edit_shopping(food_name):
             "price": request.form.get("price"),
             "created_by": session["user"]
         }
-        mongo.db.shopping.update_one({"_id": ObjectId(food_name)}, submit)
+        mongo.db.shopping.replace_one({"_id": ObjectId(food_name)}, submit)
         flash("Shopping List Item Updated Succesfully")
         return redirect(url_for("shopping_list"))
 
@@ -332,9 +331,6 @@ def server_error(error):
 
 
 if __name__ == "__main__":
-    """
-    MUST Change debug=True to False before submitting
-    """
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
             debug=False)
