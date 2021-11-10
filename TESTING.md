@@ -66,6 +66,12 @@ All errors attributed to the jinga code added to each page.
 
 All errors listed could not be solved as errors point to jinga code within HTML which is needed to render the different pages and messages
 
+On live deployment the following errors were found on all pages which weren't shown on testing preview pages: -
+
+![](docs/testing-images/html-testing-images/live-html-error.png)
+
+This was solved by taking the 'type="submit"' out of the a tags as this was not a button and didn't need the submit. I also changed how the section was used and this then fixed the warning about h1 to h6 tags.
+
 * [css testing using W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/)
 All CSS code was put through the W3C Validation Service. The following message was shown: -
 ![css testing results](docs/testing-images/css-testing.png)

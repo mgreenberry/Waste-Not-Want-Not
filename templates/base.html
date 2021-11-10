@@ -33,9 +33,9 @@
                 <div class="container-fluid">
                     <a href="{{ url_for('home') }}" class="brand-logo left">Waste Not, Want Not!</a>
                 </div>
+                {% if session.user %}
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
-                    {% if session.user %}
                     <li>
                         <a href="{{ url_for('groceries', username=session['user']) }}">Food List</a>
                     </li>
