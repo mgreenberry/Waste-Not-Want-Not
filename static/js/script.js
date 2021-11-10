@@ -1,12 +1,16 @@
 $(document).ready(function(){
+    /* Below code from Materalize css */
     $(".sidenav").sidenav({
       edge: "right",
-      closeonClick: false
+      closeonClick: true
     });
     $('.collapsible').collapsible();
     $('.tooltipped').tooltip();
     $('select').formSelect();
     $('.modal').modal();
+    /* Below adapted from Materalize css for own use 
+    Allows the purchase date to only be today or past date 
+    and allows the use by date to be today or future only */
     $('.datepicker1').datepicker({
       format: "dd mmmm, yyyy",
       maxDate: new Date(),
@@ -26,12 +30,3 @@ $(document).ready(function(){
       }
     });
   });
-
-/*$('.navbar-collapse a').click(function(){
-    $(".navbar-collapse").collapse('hide');
-  });
-
-$('.navbar-collapse a').click(function () {
-    $(".navbar-collapse").collapse('hide');
-    $("#navBtn").attr('aria-expanded', false);
-  });*/

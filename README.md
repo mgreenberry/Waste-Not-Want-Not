@@ -471,13 +471,25 @@ All icons used were sourced form [Font Awesome](https://fontawesome.com/)
 ### Code
 
 #### HTML
-HTML code was written by the creator Michael Greenberry unless stated
+HTML pages adapted from the Task mini project from Code Institute with additonal coding by myself. 
+add-food.html
+add-shopping.html
+base.html
+edit-food.html
+edit-shopping.html
+profile.html
+register.html
+
+groceries.html adapted from catergories.html with lots of amendments and additional code required for functionality
+
+home.html - created by myself apart from log in section
+shopping & waste.html pages adapted from catergories.html with lots of amendments and additional code required.
 
 #### CSS
 CSS code was written by the creator Michael Greenberry unless stated
 
 #### JavaScript/JQuery
-JQuery code was taken from Materalize or task mini project apart from navbar collapse
+JQuery code was taken from Materalize or task mini project apart from navbar collapse and datepicker which was adapted
 
 #### Python
 Python, Flask and Jinga code adapted from the task mini project with extra code written by Michael Greenberry
@@ -488,7 +500,7 @@ Help also received on tidying code and clean code from mentor
 ## Acknowledgements
 Many thanks to the following people for their help with this project: -
 
-Scott, Sean and Jo tutors from Code Institute
+Scott, Sean and Jo and other tutors from Code Institute
 
 Mentor: narender_mentor
 

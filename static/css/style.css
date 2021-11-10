@@ -17,6 +17,7 @@ body {
     min-height: 100vh;
     flex-direction: column;
   }
+/* below css adapted from task mini project and from materalize */
 .text-shadow {
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
@@ -26,13 +27,6 @@ body {
 }
 .flashes h4 {
     line-height: 2;
-}
-.uppercase {
-    text-transform:capitalize;
-    font-family: 'Open Sans', sans-serif;
-}
-.btn-small {
-    margin: 5px;
 }
 .collapsible-header .col strong {
     margin: 5px;
@@ -46,17 +40,37 @@ main {
     border-left: 1px solid #ddd !important;
     margin: 0.5rem 0 1rem 0 !important;
 }
+/* user created - below makes lists in mongoDB display with a capital letter
+otherwise would display as all lower as per app.py code */
+.uppercase {
+    text-transform:capitalize;
+    font-family: 'Open Sans', sans-serif;
+}
+/* used to space out buttons on forms */
+.btn-small {
+    margin: 5px;
+}
+/* used to space out buttons on modal */
 .divider{
     width:5px;
     height:auto;
     display:inline-block;
 }
+/* used to force footer to display at the bottom
+also keeps all pages the same height */
 .page-height {
     min-height: 100vh;
 }
+/* sidenav not allowing selection without this css
+Aparently a bug in the materalize css */
 .sidenav-overlay {
     display: contents !important;
 }
+/* Used to move the logo text and paragraphs away from the edge of the screen */
 .brand-logo {
     margin-left: 2rem;
+}
+p {
+    margin-left: 2rem;
+    margin-right: 2rem;
 }
